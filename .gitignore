@@ -1,0 +1,23 @@
+# Python virtual environment (created in the project root)
+bin/
+include/
+lib/
+lib64
+share/
+pyvenv.cfg
+
+# Secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
