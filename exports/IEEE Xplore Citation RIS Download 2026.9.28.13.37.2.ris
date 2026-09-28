@@ -1,0 +1,1340 @@
+TY  - CONF
+TI  - ODVISTA: An Omnidirectional Video Dataset for Super-Resolution and Quality Enhancement Tasks
+T2  - 2024 IEEE International Conference on Image Processing (ICIP)
+SP  - 131
+EP  - 136
+AU  - A. Telili
+AU  - I. Farhat
+AU  - W. Hamidouche
+AU  - H. Amirpour
+PY  - 2024
+KW  - Training
+KW  - Visualization
+KW  - Image coding
+KW  - Extended reality
+KW  - Superresolution
+KW  - Bandwidth
+KW  - Streaming media
+KW  - Omnidirectional video
+KW  - 360-degree video
+KW  - super-resolution
+KW  - video streaming
+KW  - virtual reality
+KW  - machine learning
+DO  - 10.1109/ICIP51287.2024.10647612
+JO  - 2024 IEEE International Conference on Image Processing (ICIP)
+IS  - 
+SN  - 2381-8549
+VO  - 
+VL  - 
+JA  - 2024 IEEE International Conference on Image Processing (ICIP)
+Y1  - 27-30 Oct. 2024
+AB  - Omnidirectional or 360-degree video is being increasingly deployed, largely due to the latest advancements in immersive virtual reality (VR) and extended reality (XR) technology. However, the adoption of these videos in streaming encounters challenges related to bandwidth and latency, particularly in mobility conditions such as with unmanned aerial vehicles (UAVs). Adaptive resolution and compression aim to preserve quality while maintaining low latency under these constraints, yet downscaling and encoding can still degrade quality and introduce artifacts. Machine learning (ML)-based super-resolution (SR) and quality enhancement techniques offer a promising solution by enhancing detail recovery and reducing compression artifacts. However, current publicly available 360-degree video SR datasets lack compression artifacts, which limit research in this field. To bridge this gap, this paper introduces omnidirectional video streaming dataset (ODVista), which comprises 200 high-resolution and high-quality videos downscaled and encoded at four bitrate ranges using the high-efficiency video coding (HEVC)/H.265 standard. Evaluations show that the dataset not only features a wide variety of scenes but also spans different levels of content complexity, which is crucial for robust solutions that perform well in real-world scenarios and generalize across diverse visual environments. Additionally, we evaluate the performance, considering both quality enhancement and runtime, of two handcrafted and two ML-based SR models on the validation and testing sets of ODVista. Dataset URL: https://github.com/Omnidirectional-video-group/ODVista
+ER  - 
+
+TY  - CONF
+TI  - Coherent Rendering of Virtual Smile Previews with Fast Neural Style Transfer
+T2  - 2019 IEEE International Symposium on Mixed and Augmented Reality (ISMAR)
+SP  - 66
+EP  - 73
+AU  - V. Vasiliu
+AU  - G. Sörös
+PY  - 2019
+KW  - Rendering (computer graphics)
+KW  - Image color analysis
+KW  - Dentistry
+KW  - Training
+KW  - Augmented reality
+KW  - Cameras
+KW  - Task analysis
+KW  - augmented reality
+KW  - coherent rendering
+KW  - style transfer
+KW  - convolutional neural network
+KW  - autoencoder
+DO  - 10.1109/ISMAR.2019.00-25
+JO  - 2019 IEEE International Symposium on Mixed and Augmented Reality (ISMAR)
+IS  - 
+SN  - 1554-7868
+VO  - 
+VL  - 
+JA  - 2019 IEEE International Symposium on Mixed and Augmented Reality (ISMAR)
+Y1  - 14-18 Oct. 2019
+AB  - Coherent rendering in augmented reality deals with synthesizing virtual content that seamlessly blends in with the real content. Unfortunately, capturing or modeling every real aspect in the virtual rendering process is often unfeasible or too expensive. We present a post-processing method that improves the look of rendered overlays in a dental virtual try-on application. We combine the original frame and the default rendered frame in an autoencoder neural network in order to obtain a more natural output, inspired by artistic style transfer research. Specifically, we apply the original frame as style on the rendered frame as content, repeating the process with each new pair of frames. Our method requires only a single forward pass, our shallow architecture ensures fast execution, and our internal feedback loop inherently enforces temporal consistency.
+ER  - 
+
+TY  - JOUR
+TI  - A Real-Time Method for Inserting Virtual Objects Into Neural Radiance Fields
+T2  - IEEE Transactions on Visualization and Computer Graphics
+SP  - 4896
+EP  - 4907
+AU  - K. Ye
+AU  - H. Wu
+AU  - X. Tong
+AU  - K. Zhou
+PY  - 2025
+KW  - Lighting
+KW  - Rendering (computer graphics)
+KW  - Real-time systems
+KW  - Task analysis
+KW  - Estimation
+KW  - Runtime
+KW  - Geometry
+KW  - All-frequency rendering
+KW  - augmented reality
+KW  - neural radiance field
+KW  - shadow
+DO  - 10.1109/TVCG.2024.3422814
+JO  - IEEE Transactions on Visualization and Computer Graphics
+IS  - 9
+SN  - 1941-0506
+VO  - 31
+VL  - 31
+JA  - IEEE Transactions on Visualization and Computer Graphics
+Y1  - Sept. 2025
+AB  - We present the first real-time method for inserting a rigid virtual object into a neural radiance field (NeRF), which produces realistic lighting and shadowing effects, as well as allows interactive manipulation of the object. By exploiting the rich information about lighting and geometry in a NeRF, our method overcomes several challenges of object insertion in augmented reality. For lighting estimation, we produce accurate and robust incident lighting that combines the 3D spatially-varying lighting from NeRF and an environment lighting to account for sources not covered by the NeRF. For occlusion, we blend the rendered virtual object with the background scene using an opacity map integrated from the NeRF. For shadows, with a precomputed field of spherical signed distance fields, we query the visibility term for any point around the virtual object, and cast soft, detailed shadows onto 3D surfaces. Compared with state-of-the-art techniques, our approach can insert virtual objects into scenes with superior fidelity, and has great potential to be further applied to augmented reality systems.
+ER  - 
+
+TY  - CONF
+TI  - Virtual Fit Trail: Revolutionizing Size Recommendations and Enhanced Shopping Experience
+T2  - 2025 7th International Conference on Intelligent Sustainable Systems (ICISS)
+SP  - 581
+EP  - 586
+AU  - S. R
+AU  - N. J. Shafana
+AU  - K. Shyam Sundar
+AU  - R. S. Amshavalli
+AU  - R. Rajalakshmi
+PY  - 2025
+KW  - Visualization
+KW  - Technological innovation
+KW  - Three-dimensional displays
+KW  - Fitting
+KW  - Clothing
+KW  - Reinforcement learning
+KW  - Turning
+KW  - Real-time systems
+KW  - Electronic commerce
+KW  - Time factors
+KW  - Augmented Reality
+KW  - Virtual Try-On
+KW  - Machine Learning
+KW  - Size Prediction
+KW  - Computer Vision
+KW  - 3D Modeling
+KW  - Personalized Shopping
+KW  - E-Commerce
+KW  - Fashion Technology
+KW  - Virtual Fitting Room
+KW  - Online Retail Innovation
+DO  - 10.1109/ICISS63372.2025.11076443
+JO  - 2025 7th International Conference on Intelligent Sustainable Systems (ICISS)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2025 7th International Conference on Intelligent Sustainable Systems (ICISS)
+Y1  - 12-14 March 2025
+AB  - Digital technologies have merged with fashion retail to provide innovative online shopping solutions. These virtual solutions have several studies showing AR-based visualization and size recommendations as the main focus. But existing solutions are often said to lack adequate personalization, real-time adjustments in fit, and seamless integration of ML models within AR-enabled shopping experiences. This paper reviews the Virtual Fit Trial Application, the outcome of previous research integrating some of the CV technologies with an AR use case and ML size prediction models. This system has an intuitive web interface that allows the users to select apparel, get detailed suggestions on size, and inspect garments virtually in AR and 3D, this overcomes the disadvantages of previous studies and improves customer satisfaction, thereby keeping lower return-to-stock rates, and mixing the physical shopping experience and the digital one. This work explains how the development of augmented reality-supports virtual fitting rooms, along with ML size recommendations, will reshape the world of e-commerce, providing a trustworthy and engaging shopping experience.
+ER  - 
+
+TY  - JOUR
+TI  - Sensorimotor Skill Communication: A Literature Review
+T2  - IEEE Access
+SP  - 75132
+EP  - 75149
+AU  - V. Babushkin
+AU  - M. H. Jamil
+AU  - W. Park
+AU  - M. Eid
+PY  - 2021
+KW  - Robot sensing systems
+KW  - Solid modeling
+KW  - Task analysis
+KW  - Internet
+KW  - Communication systems
+KW  - Visualization
+KW  - Tactile Internet
+KW  - Haptics and haptic interfaces
+KW  - learning from demonstration
+KW  - sensorimotor learning
+KW  - virtual reality and interfaces
+DO  - 10.1109/ACCESS.2021.3081449
+JO  - IEEE Access
+IS  - 
+SN  - 2169-3536
+VO  - 9
+VL  - 9
+JA  - IEEE Access
+Y1  - 2021
+AB  - A sensorimotor skill is a sequence of motions generated in response to external stimuli and aiming to accomplish a particular task. It can be communicated to reproduce the task in a distant environment with similar settings. In this work, we conceptualize a multi-modal sensorimotor skill communication system that incorporates modeling, simulation, and evaluation of the sensorimotor skill. The proposed sensorimotor skill communication system can be applied for learning a specific style of human sensorimotor skill and teaching the skill to distant learners, which can be implemented in a variety of applications such as Tele-consultation, Tele-diagnosis, Tele-treatment, Tele-monitoring, and Tele-support. To understand the processes behind the communication of sensorimotor skill we review the representation of a human sensorimotor system from the neurobiological perspective. Then we analyze the existing literature on sensorimotor skill communication systems and propose a taxonomy of currently available methods for sensorimotor skill modeling, simulation, and evaluation. Furthermore, we propose a benchmark for evaluating the quality of the sensorimotor skill communication system. We present a case study aiming to demonstrate modeling the dental sensorimotor skill of periodontal probing. Lastly, we discuss challenges and limitations and provide perspectives for future research in developing sensorimotor skill communication systems.
+ER  - 
+
+TY  - CONF
+TI  - A Deep Learning approach for the Generation of Room Impulse Responses
+T2  - 2022 Third International Conference on Information Systems and Software Technologies (ICI2ST)
+SP  - 64
+EP  - 71
+AU  - D. A. Sanaguano-Moreno
+AU  - J. F. Lucio-Naranjo
+AU  - R. A. Tenenbaum
+AU  - L. Bravo-Moncayo
+AU  - G. B. Regattiere-Sampaio
+PY  - 2022
+KW  - Training
+KW  - Deep learning
+KW  - Solid modeling
+KW  - Virtual environments
+KW  - Software
+KW  - Real-time systems
+KW  - Acoustics
+KW  - Real-time aurilization
+KW  - Acoustic Virtual Reality
+KW  - Variational Auto-encoders
+KW  - Room-Impulse Responses
+DO  - 10.1109/ICI2ST57350.2022.00017
+JO  - 2022 Third International Conference on Information Systems and Software Technologies (ICI2ST)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2022 Third International Conference on Information Systems and Software Technologies (ICI2ST)
+Y1  - 8-10 Nov. 2022
+AB  - Generating high-resolution binaural room impulse responses (BRIRs) for a given position requires significant computational resources, making it impractical for acoustic virtual reality in real-time environments. The main problem is the large number of coefficients required to simulate high-quality BRIRs, even in low-reverberant environments. In this sense, an approach that reconstructs a BRIR with fewer computational resources has been a challenge until nowadays. Therefore, this work introduces an approach for generating BRIRs from a compressed BRIR representation using a variational autoencoder (VAE). The approach consists of 1) simulating a certain number of BRIRs using an acoustic simulator software for a given virtual environment; 2) generating a dataset with enough BRIRs distributed uniformly over the given scenario using a data augmentation process; 3) applying a clusterization technique to homogenize the BRIR dataset previous training process; 4) training a VAE to obtain dimensionally reduced BRIRs from the encoder; 5) finally, generating a BRIR from the compressed representation using the decoder of the VAE. Only a segment of the BRIR was used to train and evaluate this approach. The MSE between the BRIRs simulated and the BRIRs generated by the model were compared to test the results, presenting a lower MSE.
+ER  - 
+
+TY  - CONF
+TI  - Investigating the Applications of Deep Learning in Drug Discovery and Pharmaceutical Research
+T2  - 2024 International Conference on Advances in Computing Research on Science Engineering and Technology (ACROSET)
+SP  - 1
+EP  - 6
+AU  - K. Desai
+AU  - M. K. Goyal
+AU  - M. N. Nachappa
+PY  - 2024
+KW  - Deep learning
+KW  - Drugs
+KW  - Accuracy
+KW  - Databases
+KW  - Computational modeling
+KW  - Design methodology
+KW  - Genetics
+KW  - Data models
+KW  - Drug discovery
+KW  - Chemicals
+KW  - Artificial Intelligence
+KW  - Biotechnology
+KW  - Drug Discovery
+KW  - Genomics
+KW  - Healthcare
+KW  - Machine Learning
+KW  - Pharmaceutical Research
+KW  - Precision Medicine
+KW  - Therapeutics
+KW  - Virtual Reality
+DO  - 10.1109/ACROSET62108.2024.10743819
+JO  - 2024 International Conference on Advances in Computing Research on Science Engineering and Technology (ACROSET)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2024 International Conference on Advances in Computing Research on Science Engineering and Technology (ACROSET)
+Y1  - 27-28 Sept. 2024
+AB  - The widespread use of deep learning has ushered in a revolutionary age in the fields of drug development and pharmaceutical research. The many uses and consequences of deep learning in this area are briefly discussed in this abstract. Combining computing resources, large datasets, and cuttingedge algorithms has produced revolutionary progress. In this article, we look at how deep learning approaches have revolutionized the pharmaceutical and drug development industries. The development of new medicines has been hastened thanks to the use of deep learning methods. Potential drug candidates' potential of individualizing pharmacological therapies. There is promising potential for enhanced therapeutic outcomes with less undesirable effects using a tailored approach. Also, deep learning has rethought our understanding of how drugs and receptors work together. Computational modeling may be predicted with surprising accuracy by deep neural networks, which analyze large databases of chemical compounds and their interactions with biological targets. A constant goal is to find a middle ground where deep learning's computational power may coexist with more traditional types of biological understanding. Finally, deep learning may revolutionize the pharmaceutical sector and the drug-discovery process. Possible applications include accelerating the discovery of novel medications, enhancing the precision of individualized therapy, and shedding information on the nature of drug-receptor interactions.
+ER  - 
+
+TY  - JOUR
+TI  - Fast 3D Stylized Gaussian Portrait Generation From a Single Image With Style Aligned Sampling Loss
+T2  - IEEE Access
+SP  - 58651
+EP  - 58660
+AU  - S. Jiang
+AU  - X. Yu
+AU  - W. Guo
+AU  - J. Huang
+PY  - 2024
+KW  - Three-dimensional displays
+KW  - Rendering (computer graphics)
+KW  - Cloning
+KW  - Point cloud compression
+KW  - Noise
+KW  - Surface treatment
+KW  - Image color analysis
+KW  - Virtual reality
+KW  - Diffusion processes
+KW  - Gaussian processes
+KW  - Virtual reality
+KW  - 3D generation
+KW  - diffusion model
+KW  - Gaussian splatting
+DO  - 10.1109/ACCESS.2024.3392568
+JO  - IEEE Access
+IS  - 
+SN  - 2169-3536
+VO  - 12
+VL  - 12
+JA  - IEEE Access
+Y1  - 2024
+AB  - Creating stylized 3D avatars and portraits from just a single image input is an emerging challenge in augmented and virtual reality. While prior work has explored 2D stylization or 3D avatar generation, achieving high-fidelity 3D stylized portraits with text control remains an open problem. In this paper, we present an efficient approach for generating high-quality 3D stylized portraits directly from a single input image. Our core representations are based on 3D Gaussian Splatting for efficient rendering, along with a surface-guided splitting and cloning strategy to reduce noise. To achieve high-fidelity stylized results, we introduce a Stylized Generation Module with a Style-Aligned Sampling Loss that injects the input image’s identity information into the diffusion model while stabilizing the stylization process. Furthermore, we incorporate a multi-view diffusion model to enforce 3D consistency by generating multiple viewpoints. Extensive experimentation demonstrates that our approach outperforms existing methods in terms of stylization quality, 3D consistency, and user preference ratings. Our framework enables casual users to easily generate stylized 3D portraits through simple image or text inputs, facilitating engaging experiences in AR/VR applications.
+ER  - 
+
+TY  - CONF
+TI  - Real-time Style Transfer for Videos to Enhance the Realism of Simulation of Laparoscopic Surgeries
+T2  - 2022 10th European Workshop on Visual Information Processing (EUVIP)
+SP  - 1
+EP  - 6
+AU  - M. Shao
+AU  - J. Clark
+AU  - D. Huson
+AU  - J. Hardeberg
+PY  - 2022
+KW  - Training
+KW  - Visualization
+KW  - Minimally invasive surgery
+KW  - Databases
+KW  - Image processing
+KW  - Instruments
+KW  - Europe
+KW  - Surgical simulation
+KW  - Laparoscopy
+KW  - Style transfer
+KW  - Virtual Reality
+DO  - 10.1109/EUVIP53989.2022.9922706
+JO  - 2022 10th European Workshop on Visual Information Processing (EUVIP)
+IS  - 
+SN  - 2471-8963
+VO  - 
+VL  - 
+JA  - 2022 10th European Workshop on Visual Information Processing (EUVIP)
+Y1  - 11-14 Sept. 2022
+AB  - Surgical simulation has repeatedly proven its potential, but is limited by the lack of realism to the surgical experience. For laparoscopic surgery simulation, an image processing method known as style transfer can improve the realism by transferring the style of a picture from surgery onto the video of the simulator using a stylisation network. In this article, we propose an adjustable style transfer algorithm for videos to improve the realism of silicone based models. The results show that our method can successfully implement multiple stylisations in real-time onto the video of the simulator while maintaining temporal consistency and overall smoothness of the video. Comparing to other style-transfer methods, our technique can offer multiple stylisations and, except from the method of Johnson et al. [6], achieves better realness score when evaluated by surgeons. This method can also be trained on a generic database in only 3h43 contrary to the other image processing techniques such as image translation which require specific training datasets.
+ER  - 
+
+TY  - CONF
+TI  - MDD: Masked Deconstructed Diffusion for 3D Human Motion Generation from Text
+T2  - 2025 IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality (AIxVR)
+SP  - 61
+EP  - 72
+AU  - J. Chen
+AU  - F. Liu
+AU  - Y. Wang
+PY  - 2025
+KW  - Solid modeling
+KW  - Three-dimensional displays
+KW  - Quantization (signal)
+KW  - Semantics
+KW  - Noise reduction
+KW  - Diffusion processes
+KW  - Kinematics
+KW  - Virtual reality
+KW  - Transformers
+KW  - Computational efficiency
+KW  - 3D Human Motion Generation
+KW  - Artificial Intelligence
+KW  - Virtual Reality
+KW  - Character Animation
+KW  - Deep Learning
+DO  - 10.1109/AIxVR63409.2025.00017
+JO  - 2025 IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality (AIxVR)
+IS  - 
+SN  - 2771-7453
+VO  - 
+VL  - 
+JA  - 2025 IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality (AIxVR)
+Y1  - 27-29 Jan. 2025
+AB  - We present MDD (Masked Deconstructed Diffusion), a novel framework for generating high-fidelity 3D human motions from textual descriptions. Our MDD framework employs a multi-stage Kinematic Chain Quantization (KCQ) that effectively encodes motion sequences into a compact yet expressive codebook by capturing both local and global human kinematic features. This codebook is then leveraged by a Masked Deconstructed Diffusion Transformer (MDDT), which takes text inputs and iteratively refines the output motion sequence through masked index prediction in a deconstructed diffusion process. By aligning the prediction with the denoising process, our method strikes an optimal balance between generation quality and computational efficiency. Extensive evaluations on multiple established benchmarks demonstrate that MDD consistently outperforms state-of-the-art methods in terms of precision and semantic accuracy, while achieving superior inference speed. Our generated motions are further validated in multiple virtual reality (VR) scenes, showcasing the effectiveness of our framework in VR applications.
+ER  - 
+
+TY  - CONF
+TI  - Designing Fractal Expressions for Immersive Aesthetic Experiences
+T2  - 2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+SP  - 1642
+EP  - 1643
+AU  - E. Gerhardt
+AU  - C. Geiger
+AU  - M. Säger
+PY  - 2025
+KW  - Visualization
+KW  - Three-dimensional displays
+KW  - Conferences
+KW  - Collaboration
+KW  - Virtual reality
+KW  - User interfaces
+KW  - Fractals
+KW  - Real-time systems
+KW  - Artificial intelligence
+KW  - Immersive aesthetics
+KW  - 3D real-time fractals
+KW  - VR
+DO  - 10.1109/VRW66409.2025.00466
+JO  - 2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+Y1  - 8-12 March 2025
+AB  - Aesthetic experiences are closely related to human emotions and experiences as well as the perception of aesthetic objects and phenomena. We consider interaction with generated immersive worlds to be an immersive aesthetic experience if it is designed independently of any functional use and can be experienced in an aesthetically pleasing way. The possibilities of generative techniques such as AI and other algorithms and visualization through the integration of virtual reality open up new aesthetic possibilities. We present the results of a collaboration between scientists and designers/artists in the development of a framework for three-dimensional fractals [5] and its application in various scenarios in the field of festivals, performances and exhibitions.
+ER  - 
+
+TY  - CONF
+TI  - Self-Aware Adaptive Alignment: Enabling Accurate Perception for Intelligent Transportation Systems
+T2  - 2024 IEEE Intelligent Vehicles Symposium (IV)
+SP  - 595
+EP  - 601
+AU  - T. Xiang
+AU  - H. Zhao
+AU  - F. Zhu
+AU  - Y. Chen
+AU  - Y. Lv
+PY  - 2024
+KW  - Adaptive systems
+KW  - Accuracy
+KW  - Intelligent vehicles
+KW  - Transportation
+KW  - Object detection
+KW  - Virtual reality
+KW  - Benchmark testing
+KW  - Domain adaptation
+KW  - virtual reality
+KW  - object detection
+DO  - 10.1109/IV55156.2024.10588464
+JO  - 2024 IEEE Intelligent Vehicles Symposium (IV)
+IS  - 
+SN  - 2642-7214
+VO  - 
+VL  - 
+JA  - 2024 IEEE Intelligent Vehicles Symposium (IV)
+Y1  - 2-5 June 2024
+AB  - Achieving top-notch performance in Intelligent Transportation detection is a critical research area. However, many challenges still need to be addressed when it comes to detecting in a cross-domain scenario. In this paper, we propose a Self-Aware Adaptive Alignment (SA3), by leveraging an efficient alignment mechanism and recognition strategy. Our proposed method employs a specified attention-based alignment module trained on source and target domain datasets to guide the image-level features alignment process, enabling the local-global adaptive alignment between the source domain and target domain. Features from both domains, whose channel importance is re-weighted, are fed into the region proposal network, which facilitates the acquisition of salient region features. Also, we introduce an instance-to-image level alignment module specific to the target domain to adaptively mitigate the domain gap. To evaluate the proposed method, extensive experiments have been conducted on popular cross-domain object detection benchmarks. Experimental results show that SA3 achieves superior results to the previous state-of-the-art methods.
+ER  - 
+
+TY  - CONF
+TI  - Mindfulness Anywhere: Meditating in the Generated Virtual World
+T2  - 2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+SP  - 1406
+EP  - 1407
+AU  - Y. Jiang
+AU  - D. Jia
+AU  - Z. Yang
+AU  - L. Li
+AU  - Y. Wang
+AU  - P. Hui
+PY  - 2025
+KW  - Three-dimensional displays
+KW  - Limiting
+KW  - Conferences
+KW  - Virtual environments
+KW  - Mental health
+KW  - User interfaces
+KW  - Functional near-infrared spectroscopy
+KW  - VR Content
+KW  - Meditation
+KW  - Mental Health
+KW  - Immersive Environments
+DO  - 10.1109/VRW66409.2025.00349
+JO  - 2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+Y1  - 8-12 March 2025
+AB  - With the rapid advancement of Virtual Reality (VR) technology, immersive meditation experiences have become a promising tool for enhancing mental well-being. However, many existing VR meditation environments lack personalization and realistic integration, limiting their effectiveness. This study evaluated personalized virtual relaxation environments using a comparative research design. Results showed that the experimental group, using generative virtual meditation spaces, experienced significantly more positive emotional states. Future work will explore the impact of VR meditation through fNIRS measurements of prefrontal cortex activity, aiming to understand how personalized virtual environments influence psychological and neural responses.
+ER  - 
+
+TY  - CONF
+TI  - The Role of Room Impulse Response in Educational Applications
+T2  - 2025 International Conference on Emerging eLearning Technologies and Applications (ICETA)
+SP  - 835
+EP  - 841
+AU  - J. Urbánek
+AU  - P. Kasák
+AU  - R. Jarina
+PY  - 2025
+KW  - Solid modeling
+KW  - Computer aided instruction
+KW  - Parameter estimation
+KW  - Reviews
+KW  - Noise reduction
+KW  - Machine learning
+KW  - Measurement techniques
+KW  - Reliability engineering
+KW  - Reflection
+KW  - Reverberation
+KW  - education
+KW  - virtual reality
+KW  - distance learning
+KW  - room impulse response
+DO  - 10.1109/ICETA67772.2025.11280084
+JO  - 2025 International Conference on Emerging eLearning Technologies and Applications (ICETA)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2025 International Conference on Emerging eLearning Technologies and Applications (ICETA)
+Y1  - 13-14 Nov. 2025
+AB  - Room acoustics significantly influence learning outcomes in both traditional (in-person) and distance education environments. Artefacts such as background noise and reverberation can negatively affect students' attention, memory, and comprehension. With the growth of distance learning and immersive technologies such as virtual and augmented reality, the importance of high-quality audio becomes even more critical. A possible way to address acoustic interference is through denoising and speech separation. A central component in addressing reverberations is room impulse response. It contains information about sound reflections and material properties making it an essential asset in classroom design, speech transmission improvement, and immersive simulations. This paper reviews applications and research works in various educational contexts, from acoustic treatment of classrooms to speech quality in distance learning and usage in diverse virtual reality simulations. Furthermore, this work reviews different methods for obtaining RIR, ranging from classical measurement techniques to modern machine learning approaches. Finally, the paper outlines opportunities for integrating acoustic modelling into educational practices to improve their effectiveness, quality, and accessibility.
+ER  - 
+
+TY  - CONF
+TI  - TrendiTex: An Intelligent Fashion Designer
+T2  - 2019 International Seminar on Research of Information Technology and Intelligent Systems (ISRITI)
+SP  - 505
+EP  - 510
+AU  - P. Wickramarathne
+AU  - M. De Silva
+AU  - C. Weerasinghe
+AU  - H. Nanayakkara
+AU  - P. Abeygunawardhana
+AU  - S. Silva
+PY  - 2019
+KW  - Image color analysis
+KW  - Color
+KW  - Shape
+KW  - Skin
+KW  - Hip
+KW  - Information technology
+KW  - Clothing
+KW  - Machine Learning
+KW  - Image Processing
+KW  - Classification
+KW  - Augmented Reality (AR)
+DO  - 10.1109/ISRITI48646.2019.9034631
+JO  - 2019 International Seminar on Research of Information Technology and Intelligent Systems (ISRITI)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2019 International Seminar on Research of Information Technology and Intelligent Systems (ISRITI)
+Y1  - 5-6 Dec. 2019
+AB  - In a highly changing technical era, Intelligent Fashion Designing systems play a key role to bridge the gap between fashion designers and the customers. Most of the people specially females, are fond of fashion. Currently, fashion has become a way of defining a person's preferences and personality. Analyzing through a large number of fashion trends and selecting a one among them will be a highly time-consuming task. Even though most of the people are keen on fashion, with their busy schedules, spending time on selecting a cloth for an occasion among numerous numbers of designs available is a hard task. Therefore, it would be exhausting to select a proper design for an occasion for them. Prevailing the difficulty in finding the clothes up to the user's expectation, we propose a user-friendly fashion designing mobile application and a web application called "TrendiTex". Extracting user preference details, user's body shape predicting and recommending trending fashion designs according to their shape, generating the unique 2D new fashionable design for a specific event and the augmented fit-on facility are implemented in TrendiTex. This system represents an efficient approach to design new unique products according to user's preferences and gives augmented fit-on facility.
+ER  - 
+
+TY  - CONF
+TI  - Visualizing Health: Virtual Eyewear Try-On Shaping Informed Medical Choices
+T2  - 2023 IEEE Afro-Mediterranean Conference on Artificial Intelligence (AMCAI)
+SP  - 1
+EP  - 9
+AU  - M. Chaabani
+AU  - Y. Ghozzi
+AU  - R. Ktari
+PY  - 2023
+KW  - Visualization
+KW  - Technological innovation
+KW  - Computer vision
+KW  - Medical services
+KW  - Rendering (computer graphics)
+KW  - Real-time systems
+KW  - Testing
+KW  - Computer vision
+KW  - augmented reality
+KW  - virtual try-on
+KW  - facial feature detection
+KW  - eyewear VTO system
+KW  - real-time visualization
+KW  - healthcare applications
+DO  - 10.1109/AMCAI59331.2023.10431499
+JO  - 2023 IEEE Afro-Mediterranean Conference on Artificial Intelligence (AMCAI)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2023 IEEE Afro-Mediterranean Conference on Artificial Intelligence (AMCAI)
+Y1  - 13-15 Dec. 2023
+AB  - Incorporating the latest advancements in computer vision and virtual reality (VR) technology, this paper explores the fusion of computer vision and augmented reality, resulting in groundbreaking innovations applicable across various industries. This study introduces an advanced virtual eyewear try-on system that transcends its traditional application in the fashion sector. This cutting-edge system harnesses the power of precise facial and ocular recognition algorithms, sophisticated image manipulation techniques, geometric transformations, and real-time visual rendering. As a result, users are immersed in a lifelike environment, enabling them to virtually experiment with a diverse range of eyewear frames. Beyond its notable impact on the online retail experience, this technology opens up exciting possibilities in the realm of healthcare.
+ER  - 
+
+TY  - JOUR
+TI  - HFM-GS: Half-Face Mapping 3DGS Avatar Based Real-Time HMD Removal
+T2  - IEEE Transactions on Visualization and Computer Graphics
+SP  - 9803
+EP  - 9812
+AU  - K. Wang
+AU  - J. Wu
+AU  - R. Fan
+AU  - H. Zhang
+AU  - S. K. Im
+AU  - L. Wang
+PY  - 2025
+KW  - Resists
+KW  - Faces
+KW  - Image reconstruction
+KW  - Three-dimensional displays
+KW  - Real-time systems
+KW  - Videos
+KW  - Avatars
+KW  - Deformation
+KW  - Head
+KW  - Image restoration
+KW  - Virtual reality
+KW  - HMD removal
+KW  - 3D Gaussian avatar
+KW  - Deformation field
+DO  - 10.1109/TVCG.2025.3616801
+JO  - IEEE Transactions on Visualization and Computer Graphics
+IS  - 11
+SN  - 1941-0506
+VO  - 31
+VL  - 31
+JA  - IEEE Transactions on Visualization and Computer Graphics
+Y1  - Nov. 2025
+AB  - In extended reality (XR) applications, enhancing user perception often necessitates head-mounted display (HMD) removal. However, existing methods suffer from low time performance and suboptimal reconstruction quality. In this paper, we propose a half face mapping 3D Gaussian splatting avatar based HMD removal method (HFM-GS), which can perform real-time and high-fidelity online restoration of the complete face in HMD-occluded videos for XR applications after a short un-occluded face registration. We establish a mapping field between the upper and lower face Gaussians to enhance the adaptability to deformation. Then, we introduce correlation weight-based sampling to improve time performance and handle variations in the number of Gaussians. At last, we ensure model robustness through Gaussian Segregation Strategy. Compared to two state-of-the-art methods, our method achieves better quality and time performance. The results of the user study show that fidelity is significantly improved with our method.
+ER  - 
+
+TY  - CONF
+TI  - Transformer-Based Inpainting for Real-Time 3D Streaming in Sparse Multi-Camera Setups
+T2  - 2026 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+SP  - 4587
+EP  - 4598
+AU  - L. Van Holland
+AU  - D. Zingsheim
+AU  - M. Takhsha
+AU  - H. Dröge
+AU  - P. Stotko
+AU  - M. Plack
+AU  - R. Klein
+PY  - 2026
+KW  - Feeds
+KW  - Motion pictures
+KW  - Filtering
+KW  - Filters
+KW  - Circuits and systems
+KW  - Pixel
+KW  - Videos
+KW  - Communication systems
+KW  - Streaming media
+KW  - Wide area networks
+KW  - inpainting
+KW  - 3d streaming
+KW  - real-time
+KW  - virtual reality
+KW  - telepresence
+DO  - 10.1109/WACV61042.2026.00446
+JO  - 2026 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+IS  - 
+SN  - 2642-9381
+VO  - 
+VL  - 
+JA  - 2026 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+Y1  - 6-10 March 2026
+AB  - High-quality 3D streaming from multiple cameras is crucial for immersive experiences in many AR/VR applications. The limited number of views - often due to real-time constraints - leads to missing information and incomplete surfaces in the rendered images. Existing approaches typically rely on simple heuristics for the hole filling, which can result in inconsistencies or visual artifacts. We propose to complete the missing textures using a novel, application-targeted inpainting method independent of the underlying representation as an image-based post-processing step after the novel view rendering. The method is designed as a standalone module compatible with any calibrated multi-camera system. For this we introduce a multi-view aware, transformer-based network architecture using spatio-temporal embeddings to ensure consistency across frames while preserving fine details. Additionally, our resolution-independent design allows adaptation to different camera setups, while an adaptive patch selection strategy balances inference speed and quality, allowing real-time performance. We evaluate our approach against state-of-the-art inpainting techniques under the same real-time constraints and demonstrate that our model achieves the best trade-off between quality and speed, outperforming competitors in both image and video-based metrics.
+ER  - 
+
+TY  - CONF
+TI  - AI-Enhanced Virtual Meeting Platform: Integrating Spatial Audio and Personalization Features along with Smart Meeting Summarization
+T2  - 2025 4th OPJU International Technology Conference (OTCON) on Smart Computing for Innovation and Advancement in Industry 5.0
+SP  - 1
+EP  - 6
+AU  - P. Ghadekar
+AU  - Y. Shaligram
+AU  - V. Shimpi
+AU  - O. Shingade
+AU  - S. Singh
+AU  - S. Thakur
+PY  - 2025
+KW  - Technological innovation
+KW  - Translation
+KW  - Avatars
+KW  - Spatial audio
+KW  - Virtual environments
+KW  - Web conferencing
+KW  - User experience
+KW  - Teamwork
+KW  - Artificial intelligence
+KW  - Speech processing
+KW  - Virtual Reality
+KW  - Meeting room
+KW  - Spatial Audio
+KW  - Meeting summarization
+KW  - Multilingual feature
+DO  - 10.1109/OTCON65728.2025.11070561
+JO  - 2025 4th OPJU International Technology Conference (OTCON) on Smart Computing for Innovation and Advancement in Industry 5.0
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2025 4th OPJU International Technology Conference (OTCON) on Smart Computing for Innovation and Advancement in Industry 5.0
+Y1  - 9-11 April 2025
+AB  - The need for effective and engaging communication tools has increased in this age of remote work and virtual teamwork. In this time, having an interactive meeting environment without facing the virtual platform constraints has proved to be beneficial and engaging in today's era. Taking this into consideration, this research project is carried out for the development of a virtual meeting platform where people can come together in virtual environments and conduct meetings. Also, integration of artificial intelligence (AI) technologies into virtual meeting applications has enhanced communication experiences. The goal of this project is to develop an interactive virtual meeting platform with features like dynamic personalization which include creation of personalized and customizable avatar which represents the person in the virtual world, interlanguage translation to avoid the language barrier in the meeting and help in smooth communication, spatial audio effects, AI-powered automated meeting summary feature which gives a detailed summary of the key points discussed at the end of the meeting, and subtitle production. Advanced methods for audio processing include spatial audio, allowing users to follow speech direction and volume by utilizing avatar placements. By modifying avatar look, audio settings, and content recommendations based on unique preferences and actions, AI systems personalize the user experience. The study tells how these developments affect participation, productivity, and accessibility in virtual meetings and provides predictions about the direction AI-driven communication tools may take in the future.
+ER  - 
+
+TY  - CONF
+TI  - Generation of Upright Panoramic Image from Non-upright Panoramic Image
+T2  - 2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+SP  - 5249
+EP  - 5258
+AU  - J. Liu
+AU  - H. Chen
+AU  - S. Li
+AU  - J. Li
+PY  - 2024
+KW  - Computer vision
+KW  - Neural networks
+KW  - Estimation
+KW  - Cameras
+KW  - Algorithms
+KW  - Generative models for image
+KW  - video
+KW  - 3D
+KW  - etc.
+KW  - Algorithms
+KW  - 3D computer vision
+KW  - Applications
+KW  - Virtual / augmented reality
+DO  - 10.1109/WACV57701.2024.00518
+JO  - 2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+IS  - 
+SN  - 2642-9381
+VO  - 
+VL  - 
+JA  - 2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+Y1  - 3-8 Jan. 2024
+AB  - The inclination of a spherical camera results in nonupright panoramic images. To carry out upright adjustment, traditional methods estimate camera inclination angles firstly, and then resample the image in terms of the estimated rotation to generate upright image. Since sampling an image is a time-consuming processing, a lookup table is usually used to achieve a high processing speed; however, the content of a lookup table depends on the rotational angles and needs extra memory to store also. In this paper we propose a new approach for panorama upright adjustment, which directly generates an upright panoramic image from an input nonupright one without rotation estimation and lookup tables as an intermediate processing. The proposed approach formulates panorama upright adjustment as a pixelwise image-to-image mapping problem, and the mapping is directly generated from an input nonupright panoramic image via an end-to-end neural network. As shown in the experiment of this paper, the proposed method results in a lightweight network, as less as 163MB, with high processing speed, as great as 9ms, for a 256×512 pixel panoramic image.
+ER  - 
+
+TY  - CONF
+TI  - iBARLE: imBalance-Aware Room Layout Estimation
+T2  - 2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+SP  - 903
+EP  - 913
+AU  - T. Jing
+AU  - L. Wang
+AU  - N. Khosravan
+AU  - Z. Wan
+AU  - Z. Bessinger
+AU  - Z. Ding
+AU  - S. B. Kang
+PY  - 2024
+KW  - Training
+KW  - Visualization
+KW  - Computer vision
+KW  - Shape
+KW  - Layout
+KW  - Estimation
+KW  - Linear programming
+KW  - Algorithms
+KW  - Image recognition and understanding
+KW  - Algorithms
+KW  - Generative models for image
+KW  - video
+KW  - 3D
+KW  - etc.
+KW  - Applications
+KW  - Virtual / augmented reality
+DO  - 10.1109/WACV57701.2024.00096
+JO  - 2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+IS  - 
+SN  - 2642-9381
+VO  - 
+VL  - 
+JA  - 2024 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)
+Y1  - 3-8 Jan. 2024
+AB  - Room layout estimation predicts layouts from a single panorama. It requires datasets with large-scale and diverse room shapes to well train the models. However, there are significant imbalances in real-world datasets including the dimensions of layout complexity, camera locations, and variation in scene appearance. These issues considerably influence the model training performance. In this work, we propose imBalance-Aware Room Layout Estimation (iBARLE) framework to address these issues. iBARLE consists of: (1) Appearance Variation Generation (AVG) module, which promotes visual appearance domain generalization, (2) Complex Structure Mix-up (CSMix) module, which enhances generalizability w.r.t. room structure, and (3) a gradient-based layout objective function, which allows more effective accounting for occlusions in complex layouts. All modules are jointly trained and help each other to achieve the best performance. Experiments and ablation studies based on ZInD [6] dataset illustrate that iBARLE has state-of-the-art performance compared with other layout estimation baselines.
+ER  - 
+
+TY  - JOUR
+TI  - Federated Prompt-Based Decision Transformer for Resource Allocation of Customized VR Streaming in Mobile Edge Computing
+T2  - IEEE Transactions on Wireless Communications
+SP  - 743
+EP  - 757
+AU  - T. Zhou
+AU  - J. Yu
+AU  - J. Zhang
+AU  - D. H. K. Tsang
+PY  - 2026
+KW  - Servers
+KW  - Resource management
+KW  - Quality of experience
+KW  - Adaptation models
+KW  - Training
+KW  - Transformers
+KW  - Data models
+KW  - Federated learning
+KW  - Trajectory
+KW  - Data privacy
+KW  - Federated learning
+KW  - decision transformer
+KW  - prompt
+KW  - mobile edge computing
+KW  - resource allocation
+DO  - 10.1109/TWC.2025.3586371
+JO  - IEEE Transactions on Wireless Communications
+IS  - 
+SN  - 1558-2248
+VO  - 25
+VL  - 25
+JA  - IEEE Transactions on Wireless Communications
+Y1  - 2026
+AB  - This paper investigates resource allocation for providing heterogeneous users with customized virtual reality (VR) streaming services in a mobile edge computing (MEC) system. We introduce a quality of experience (QoE) metric that considers system latency, user attention levels, and preferred resolutions to measure user experience based on the Weber-Fechner Law. A QoE maximization problem is then formulated for resource allocation to optimize user experience. It is cast as a reinforcement learning problem, aiming to learn a generalized policy applicable across diverse user environments of different MEC servers. To solve the problem, we propose a FedPromptDT framework, which employs federated learning (FL) and prompt-based generative sequence modeling to pre-train a common decision model across MEC servers. FL addresses the issue of insufficient local MEC data while protecting user privacy during offline training. Meanwhile, by integrating user-environment cues and user-preferred allocation, the design of prompts enhances the model’s adaptability to various user environments during online execution. Extensive experimental evaluations demonstrate that FedPromptDT outperforms baseline methods, exhibiting remarkable adaptability and maintaining superior performance across various user environments.
+ER  - 
+
+TY  - JOUR
+TI  - VR-DataAug: An Efficient Data Augmentation Method for Multicamera Vehicle Tracking
+T2  - IEEE Sensors Journal
+SP  - 35426
+EP  - 35437
+AU  - H. Zhuang
+AU  - Y. Qian
+AU  - M. Wu
+AU  - C. Wang
+AU  - M. Yang
+PY  - 2025
+KW  - Cameras
+KW  - Training
+KW  - Data models
+KW  - Feature extraction
+KW  - Adaptation models
+KW  - Mathematical models
+KW  - Target tracking
+KW  - Data augmentation
+KW  - Trajectory
+KW  - Vehicle dynamics
+KW  - Data augmentation
+KW  - multicamera vehicle tracking
+KW  - vehicle modeling
+DO  - 10.1109/JSEN.2025.3596067
+JO  - IEEE Sensors Journal
+IS  - 18
+SN  - 1558-1748
+VO  - 25
+VL  - 25
+JA  - IEEE Sensors Journal
+Y1  - 15 Sept.15, 2025
+AB  - Multicamera vehicle tracking refers to tracking the same vehicle in multiple cameras in various locations, which aids in traffic flow analysis and prediction. But, collecting and labeling extensive multicamera vehicle tracking datasets for cities is challenging due to the spatio-temporal complexity, hindering the performance of multicamera vehicle tracking algorithm development. Simulations can produce vast, automatically labeled datasets. However, there is a significant domain gap between virtual and real vehicles, affecting style features like texture and illumination, as well as apparent features like scale and pose. We introduce VR-DataAug, a data augmentation method merging virtual and real data with consistent style and apparent features. A Background Modeling With Detection Feedback module creates a clean background and extracts vehicle instances. A Multiattribute Vehicle Apparent Modeling module utilizes a classifier to learn apparent features from various camera viewpoints, preserving scale, position, and orientation information between virtual and real vehicles. A Virtual Vehicle and Real Background Fusion module uses a generative model to ensure texture consistency and merge virtual vehicles into real traffic scenes. Extensive experiments on the CityFlow dataset demonstrate that our approach improves detection performance by 3.4% mAP, enhances the vehicle re-identification model by 3.84%, boosts multi camera vehicle tracking by increasing IDF1 metrics by 4.25%, and highlighting its potential to expand training sets while minimizing domain offset.
+ER  - 
+
+TY  - CONF
+TI  - A Macro-to-Micro Control Approach to Balance User Agency and Automation for Mobile AI-assisted Writing on Smart Glasses
+T2  - 2025 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+SP  - 773
+EP  - 774
+AU  - C. Zhou
+AU  - W. T. Ooi
+AU  - S. Zhao
+PY  - 2025
+KW  - Human computer interaction
+KW  - Automation
+KW  - Process control
+KW  - Writing
+KW  - Cognitive load
+KW  - Ubiquitous computing
+KW  - Control systems
+KW  - Augmented reality
+KW  - Smart glasses
+KW  - [Human-centered computing]: Mixed / augmented reality
+KW  - [Human-centered computing]: Ubiquitous computing;
+DO  - 10.1109/ISMAR-Adjunct68609.2025.00183
+JO  - 2025 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+IS  - 
+SN  - 2771-1110
+VO  - 
+VL  - 
+JA  - 2025 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+Y1  - 8-12 Oct. 2025
+AB  - Generative AI-assisted writing often requires post-generation editing. In a dynamic mobile environment, where user attention is divided, a key challenge is to reduce the cognitive load of such generate-edit cycle. To address the challenge, we propose a "macro-to-micro" control approach to balance user agency and automation in the AI-assisted writing process. This approach offers distinct interaction methods for macro-level adjustments (e.g., tone) and micro-level modifications (e.g., words). We conducted two user studies to evaluate its effectiveness in mobile text editing. Our preliminary results show that our approach significantly reduces cognitive load in demanding mobile situations. We identified a "control paradox": users felt more confident and preferred our approach, despite perceiving less direct operational control. Furthermore, our second study identified an important modality mismatch: the voice-centric modality for the micro-editing layer was a significant bottleneck. This finding suggests a key design principle for future systems: effective control is not about more or less, but about matching the interaction modality to the task’s required precision.
+ER  - 
+
+TY  - CONF
+TI  - DecoraAI: AI-powered Augmented Reality (AR) Interior Design Web Application
+T2  - 2026 International Conference on Emerging Technologies and Future Innovations (ETFI)
+SP  - 1
+EP  - 6
+AU  - P. Gouthami
+AU  - S. Darun
+AU  - K. Rathivarman
+PY  - 2026
+KW  - Broadcasting
+KW  - Feedback
+KW  - Circuits
+KW  - MIMICs
+KW  - Recommender systems
+KW  - Information filtering
+KW  - Millimeter wave integrated circuits
+KW  - Monolithic integrated circuits
+KW  - Internet
+KW  - Protocols
+KW  - Artificial Intelligence (AI)
+KW  - Interior Design
+KW  - 3D Model Creation
+KW  - WebAR
+KW  - Real-Time Visualization
+KW  - HumanComputer Interaction
+KW  - Spatial Computing
+KW  - Intelligent Design Systems
+KW  - Immersion Technologies and Web-Based Applications
+DO  - 10.1109/ETFI68128.2026.11484877
+JO  - 2026 International Conference on Emerging Technologies and Future Innovations (ETFI)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2026 International Conference on Emerging Technologies and Future Innovations (ETFI)
+Y1  - 12-14 Feb. 2026
+AB  - In this paper, the author introduces an AI-based web-based Augmented Reality (AR) interior design application, called DecoraAI, that will be utilized to improve the process of interior visualization in real-time and assist users in decisionmaking. The main aim of the study is to create a smart system that helps a user to create a tailor-made 3D interior items with a natural language input and automatically view it in the real world conditions via WebAR. The suggested research approach is based on the design-based experimental framework, involving the text to 3D-generative AI model, the WebXR-based AR visualization system, and the interactive manipulation of objects. The evaluation of the performance is done based on the quantitative metrics of user engagement rate, design completion time, spatial understanding accuracy, and a user satisfaction score. Experiments indicate that DecoraAI helps to increase user interaction by $32 \%$, shortens the time need to finish a design by $25 \%$ and increases spatial comprehension significantly than traditional interior design tools. The unique value of the work is in the smooth connection between artificial 3D content creation based on AI and real-time web-based AR display, which provides an affordable, interactive, and smart interior design option.
+ER  - 
+
+TY  - CONF
+TI  - Existential Problems of Deathbots and the Transience of Death in Modern Digital Reality
+T2  - 2026 IEEE Ural-Siberian Conference on Biomedical Engineering, Radioelectronics and Information Technology (USBEREIT)
+SP  - 1
+EP  - 4
+AU  - D. Kuzmin
+PY  - 2026
+KW  - Death
+KW  - Memory
+KW  - Printing
+KW  - Liver
+KW  - Modeling
+KW  - digital existentialism
+KW  - artificial intelligence
+KW  - deathbot
+KW  - digital immortality
+KW  - digital reality
+KW  - virtual reality
+KW  - death studies
+DO  - 10.1109/USBEREIT70063.2026.11581123
+JO  - 2026 IEEE Ural-Siberian Conference on Biomedical Engineering, Radioelectronics and Information Technology (USBEREIT)
+IS  - 
+SN  - 2769-3635
+VO  - 
+VL  - 
+JA  - 2026 IEEE Ural-Siberian Conference on Biomedical Engineering, Radioelectronics and Information Technology (USBEREIT)
+Y1  - 14-15 May 2026
+AB  - The article aims to understand the transformation of the existential notion of death within the digital reality and the generative AI’s input in the process; the study focuses on the phenomenon of “deathbots” as a specific way of the deceased’s continued existence within the digital reality. Theoretical basis of the paper is resting on Jean-Paul Sartre’s and Martin Heidegger’s definitions of death as an existential notion and the digital humanities research of what’s known as “digital afterlife”, i.e. the continued existence of an individual in the digital reality even after the physical passing, utilizing a combination of existential analysis, death studies methods, and elements of content analysis. The article seeks to understand the existential implications of deathbots as avatars of the decedent through notions of memory and presence, how they’re relevant to retaining the image and preserving the existence of an individual after the passing; existential relevance of these notions is further uncovered and pondered. The conclusion provides analysis to the existential and thanatological consequences of “deathbots”: blurring of the line between life and death, illusion of the “response from the beyond”, alterations of the grieving processes, as well as potential rejection of death as an ontological finality.
+ER  - 
+
+TY  - JOUR
+TI  - Enhancing Motion Reconstruction From Sparse Tracking Inputs With Kinematic Constraints
+T2  - IEEE Transactions on Automation Science and Engineering
+SP  - 5029
+EP  - 5037
+AU  - X. Dai
+AU  - X. Zhang
+AU  - S. Li
+AU  - X. Chen
+PY  - 2025
+KW  - Kinematics
+KW  - Accuracy
+KW  - Image reconstruction
+KW  - Decoding
+KW  - Task analysis
+KW  - Predictive models
+KW  - Virtual reality
+KW  - pose reconstruction
+KW  - human kinematic prior
+KW  - multi-scale signal processing
+DO  - 10.1109/TASE.2024.3415151
+JO  - IEEE Transactions on Automation Science and Engineering
+IS  - 
+SN  - 1558-3783
+VO  - 22
+VL  - 22
+JA  - IEEE Transactions on Automation Science and Engineering
+Y1  - 2025
+AB  - In virtual reality, there is a growing demand for reconstructing accurate full-body 3D avatars from the sparse motion captured through head-mounted displays and hand-held controllers. However, due to the limited information from sparse inputs, precisely reconstructing full body poses is an ill-posed and challenging task. Existing methods often exhibit notable errors in lower body poses, which results in unrealistic poses and occasional floor penetration artifacts. To address the above issue, a MLP-based model with Kinematic Constraints and Temporal Diversity (KCTD) was proposed for full body poses reconstruction, which incorporates Kinematic Constraints Hierarchical Decoder with Temporal Diversity Awareness Module and a Generative Feedback Module to further improve the accuracy of the reconstruction of the full body poses. Specifically, the potential constraints of human kinematic chain are incorporated into the model through a hierarchical decoder, which elevates overall precision through the interaction of the human kinematic chain. Then, a temporal diversity awareness module is integrated into the hierarchical decoder to help the model capture information at different frequency in the time domain. In addition, a generative feedback module is imposed on leg poses reconstruction to further improve its accuracy without increasing the model’s inference time. Test results on the AMASS dataset demonstrate that, the proposed model effectively improves the reconstruction accuracy of the full-body poses with the mean per joint rotation error and position error of of 2.60 and 3.62 respectively, which surpasses the state-of-the-art methods. Particularly, the proposed model can alleviate irrational poses in the lower body and reduce the floor penetration artifacts. Note to Practitioners—The motivation behind this manuscript stems from the necessity for precise full pose reconstruction in certain virtual reality applications. While existing methods have significantly contributed to the reconstruction of full-body poses based on sparse inputs, they have not taken tailored measures to improve accuracy in the lower body. Consequently, this paper introduces a full human body pose reconstruction model grounded in constraints from the human kinematic chain, featuring a temporal diversity awareness module. This model excels in reconstructing more accurate complete human body poses using sparse inputs from the head and hands, notably addressing issues such as irrational lower-body poses and floor-penetrating artifacts. Benefiting from state-of-the-art precision, the proposed approach has the potential to significantly elevate user experience and immersion in virtual reality applications, particularly in scenarios such as automated task training and simulation of hazardous conditions.
+ER  - 
+
+TY  - CONF
+TI  - Malicious Design in AIVR, Falsehood and Cybersecurity-oriented Immersive Defenses
+T2  - 2020 IEEE International Conference on Artificial Intelligence and Virtual Reality (AIVR)
+SP  - 130
+EP  - 137
+AU  - N. -M. Aliman
+AU  - L. Kester
+PY  - 2020
+KW  - Artificial intelligence
+KW  - Information integrity
+KW  - Videos
+KW  - Safety
+KW  - Media
+KW  - Journalism
+KW  - Computer crime
+KW  - AI Safety
+KW  - VR
+KW  - AI
+KW  - Immersive Journalism
+KW  - Disinformation
+KW  - HCI
+KW  - Design Fiction
+KW  - Psychology
+KW  - Cybersecurity
+DO  - 10.1109/AIVR50618.2020.00031
+JO  - 2020 IEEE International Conference on Artificial Intelligence and Virtual Reality (AIVR)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2020 IEEE International Conference on Artificial Intelligence and Virtual Reality (AIVR)
+Y1  - 14-18 Dec. 2020
+AB  - Advancements in the AI field unfold tremendous opportunities for society. Simultaneously, it becomes increasingly important to address emerging ramifications. Thereby, the focus is often set on ethical and safe design forestalling unintentional failures. However, cybersecurity-oriented approaches to AI safety additionally consider instantiations of intentional malice - including unethical malevolent AI design. Recently, an analogous emphasis on malicious actors has been expressed regarding security and safety for virtual reality (VR). In this vein, while the intersection of AI and VR (AIVR) offers a wide array of beneficial cross-fertilization possibilities, it is responsible to anticipate future malicious AIVR design from the onset on given the potential socio-psycho-technological impacts. For a simplified illustration, this paper analyzes the conceivable use case of Generative AI (here deepfake techniques) utilized for disinformation in immersive journalism. In our view, defenses against such future AIVR safety risks related to falsehood in immersive settings should be transdisciplinarily conceived from an immersive co-creation stance. As a first step, we motivate a cybersecurity-oriented procedure to generate defenses via immersive design fictions. Overall, there may be no panacea but updatable transdisciplinary tools including AIVR itself could be used to incrementally defend against malicious actors in AIVR.
+ER  - 
+
+TY  - CONF
+TI  - DM-VTON: Distilled Mobile Real-time Virtual Try-On
+T2  - 2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+SP  - 695
+EP  - 700
+AU  - K. -N. Nguyen-Ngoc
+AU  - T. -T. Phan-Nguyen
+AU  - K. -D. Le
+AU  - T. V. Nguyen
+AU  - M. -T. Tran
+AU  - T. -N. Le
+PY  - 2023
+KW  - Training
+KW  - Knowledge engineering
+KW  - Industries
+KW  - Runtime
+KW  - Training data
+KW  - Machine learning
+KW  - Real-time systems
+KW  - Mixed/augmented reality
+KW  - Real-time systems
+KW  - Virtual try-on
+KW  - Knowledge distillation
+DO  - 10.1109/ISMAR-Adjunct60411.2023.00149
+JO  - 2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+IS  - 
+SN  - 2771-1110
+VO  - 
+VL  - 
+JA  - 2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+Y1  - 16-20 Oct. 2023
+AB  - The fashion e-commerce industry has witnessed significant growth in recent years, prompting exploring image-based virtual try-on techniques to incorporate Augmented Reality (AR) experiences into online shopping platforms. However, existing research has primarily overlooked a crucial aspect - the runtime of the underlying machine-learning model. While existing methods prioritize enhancing output quality, they often disregard the execution time, which restricts their applications on a limited range of devices. To address this gap, we propose Distilled Mobile Real-time Virtual Try-On (DM-VTON), a novel virtual try-on framework designed to achieve simplicity and efficiency. Our approach is based on a knowledge distillation scheme that leverages a strong Teacher network as supervision to guide a Student network without relying on human parsing. Notably, we introduce an efficient Mobile Generative Module within the Student network, significantly reducing the runtime while ensuring high-quality output. Additionally, we propose Virtual Try-on-guided Pose for Data Synthesis to address the limited pose variation observed in training images. Experimental results show that the proposed method can achieve 40 frames per second on a single Nvidia Tesla T4 GPU and only take up 37 MB of memory while producing almost the same output quality as other state-of-the-art methods. DM-VTON stands poised to facilitate the advancement of real-time AR applications, in addition to the generation of lifelike attired human figures tailored for diverse specialized training tasks.
+ER  - 
+
+TY  - CONF
+TI  - Prompt Engineering, Tools and Methods for Immersive Experience Development
+T2  - 2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+SP  - 125
+EP  - 132
+AU  - A. Rozo-Torres
+AU  - W. J. Sarmiento
+PY  - 2024
+KW  - Three-dimensional displays
+KW  - Conferences
+KW  - Collaboration
+KW  - Immersive experience
+KW  - User interfaces
+KW  - Proposals
+KW  - prompt engineering
+KW  - co-creation
+KW  - immersive experience development
+KW  - Computing methodologies-Computer graphics-Graphics systems and interfaces-Mixed / augmented reality Human-centered computing-Human computer interaction (HCI)-Interactive systems and tools
+DO  - 10.1109/VRW62533.2024.00027
+JO  - 2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+Y1  - 16-21 March 2024
+AB  - This paper presents relevant considerations about the challenges of integrating “prompt engineering” tools in the design and development of immersive systems. Thus, the contribution of this work is a general framework for the design and development of immersive systems using “prompt engineering” tools that use Generative Artificial Intelligence (GenAI). In other words, this proposal provides how to incorporate these tools into a traditional workflow of extreme programming agile methodology, establishing creative collaboration between the user and the GenAI tools. This work includes a concrete example of this dynamic interaction in developing a virtual reality experience for preparing specialty coffee using the V60 method. Thus, the development example shows the use of a set tool of GertAI, “prompt” inputs used, their corresponding outputs, and how they are integrated into the final product at each stage of the process. Therefore, the recommendations and challenges presented in this document are based on the knowledge gained from this experience.
+ER  - 
+
+TY  - CONF
+TI  - Smart AR Wardrobe: Implementation of a Real-Time Virtual Try-On System using AR and AI
+T2  - 2026 International Conference on Trends in Quantum Computing and Emerging Business Technologies (TQCEBT)
+SP  - 1
+EP  - 6
+AU  - K. Sharma
+AU  - M. C. Sarapali
+AU  - R. Raj
+AU  - P. M. Chandana
+AU  - K. L
+PY  - 2026
+KW  - Modeling
+KW  - Real-time systems
+KW  - Three-dimensional displays
+KW  - Timing
+KW  - Faces
+KW  - Argon
+KW  - Visualization
+KW  - Rendering (computer graphics)
+KW  - Browsers
+KW  - Printing
+KW  - Augmented Reality (AR)
+KW  - Virtual Try-On (VTO)
+KW  - MediaPipe
+KW  - Three.js
+KW  - Real-Time Systems
+KW  - Computer Vision
+KW  - Pose Estimation
+KW  - Face Mesh
+KW  - 3D Rendering
+KW  - Web Application
+KW  - HumanComputer Interaction (HCI)
+DO  - 10.1109/TQCEBT67648.2026.11681155
+JO  - 2026 International Conference on Trends in Quantum Computing and Emerging Business Technologies (TQCEBT)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2026 International Conference on Trends in Quantum Computing and Emerging Business Technologies (TQCEBT)
+Y1  - 9-11 April 2026
+AB  - Fashion-centered e-commerce is yet to overcome the challenge of accurate visualization of clothing and accessories online; we are addressing this issue in this paper with a real-time, browser-based Augmented Reality (AR) virtual tryon (VTO) application developed on React and three.js. The system uses the MediaPipe Holistic model through the JavaScript API to extract both detailed facial landmarks (478 points) and body pose landmarks (33 points) from a standard webcam stream. With that information, customers will be able to test a variety of 3D products - glasses, earrings, necklaces and T-shirts - right within a single integrated web page. We portray virtual objects in three.js and attach them to the body by calculating the landmarks smoothly and scaling and rotating them, ensuring smooth real-time alignment. This paper presents a dynamic face occlusion mesh and a single multi-accessory alignment pipeline, which makes it possible to render realistically in the browser. The proposed system can offer real-time performance without any specialized hardware, which means that it can be scaled in place of applications in ecommerce. The system also includes an AI-based recommendation module, which is generative and offers real-time suggestions of accessories, based on the user's visual context and selected accessories.
+ER  - 
+
+TY  - CONF
+TI  - A Unified Framework for AR Indoor Navigation and Conversational Information Retrieval in Smart Campus Environments
+T2  - 2025 Twelfth International Conference on Intelligent Computing and Information Systems (ICICIS)
+SP  - 757
+EP  - 763
+AU  - A. Magdy
+AU  - A. Mohamed
+AU  - A. A. Boghdady
+AU  - B. Achraf
+AU  - H. Mohamed
+AU  - Z. Abd-El-Hamid
+AU  - S. Ali
+AU  - I. Hegazy
+PY  - 2025
+KW  - Visualization
+KW  - Accuracy
+KW  - Simultaneous localization and mapping
+KW  - Tracking
+KW  - Indoor navigation
+KW  - Retrieval augmented generation
+KW  - Computer architecture
+KW  - Information retrieval
+KW  - Vectors
+KW  - Standards
+KW  - Augmented Reality
+KW  - Indoor Navigation
+KW  - Information Retrieval
+DO  - 10.1109/ICICIS66182.2025.11313163
+JO  - 2025 Twelfth International Conference on Intelligent Computing and Information Systems (ICICIS)
+IS  - 
+SN  - 2831-5952
+VO  - 
+VL  - 
+JA  - 2025 Twelfth International Conference on Intelligent Computing and Information Systems (ICICIS)
+Y1  - 25-27 Nov. 2025
+AB  - Navigating complex indoor environments like university campuses poses a significant challenge, compounded by the difficulty of accessing specific institutional information. While vision-based Simultaneous Localization and Mapping (SLAM) offers continuous tracking, it suffers from cumulative drift. Sim- ilarly, standard Retrieval-Augmented Generation (RAG) systems for question-answering are prone to context collision. This paper presents a unified mobile application that integrates a robust AR indoor navigation module with an intelligent conversational assistant to address both challenges simultaneously. The pro- posed navigation system fuses the continuous motion tracking of SLAM with high-precision QR code markers for drift correction, providing accurate, real-time visual guidance. For information retrieval, a novel RAG architecture is proposed featuring an LLM-powered router that intelligently directs user queries to one of several specialized vector stores, effectively eliminating con- text collision and improving contextual accuracy. Experimental results confirm that the navigation module provides robust and accurate visual guidance in real-world scenarios. Furthermore, the chatbot's router-based architecture demonstrates a marked improvement in retrieval accuracy, consistently identifying more relevant information than a standard RAG system. The proposed system demonstrates the feasibility of synergistically combining spatial computing with advanced conversational AI to create a comprehensive smart campus assistant, enhancing the student experience by providing seamless access to both physical and digital resources.
+ER  - 
+
+TY  - JOUR
+TI  - A Perceptual Model-Based Approach to Plausible Authoring of Vibration for the Haptic Metaverse
+T2  - IEEE Transactions on Haptics
+SP  - 263
+EP  - 276
+AU  - R. Rosenkranz
+AU  - M. E. Altinsoy
+PY  - 2024
+KW  - Vibration measurement
+KW  - Virtual reality
+KW  - Haptic interfaces
+KW  - Metaverse
+KW  - User centered design
+KW  - Human factors
+KW  - Information processing
+KW  - Tactile sensors
+KW  - Vibrometers
+KW  - User centered design
+KW  - Information processing
+KW  - Virtual reality
+KW  - haptic perception
+KW  - vibrotactile feedback
+KW  - user-centered design
+KW  - human factors
+KW  - human information processing
+DO  - 10.1109/TOH.2023.3318644
+JO  - IEEE Transactions on Haptics
+IS  - 2
+SN  - 2329-4051
+VO  - 17
+VL  - 17
+JA  - IEEE Transactions on Haptics
+Y1  - April-June 2024
+AB  - Haptic virtual reality is often misunderstood as being solely a physically identical copy of real environments. Thus, a perfect recording and reproduction of vibration that is indistinguishable in an A:B comparison is often the aim. However, in most virtual reality applications the real environment is not available for direct comparison. Instead, when judging the plausibility of a presented scene, the user compares the vibration to his expectations shaped by the audiovisual context. Therefore, it should be sufficient to find any vibration that the user expects to potentially occur in the given context. Such a vibration needs to elicit a perceptual profile with a minimal distance to an expected profile in the sensory tactile perceptual space. Building onto this formalization, this article demonstrates a novel generative model-based approach to authoring vibrations. First, users quantify expectations as tactile profiles consisting of ratings of six sensory tactile attributes without the presence of vibrations. Subsequently, the model predicts vibration parameters from such profiles. This ensures the fulfillment of user expectations and thus high plausibility. Furthermore, it eliminates the necessity of recordings, infeasible for scenes with no real counterpart and opens the door to crowdsourcing the authoring process with laypersons for the haptic metaverse.
+ER  - 
+
+TY  - JOUR
+TI  - StyleVR: Stylizing Character Animations With Normalizing Flows
+T2  - IEEE Transactions on Visualization and Computer Graphics
+SP  - 4183
+EP  - 4196
+AU  - B. Ji
+AU  - Y. Pan
+AU  - Y. Yan
+AU  - R. Chen
+AU  - X. Yang
+PY  - 2024
+KW  - Animation
+KW  - Trajectory
+KW  - Three-dimensional displays
+KW  - Solid modeling
+KW  - Probabilistic logic
+KW  - Prototypes
+KW  - Computational modeling
+KW  - Character animation
+KW  - motion generation
+KW  - style transfer
+KW  - normalizing flow
+KW  - virtual reality
+DO  - 10.1109/TVCG.2023.3259183
+JO  - IEEE Transactions on Visualization and Computer Graphics
+IS  - 7
+SN  - 1941-0506
+VO  - 30
+VL  - 30
+JA  - IEEE Transactions on Visualization and Computer Graphics
+Y1  - July 2024
+AB  - The significance of artistry in creating animated virtual characters is widely acknowledged, and motion style is a crucial element in this process. There has been a long-standing interest in stylizing character animations with style transfer methods. However, this kind of models can only deal with short-term motions and yield deterministic outputs. To address this issue, we propose a generative model based on normalizing flows for stylizing long and aperiodic animations in the VR scene. Our approach breaks down this task into two sub-problems: motion style transfer and stylized motion generation, both formulated as the instances of conditional normalizing flows with multi-class latent space. Specifically, we encode high-frequency style features into the latent space for varied results and control the generation process with style-content labels for disentangled edits of style and content. We have developed a prototype, StyleVR, in Unity, which allows casual users to apply our method in VR. Through qualitative and quantitative comparisons, we demonstrate that our system outperforms other methods in terms of style transfer as well as stochastic stylized motion generation.
+ER  - 
+
+TY  - CONF
+TI  - Envisioning Paramersive Design: An Immersive Approach to Architectural Design and Review
+T2  - 2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+SP  - 261
+EP  - 265
+AU  - A. Drogemuller
+AU  - H. Sakhaei
+AU  - A. Cunningham
+AU  - R. Yu
+AU  - N. Gu
+AU  - B. H. Thomas
+PY  - 2023
+KW  - Artificial intelligence
+KW  - Augmented reality
+KW  - Human-centered computing—Human computer interaction (HCI)—Interaction paradigms—Virtual reality
+DO  - 10.1109/ISMAR-Adjunct60411.2023.00060
+JO  - 2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+IS  - 
+SN  - 2771-1110
+VO  - 
+VL  - 
+JA  - 2023 IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)
+Y1  - 16-20 Oct. 2023
+AB  - We present Paramersive Design, a new paradigm that encompasses Parametric Design, Generative Artificial Intelligence (AI), and Immersive Display Technologies for embodied Architectural Design. To demonstrate Paramersive Design, we describe pre-existing influential works, two envisioned systems inspired by related work, and use case scenarios demonstrating the systems in design contexts. Our paper concludes with future directions and opportunities for Paramersive Design.
+ER  - 
+
+TY  - CONF
+TI  - Supplementing Patient Encounter Training for Preservice Nurses: Towards an AI×VR Approach
+T2  - 2026 IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality (AIxVR)
+SP  - 98
+EP  - 107
+AU  - Y. Duan
+AU  - X. Xu
+AU  - H. He
+AU  - Y. Gu
+AU  - S. Li
+AU  - J. Bueno-Vesga
+PY  - 2026
+KW  - Training
+KW  - Headphones
+KW  - Friction
+KW  - Virtual reality
+KW  - Medical services
+KW  - Reliability engineering
+KW  - Timing
+KW  - Usability
+KW  - Artificial intelligence
+KW  - Interviews
+KW  - artificial intelligence
+KW  - virtual reality
+KW  - nursing education
+KW  - standardized patient
+DO  - 10.1109/AIxVR67263.2026.00020
+JO  - 2026 IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality (AIxVR)
+IS  - 
+SN  - 2771-7453
+VO  - 
+VL  - 
+JA  - 2026 IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality (AIxVR)
+Y1  - 26-28 Jan. 2026
+AB  - We built an immersive virtual reality environment where preservice nurses practice with generative artificial intelligence-driven virtual standardized patients (AI-VSPs). We ran mixed-methods study (experimental $n=23$; control $n=34$). Usability score was $81.6 / 100$, indicating excellent usability. A single session increased self-efficacy from 3.74 to $4.11(t(22)=3.82, p<0.001$). In the standardized-patient (SP) encounter performance assessment, scores for AI-VSP users did not differ from controls $(t(55)=-0.134, p=0.894)$. AI-VSP encounter performance did not relate to engagement, presence, or immersion, although these experience measures were strongly intercorrelated. Interviews highlighted helps and hindrances. Overall, AI-VSPs are a usable, confidence-building supplement to SP encounter preparation. We also outline practical design steps: cap reply length, enable reliable barge-in, improve speech quality and latency, and keep scaffolding minimal.
+ER  - 
+
+TY  - CONF
+TI  - LifeBrush: Painting Interactive Agent-Based Simulations
+T2  - 2018 International Conference on Cyberworlds (CW)
+SP  - 17
+EP  - 24
+AU  - T. Davison
+AU  - F. Samavati
+AU  - C. Jacob
+PY  - 2018
+KW  - Solid modeling
+KW  - Biological system modeling
+KW  - Paints
+KW  - Three-dimensional displays
+KW  - Mathematical model
+KW  - Computational modeling
+KW  - Brushes
+KW  - agent based simulation
+KW  - sketch based
+KW  - discrete element texture synthesis
+KW  - virtual reality
+DO  - 10.1109/CW.2018.00017
+JO  - 2018 International Conference on Cyberworlds (CW)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2018 International Conference on Cyberworlds (CW)
+Y1  - 3-5 Oct. 2018
+AB  - Building and interacting with 3D agent-based simulations that contain a large number of agents is a significant challenge. What if we want to create an intricate new arrangement of agents, or reconfigure a large number of agents? We present LifeBrush, a cyberworld for interactively painting large and elaborate multi-agent simulations with commodity virtual reality systems that we can then simulate and explore. Our main methodology uses sketch-based discrete element texture synthesis to paint agent arrangements. We define a map to convert agents to elements in this framework when we paint and back to agents when we simulate. Like creating new colors on a paint palette, we create example agent arrangements and configurations in an example palette. We paint new agents into a scene with sketch-based generative brushes. We also use those brushes to reconfigure agents to match examples created in the palette. Then we simulate, pause the simulation and modify the agents with our sketch-based tools. This iteration loop enables new levels of interactivity for the design, simulation, and exploration of agent-based simulations.
+ER  - 
+
+TY  - CONF
+TI  - Retraction Notice: An Innovation of Exploiting Generative Adversarial Networks to Augment Virtual Reality Experiences
+T2  - 2024 International Conference on Optimization Computing and Wireless Communication (ICOCWC)
+SP  - 1
+EP  - 1
+AU  - R. Sikka
+AU  - V. Saxena
+AU  - M. N. Nachappa
+PY  - 2024
+DO  - 10.1109/ICOCWC60930.2024.11149347
+JO  - 2024 International Conference on Optimization Computing and Wireless Communication (ICOCWC)
+IS  - 
+SN  - 
+VO  - 
+VL  - 
+JA  - 2024 International Conference on Optimization Computing and Wireless Communication (ICOCWC)
+Y1  - 29-30 Jan. 2024
+AB  - Generative adversarial Networks (GANs) reinforce digital reality (VR) studies with artificial facts. They are executed via training a GAN to generate artificial virtual objects in a simulated environment from photographs of real-world scenes. This process creates a ‘GAN-augmented space’ which permits unheard-of tiers of interaction and immersive studies. The primary advantage of GANs over conventional strategies is they can generate novel content material that immediately extends a person's cutting-edge revel. It creates the potential for more excellent sensible scenes, synthetic gadgets that blend seamlessly into a digital environment, and real-time modifications to VR scenes. In addition, GANs empower VR developers to create particular digital worlds using minimum actual-world facts. This innovation can reduce the cost and time needed to create a practical VR reveal, making it less complicated for developers to create attractive VR reviews.
+ER  - 
+
+TY  - CONF
+TI  - VGTC Virtual Reality Significant New Researcher Award
+T2  - 2024 IEEE Conference Virtual Reality and 3D User Interfaces (VR)
+SP  - 1
+EP  - 1
+AU  - A. Serrano
+PY  - 2024
+DO  - 10.1109/VR58804.2024.00018
+JO  - 2024 IEEE Conference Virtual Reality and 3D User Interfaces (VR)
+IS  - 
+SN  - 2642-5254
+VO  - 
+VL  - 
+JA  - 2024 IEEE Conference Virtual Reality and 3D User Interfaces (VR)
+Y1  - 16-21 March 2024
+AB  - The 2024 IEEE VGTC Virtual Reality Significant New Researcher Award goes to Professor Ana Serrano of the Universidad de Zaragoza (Spain), in recognition of her outstanding contributions to virtual reality, computational imaging, and perception of material appearance. Her work has greatly impacted the community’s understanding of attention and viewer behavior in virtual reality. In addition to investigating saliency in virtual reality, Dr. Serrano has introduced a generative model of realistic scanpaths for 360° images that represent how users explore a virtual environment. Her other contributions include movie editing in virtual reality and its effects on the perception of continuity, perception-based material modeling such as gloss management, and understanding the effects of shape and illumination on the perception of material appearance. Her work has produced many high-profile publications and received numerous accolades within and beyond the field of virtual reality.
+ER  - 
+
+TY  - JOUR
+TI  - Converging Real and Virtual: Embodied Intelligence-Driven Immersive VR Biofeedback for Brain Health Modulation
+T2  - IEEE Transactions on Computational Social Systems
+SP  - 938
+EP  - 946
+AU  - Y. She
+AU  - F. Liu
+AU  - B. Yang
+AU  - B. Hu
+PY  - 2025
+DO  - 10.1109/TCSS.2025.3567776
+JO  - IEEE Transactions on Computational Social Systems
+IS  - 3
+SN  - 2329-924X
+VO  - 12
+VL  - 12
+JA  - IEEE Transactions on Computational Social Systems
+Y1  - June 2025
+AB  - 
+ER  - 
+
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="512" viewBox="0 0 1000 512">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#000"/></marker></defs>
+<rect width="1000" height="512" fill="#ffffff"/>
+<text x="500.0" y="28" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#000">PRISMA 2020 flow diagram: identification of studies via databases</text>
+<rect x="30" y="46" width="34" height="94" rx="3" fill="#e8e8e8" stroke="#000" stroke-width="1"/>
+<text x="47" y="93.0" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#000" text-anchor="middle" transform="rotate(-90 47 93.0)">Identification</text>
+<rect x="150" y="46" width="400" height="94" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+<text x="162" y="67" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Records identified from databases (n = 3,269):</text>
+<text x="162" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#000">    Scopus (n = 1,900)</text>
+<text x="162" y="101" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#000">    IEEE Xplore (n = 840)</text>
+<text x="162" y="118" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#000">    ACM Digital Library (n = 529)</text>
+<rect x="600" y="46" width="372" height="94" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+<text x="612" y="67" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Records removed before screening:</text>
+<text x="612" y="84" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#000">    Duplicate records removed (n = 1,006)</text>
+<rect x="150" y="186" width="400" height="40" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+<text x="162" y="207" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Records screened (n = 2,263)</text>
+<rect x="600" y="186" width="372" height="40" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="612" y="207" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Records excluded (n = ____)</text>
+<rect x="150" y="266" width="400" height="40" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="162" y="287" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Reports sought for retrieval (n = ____)</text>
+<rect x="600" y="266" width="372" height="40" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="612" y="287" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Reports not retrieved (n = ____)</text>
+<rect x="150" y="346" width="400" height="40" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="162" y="367" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Reports assessed for eligibility (n = ____)</text>
+<rect x="600" y="346" width="372" height="92" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="612" y="367" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Reports excluded:</text>
+<text x="612" y="384" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#000">    Reason 1 (n = ____)</text>
+<text x="612" y="401" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#000">    Reason 2 (n = ____)</text>
+<text x="612" y="418" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#000">    Reason 3 (n = ____)</text>
+<rect x="30" y="174" width="34" height="224" rx="3" fill="#e8e8e8" stroke="#000" stroke-width="1"/>
+<text x="47" y="286.0" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#000" text-anchor="middle" transform="rotate(-90 47 286.0)">Screening</text>
+<rect x="30" y="422" width="34" height="62" rx="3" fill="#e8e8e8" stroke="#000" stroke-width="1"/>
+<text x="47" y="453.0" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#000" text-anchor="middle" transform="rotate(-90 47 453.0)">Included</text>
+<rect x="150" y="432" width="400" height="40" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="162" y="453" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#000">Studies included in review (n = ____)</text>
+<line x1="550" y1="93.0" x2="598" y2="93.0" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+<line x1="350.0" y1="140" x2="350.0" y2="184" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+<line x1="550" y1="206" x2="598" y2="206" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+<line x1="350.0" y1="226" x2="350.0" y2="264" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+<line x1="550" y1="286" x2="598" y2="286" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+<line x1="350.0" y1="306" x2="350.0" y2="344" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+<line x1="550" y1="366" x2="598" y2="366" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+<line x1="350.0" y1="386" x2="350.0" y2="430" stroke="#000" stroke-width="1.2" marker-end="url(#ah)"/>
+</svg>

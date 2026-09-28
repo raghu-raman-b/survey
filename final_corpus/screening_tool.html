@@ -1,0 +1,1158 @@
+<title>Screening Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --ground:#F6F7F9; --surface:#FFFFFF; --surface-2:#EFF1F5;
+  --ink:#161A22; --ink-2:#39414F; --muted:#5B6474; --faint:#8B94A4;
+  --line:#DDE2E9; --line-strong:#C6CDD9;
+  --accent:#3D5A9E; --accent-soft:#E7ECF7; --accent-ink:#2C4478;
+  --inc:#1E7A4C; --inc-soft:#E2F1E8; --inc-line:#A9D4BE;
+  --exc:#B03A30; --exc-soft:#F8E6E4; --exc-line:#E5B3AD;
+  --may:#A97918; --may-soft:#FAF0DC; --may-line:#E3CB94;
+  --shadow:0 1px 2px rgba(20,26,38,.06),0 8px 24px -12px rgba(20,26,38,.18);
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --serif:"Source Serif 4",Iowan Old Style,Georgia,Cambria,serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#10131A; --surface:#181C24; --surface-2:#1F242E;
+  --ink:#E6EAF1; --ink-2:#C2C9D6; --muted:#939CAC; --faint:#6E7889;
+  --line:#272D38; --line-strong:#3A4252;
+  --accent:#86A2E4; --accent-soft:#1E2739; --accent-ink:#A8BDEE;
+  --inc:#43A273; --inc-soft:#152A21; --inc-line:#2D5942;
+  --exc:#DC7168; --exc-soft:#2E1B1A; --exc-line:#5E322E;
+  --may:#D3A548; --may-soft:#2B2417; --may-line:#57472A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}}
+:root[data-theme="dark"]{
+  --ground:#10131A; --surface:#181C24; --surface-2:#1F242E;
+  --ink:#E6EAF1; --ink-2:#C2C9D6; --muted:#939CAC; --faint:#6E7889;
+  --line:#272D38; --line-strong:#3A4252;
+  --accent:#86A2E4; --accent-soft:#1E2739; --accent-ink:#A8BDEE;
+  --inc:#43A273; --inc-soft:#152A21; --inc-line:#2D5942;
+  --exc:#DC7168; --exc-soft:#2E1B1A; --exc-line:#5E322E;
+  --may:#D3A548; --may-soft:#2B2417; --may-line:#57472A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+h1,h2,h3{margin:0;text-wrap:balance}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- shell ---------- */
+#app{display:flex;flex-direction:column;height:100%}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--surface);
+  border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;
+  padding:9px 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:8px;margin-right:2px}
+.brand b{font-weight:600;letter-spacing:-.01em;font-size:15px}
+.brand span{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em}
+.tabs{display:flex;gap:2px;background:var(--surface-2);padding:3px;border-radius:8px}
+.tab{border:0;background:none;padding:6px 13px;border-radius:6px;font-size:13px;
+  font-weight:500;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(20,26,38,.1)}
+.spacer{flex:1 1 auto}
+.phase{display:flex;align-items:center;gap:8px}
+.plabel{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);font-weight:500}
+.phasehint{background:var(--accent-soft);border:1px solid var(--line);border-radius:9px;
+  padding:13px 16px;margin-bottom:16px;font-size:13px;color:var(--ink-2);line-height:1.55}
+.phasehint b{color:var(--ink)}
+.phasehint ol{margin:7px 0 0;padding-left:19px}
+.phasehint li{margin:3px 0}
+.phasehint code{font-family:var(--mono);font-size:12px;background:var(--surface);
+  padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+.who{display:flex;align-items:center;gap:7px}
+.who label{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);font-weight:500}
+.who input{width:104px;padding:5px 9px;border:1px solid var(--line-strong);border-radius:6px;
+  background:var(--surface);font-family:var(--mono);font-size:12.5px}
+.iconbtn{border:1px solid var(--line-strong);background:var(--surface);border-radius:6px;
+  padding:5px 9px;cursor:pointer;color:var(--muted);font-size:13px}
+.iconbtn:hover{color:var(--ink);border-color:var(--faint)}
+
+/* ---------- progress ---------- */
+.prog{display:flex;align-items:center;gap:10px;width:100%;order:9}
+.bar{flex:1;height:5px;border-radius:99px;background:var(--surface-2);overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+.bar .i-inc{background:var(--inc)} .bar .i-exc{background:var(--exc)} .bar .i-may{background:var(--may)}
+.prog .cnt{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+
+/* ---------- views ---------- */
+main{flex:1;min-height:0;overflow:auto}
+.view{display:none}
+.view.on{display:block}
+.wrap{max-width:860px;margin:0 auto;padding-block:26px;padding-left:16px;padding-right:16px}
+.wide{max-width:1180px}
+
+/* ---------- panels ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:16px}
+.panel>h2{font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:4px}
+.panel .sub{color:var(--muted);font-size:12.5px;margin-bottom:16px;max-width:62ch}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);font-weight:500}
+.field input,.field select{padding:7px 10px;border:1px solid var(--line-strong);border-radius:7px;
+  background:var(--surface);font-size:13px}
+.field input[type=number]{width:92px;font-family:var(--mono)}
+.btn{border:1px solid var(--line-strong);background:var(--surface);border-radius:7px;
+  padding:8px 14px;font-size:13px;font-weight:500;cursor:pointer}
+.btn:hover{border-color:var(--faint)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.drop{border:1.5px dashed var(--line-strong);border-radius:10px;padding:22px;text-align:center;
+  color:var(--muted);cursor:pointer;background:var(--surface)}
+.drop:hover,.drop.over{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.drop b{display:block;color:var(--ink);font-size:14px;font-weight:600;margin-bottom:3px}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ---------- stat tiles ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(122px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.stat{background:var(--surface);padding:13px 14px}
+.stat .k{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);font-weight:500}
+.stat .v{font-family:var(--mono);font-size:21px;font-weight:500;margin-top:3px;font-variant-numeric:tabular-nums}
+.stat .v small{font-size:12px;color:var(--muted);margin-left:3px}
+
+/* ---------- screening layout ---------- */
+.screen-grid{display:grid;grid-template-columns:262px minmax(0,1fr);height:100%}
+.rail{border-right:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;min-height:0}
+.rail-top{padding:10px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.rail-top input{width:100%;padding:6px 9px;border:1px solid var(--line-strong);border-radius:6px;
+  background:var(--ground);font-size:12.5px}
+.chips{display:flex;gap:4px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--ground);border-radius:99px;padding:3px 9px;
+  font-size:11px;cursor:pointer;color:var(--muted);font-weight:500}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+.rail-list{flex:1;overflow:auto;padding:5px}
+.rl{display:grid;grid-template-columns:8px 1fr;gap:8px;align-items:start;width:100%;
+  border:0;background:none;text-align:left;padding:7px 8px;border-radius:6px;cursor:pointer}
+.rl:hover{background:var(--surface-2)}
+.rl[aria-current="true"]{background:var(--accent-soft)}
+.rl .dot{width:7px;height:7px;border-radius:99px;background:var(--line-strong);margin-top:5px}
+.rl.d-include .dot{background:var(--inc)} .rl.d-exclude .dot{background:var(--exc)}
+.rl.d-maybe .dot{background:var(--may)}
+.rl .t{font-size:12.2px;line-height:1.35;color:var(--ink-2);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rl .id{font-family:var(--mono);font-size:10px;color:var(--faint);display:block;margin-top:2px}
+
+.reading{min-height:0;overflow:auto;display:flex;flex-direction:column}
+.paper{max-width:720px;margin:0 auto;width:100%;padding:30px 20px 24px}
+.crumbs{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.pill{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:5px;
+  background:var(--surface-2);color:var(--muted)}
+.pill.state{font-family:var(--sans);font-weight:600;letter-spacing:.02em}
+.pill.d-include{background:var(--inc-soft);color:var(--inc);border:1px solid var(--inc-line)}
+.pill.d-exclude{background:var(--exc-soft);color:var(--exc);border:1px solid var(--exc-line)}
+.pill.d-maybe{background:var(--may-soft);color:var(--may);border:1px solid var(--may-line)}
+.paper h1{font-family:var(--serif);font-size:26px;line-height:1.24;font-weight:600;
+  letter-spacing:-.006em;margin-bottom:12px}
+.authors{font-size:13.5px;color:var(--ink-2);line-height:1.5;margin-bottom:9px}
+.venue{font-size:12.5px;color:var(--muted);margin-bottom:14px}
+.venue a{color:var(--accent);text-decoration:none}
+.venue a:hover{text-decoration:underline}
+.kws{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:22px}
+.kw{font-size:11.5px;padding:3px 9px;border-radius:99px;background:var(--surface-2);
+  color:var(--muted);border:1px solid var(--line)}
+.abstract{font-family:var(--serif);font-size:17.5px;line-height:1.72;color:var(--ink);
+  max-width:66ch;white-space:pre-wrap}
+.abstract.none{font-family:var(--sans);font-size:14px;color:var(--faint);font-style:italic}
+.ablabel{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);
+  font-weight:500;margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+
+/* ---------- decision bar ---------- */
+.codebar{position:sticky;bottom:57px;background:var(--surface);border-top:1px solid var(--line);
+  padding:8px 16px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.codebar .grp{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);
+  font-weight:500;margin-right:2px}
+.code{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line-strong);background:var(--ground);
+  border-radius:5px;padding:3px 8px;cursor:pointer;color:var(--muted)}
+.code:hover{color:var(--ink);border-color:var(--faint)}
+.code[aria-pressed="true"].i{background:var(--inc-soft);border-color:var(--inc);color:var(--inc)}
+.code[aria-pressed="true"].e{background:var(--exc-soft);border-color:var(--exc);color:var(--exc)}
+.deck{position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--line);
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px));
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.deck .reason{flex:1 1 220px;min-width:0;padding:8px 11px;border:1px solid var(--line-strong);
+  border-radius:7px;background:var(--ground);font-size:13px}
+.acts{display:flex;gap:7px}
+.act{border:1px solid var(--line-strong);background:var(--surface);border-radius:8px;
+  padding:9px 15px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px}
+.act kbd{font-family:var(--mono);font-size:10px;font-weight:400;padding:1px 4px;border-radius:3px;
+  background:var(--surface-2);color:var(--faint);border:1px solid var(--line)}
+.act.inc:hover,.act.inc[aria-pressed="true"]{background:var(--inc-soft);border-color:var(--inc);color:var(--inc)}
+.act.may:hover,.act.may[aria-pressed="true"]{background:var(--may-soft);border-color:var(--may);color:var(--may)}
+.act.exc:hover,.act.exc[aria-pressed="true"]{background:var(--exc-soft);border-color:var(--exc);color:var(--exc)}
+.rapidhint{font-size:12.5px;color:var(--faint);flex:1 1 auto;min-width:0}
+.deck.rapid{padding-block:14px}
+.deck.rapid .acts{gap:10px}
+.deck.rapid .act{padding:13px 30px;font-size:14.5px}
+.nav{display:flex;gap:5px}
+.nav button{border:1px solid var(--line-strong);background:var(--surface);border-radius:7px;
+  width:34px;height:34px;cursor:pointer;color:var(--muted);font-size:15px}
+.nav button:hover{color:var(--ink)}
+
+/* ---------- tables ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:9px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);
+  font-weight:500;background:var(--surface-2)}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+td.diag{background:var(--accent-soft)}
+
+/* ---------- resolve ---------- */
+.conflict{border:1px solid var(--line);border-radius:10px;background:var(--surface);
+  padding:18px;margin-bottom:12px}
+.conflict h3{font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.3;margin-bottom:8px}
+.votes{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.vote{border:1px solid var(--line);border-radius:8px;padding:8px 11px;background:var(--ground);min-width:150px}
+.vote .r{font-family:var(--mono);font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.05em}
+.vote .d{font-weight:600;font-size:13px;margin-top:2px}
+.vote .why{font-size:12px;color:var(--muted);margin-top:4px;font-style:italic}
+.vcodes{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.vcode{font-family:var(--mono);font-size:10.5px;padding:2px 6px;border-radius:4px;
+  background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.friction td.pair{font-family:var(--mono);font-size:12px;white-space:nowrap}
+.vote.d-include{border-color:var(--inc-line);background:var(--inc-soft)}
+.vote.d-include .d{color:var(--inc)}
+.vote.d-exclude{border-color:var(--exc-line);background:var(--exc-soft)}
+.vote.d-exclude .d{color:var(--exc)}
+.vote.d-maybe{border-color:var(--may-line);background:var(--may-soft)}
+.vote.d-maybe .d{color:var(--may)}
+.conflict details{margin:10px 0}
+.conflict summary{cursor:pointer;font-size:12.5px;color:var(--accent);font-weight:500}
+.conflict .abstract{font-size:15.5px;margin-top:10px}
+.kbar{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:12px;
+  padding-top:12px;border-top:1px solid var(--line)}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:90;background:rgba(14,18,26,.55);
+  display:flex;align-items:center;justify-content:center;padding:16px}
+.modal .box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);
+  max-width:660px;width:100%;max-height:86vh;display:flex;flex-direction:column;overflow:hidden}
+.modal header{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;
+  align-items:center;gap:10px}
+.modal header h3{font-size:14px;font-weight:600;flex:1}
+.modal .body{padding:16px 18px;overflow:auto}
+.modal textarea{width:100%;height:210px;font-family:var(--mono);font-size:11px;
+  border:1px solid var(--line-strong);border-radius:8px;padding:10px;background:var(--ground);
+  resize:vertical;line-height:1.45}
+.modal footer{padding:13px 18px;border-top:1px solid var(--line);display:flex;gap:8px;
+  justify-content:flex-end;flex-wrap:wrap}
+.empty{text-align:center;padding:46px 20px;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:15px;margin-bottom:5px;font-weight:600}
+.banner{background:var(--may-soft);border:1px solid var(--may-line);color:var(--may);
+  border-radius:8px;padding:9px 13px;font-size:12.5px;margin-bottom:14px}
+.ok{color:var(--inc)} .bad{color:var(--exc)} .warn{color:var(--may)}
+
+@media (max-width:820px){
+  .screen-grid{grid-template-columns:1fr}
+  .rail{display:none}
+  .rail.show{display:flex;position:fixed;inset:auto 0 0 0;top:54px;z-index:30}
+  .paper{padding:22px 16px}
+  .paper h1{font-size:22px}
+  .abstract{font-size:16.5px}
+  .who input{width:78px}
+}
+</style>
+
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><b>Screening Desk</b></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-view="corpus" aria-selected="true">Corpus</button>
+      <button class="tab" role="tab" data-view="screen" aria-selected="false">Screen</button>
+      <button class="tab" role="tab" data-view="resolve" aria-selected="false">Resolve</button>
+    </div>
+    <div class="phase" role="group" aria-label="Phase">
+      <span class="plabel">Phase</span>
+      <div class="tabs">
+        <button class="tab" data-phase="agreement" aria-selected="true">Agreement</button>
+        <button class="tab" data-phase="screening" aria-selected="false">Screening</button>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="who">
+      <label for="reviewerId">Reviewer</label>
+      <input id="reviewerId" placeholder="e.g. RG" autocomplete="off" spellcheck="false">
+    </div>
+    <button class="iconbtn" id="railToggle" title="Toggle record list">☰</button>
+    <button class="iconbtn" id="themeBtn" title="Switch theme">◐</button>
+    <div class="prog">
+      <div class="bar" id="bar"><i class="i-inc" style="width:0"></i><i class="i-may" style="width:0"></i><i class="i-exc" style="width:0"></i></div>
+      <span class="cnt" id="progText">no corpus loaded</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ CORPUS ============ -->
+    <section class="view on" id="view-corpus">
+      <div class="wrap">
+        <div class="phasehint" id="phaseHint"></div>
+        <div class="panel">
+          <h2>Corpus</h2>
+          <p class="sub">Load a RIS file, or the JSON a split produced. Everything stays in this browser —
+            nothing is uploaded anywhere.</p>
+          <div class="drop" id="corpusDrop" tabindex="0" role="button">
+            <b>Drop a .ris or .json file here</b>
+            or click to choose
+          </div>
+          <input type="file" id="corpusFile" accept=".ris,.txt,.json" hidden>
+          <div id="corpusInfo"></div>
+        </div>
+
+        <div class="panel" id="criteriaPanel">
+          <h2>Reason codes</h2>
+          <p class="sub">Used in the <b>Agreement phase</b> only — typing a code on all 2,000-odd
+            records of your own half buys nothing, since PRISMA asks for exclusion reasons at full
+            text, not at title/abstract. Load <code>criteria.json</code> so both screeners use the
+            same codes, then type them into the reason box (<span class="mono">E1 E3</span>) or click
+            them. Anything that isn't a code is kept as a free note.</p>
+          <div class="drop" id="critDrop" tabindex="0" role="button">
+            <b>Drop criteria.json here</b>
+            or click to choose
+          </div>
+          <input type="file" id="critFile" accept=".json" hidden>
+          <div id="critInfo"></div>
+        </div>
+
+        <div class="panel" id="sessionPanel" hidden>
+          <h2>This session</h2>
+          <p class="sub">Decisions are kept in this browser as you work. Export the JSON when you finish —
+            that file is what the agreement script reads.</p>
+          <div class="row">
+            <button class="btn primary" id="exportDecisions">Export decisions (JSON)</button>
+            <button class="btn" id="exportCsv">Export decisions (CSV)</button>
+            <button class="btn" id="importDecisions">Import a decisions file</button>
+            <button class="btn" id="clearSession">Clear decisions</button>
+          </div>
+          <input type="file" id="decisionsFile" accept=".json" hidden>
+          <p class="note" id="sessionNote"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN ============ -->
+    <section class="view" id="view-screen">
+      <div class="screen-grid">
+        <aside class="rail" id="rail">
+          <div class="rail-top">
+            <input id="railSearch" placeholder="Search title, author, keyword…" autocomplete="off">
+            <div class="chips" id="railChips">
+              <button class="chip" data-filter="all" aria-pressed="true">All</button>
+              <button class="chip" data-filter="todo" aria-pressed="false">To do</button>
+              <button class="chip" data-filter="include" aria-pressed="false">Keep</button>
+              <button class="chip" data-filter="maybe" aria-pressed="false">Maybe</button>
+              <button class="chip" data-filter="exclude" aria-pressed="false">Discard</button>
+            </div>
+          </div>
+          <div class="rail-list" id="railList"></div>
+        </aside>
+        <div class="reading" id="reading">
+          <div class="paper" id="paper"></div>
+        </div>
+      </div>
+      <div class="codebar" id="codeBar" hidden></div>
+      <div class="deck" id="deck" hidden>
+        <div class="nav">
+          <button id="prevBtn" title="Previous (←)">‹</button>
+          <button id="nextBtn" title="Next (→)">›</button>
+        </div>
+        <input class="reason" id="reasonBox" placeholder="Reason (optional) — recorded with the decision"
+               autocomplete="off">
+        <span class="rapidhint" id="rapidHint" hidden>Title and abstract only — keep it moving</span>
+        <div class="acts">
+          <button class="act inc" data-dec="include">Keep <kbd>1</kbd></button>
+          <button class="act may" data-dec="maybe">Maybe <kbd>2</kbd></button>
+          <button class="act exc" data-dec="exclude">Discard <kbd>3</kbd></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESOLVE ============ -->
+    <section class="view" id="view-resolve">
+      <div class="wrap wide">
+        <div class="panel">
+          <h2>Reviewer files</h2>
+          <p class="sub">Load two or more exported decision files. Agreement is computed on the records
+            every reviewer screened. Load the corpus on the Corpus tab first if you want abstracts
+            while you reconcile.</p>
+          <div class="drop" id="revDrop" tabindex="0" role="button">
+            <b>Drop reviewer JSON files here</b>
+            or click to choose — two or more
+          </div>
+          <input type="file" id="revFile" accept=".json" multiple hidden>
+          <div id="revList"></div>
+        </div>
+        <div id="agreeOut"></div>
+        <div id="conflictOut"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+"use strict";
+const DEMO_RECORDS = [{"id": "C0043", "title": "Improving Prediction Accuracy in Building Performance Models Using Generative Adversarial Networks (GANs)", "authors": ["C. Chokwitthaya", "E. Collier", "Y. Zhu", "S. Mukhopadhyay"], "keywords": ["building performance model", "generative adversarial network", "immersive virtual reality", "mixture model", "occupant behavior", "Forecasting", "Mixtures", "Virtual reality"], "year": "2019", "venue": "2019 International Joint Conference on Neural Networks (IJCNN)", "doi": "10.1109/IJCNN.2019.8852411", "type": "CONF", "abstract": "Building performance discrepancies between building design and operation are one of the causes that lead many new designs fail to achieve their goals and objectives. A main factor contributing to the discrepancy is occupant behaviors. Occupants responding to a new design are influenced by several factors. Existing building performance models (BPMs) ignore or partially address those factors (called contextual factors) while developing BPMs. To potentially reduce the discrepancies and improve the prediction accuracy of BPMs, this paper proposes a computational framework for learning mixture models by using Generative Adversarial Networks (GANs) that appropriately combining existing BPMs with knowledge on occupant behaviors to contextual factors in new designs. Immersive virtual environments (IVEs) experiments are used to acquire data on such behaviors. Performance targets are used to guide appropriate combination of existing BPMs with knowledge on occupant behaviors. The resulting model obtained is called an augmented BPM. Two different experiments related to occupants lighting behaviors are shown as case study. The results reveal that augmented BPMs significantly outperformed existing BPMs with respect to achieving specified performance targets. The case study confirmed the potential of the computational framework for improving prediction accuracy of BPMs during design. © 2019 I"}, {"id": "C0177", "title": "GAN - Based Medical Image Registration for Augmented Reality Applications", "authors": ["T. -H. Lee", "V. Munasinghe", "Y. -M. Li", "J. Xu", "H. -J. Lee", "J. -S. Kim"], "keywords": ["Training", "Deep learning", "PSNR", "Pose estimation", "Surgery", "Network architecture", "Generative adversarial networks", "X-ray image"], "year": "2022", "venue": "2022 IEEE 4th International Conference on Artificial Intelligence Circuits and Systems (AICAS)", "doi": "10.1109/AICAS54282.2022.9869916", "type": "CONF", "abstract": "Recently, with the development of AR/VR technology, boosting virtual information to the real world has been applied to various fields to increase convenience. In particular, in the medical field, different types of image information, such as X-ray, CT, and MRI data are used in surgery with AR devices for medical diagnosis and analysis of the cause of a patient's disease. This paper proposes an approach by which to explore a patient's posture and joints to match X-ray image information in an AR environment using deep learning networks such as GAN along with pose estimation. Thereby, we employ the CP-VTON+ virtual try-on network architecture to map chest X-ray information to the patient's body. Finally, we compare the try-on results of the chest X-ray image of the patient's body using the proposed method and CP-VTON+. The mean SSIM value of the proposed method is 0.0272 higher than that of CP-VTON+, and the mean PSNR value is 5.49 higher than that of CP-VTON+. The proposed method is more appropriate for application to AR devices for medical diagnosis and analysis due to the characteristics of medical images, as even minor misdiagnoses can lead to fatalities."}, {"id": "C0016", "title": "Virtual reality and CAD systems integration for quick product variant design", "authors": ["Zawadzki, P.", "Gorski, F.", "Bun, P.", "Wichniarek, R.", "Szalanska, K."], "keywords": ["Generative CAD models", "Knowledge based engineering", "Mass customization", "Product variant design", "Virtual reality systems", "Computer aided design", "Product design", "Virtual reality"], "year": "2018", "venue": "Lecture Notes in Mechanical Engineering", "doi": "10.1007/978-3-319-68619-6_57", "type": "CONF", "abstract": "The paper describes an integrated process of design of configurable products, on example of a city bus, comprising of two stages: configuration of a product variant with client participation and preparation of appropriate technical documentation in the design division of a company. The configuration stage is realized in a special, VR-class system—Virtual Design Studio (VDS). The technical documentation preparation stage is automated, by use of intelligent, generative CAD models, developed in the Autodesk Inventor software. They allow to save time of engineering design. The paper presents operation of the VDS system, process of building generative CAD models and integration of both stages. © Springer International Publishing AG 2018."}, {"id": "C0078", "title": "Exploring the creative possibilities of infinite photogrammetry through spatial computing and extended reality with wave function collapse", "authors": ["Elor, A.", "Conde, S."], "keywords": ["Applied Generative Algorithms", "Augmented Reality", "Extended Reality", "Infinite Photogrammetry", "Photogrammetry", "Procedural Content Generation", "Spatial Computing", "Virtual Reality"], "year": "2020", "venue": "CEUR Workshop Proceedings", "doi": "", "type": "CONF", "abstract": "Modern extended reality systems that merge virtual and augmented reality provide a unique design space for creative applications. These devices have begun to incorporate spatial computing, or methods of runtime digital photogrammetry which translate the physical world into the virtual. In this study, we examine the use of extended reality for “infinite photogrammetry,” a system of mapping the physical world into a virtual experience and procedurally generating an infinite version of the scanned architecture. We explore our system through a use case of mapping a residential home for infinite photogrammetry with the Magic Leap Spatial Computing Headset, Wave Function Collapse Algorithm, and Unity Game Engine. We conclude with a discussion on the creative applications of infinite photogrammetry and considerations for future research. © 2020 Copyright for this paper by its authors. Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0)."}, {"id": "C0341", "title": "Synthesizing Play-Ready VR Scenes with Natural Language Prompts Through GPT API", "authors": ["Kouzelis, L.R.", "Spantidi, O."], "keywords": ["AI-driven 3D Design", "Scene Generation", "Virtual Reality", "Three dimensional computer graphics", "3-d designs", "3D object", "3D scenes", "AI-driven 3d design"], "year": "2023", "venue": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)", "doi": "10.1007/978-3-031-47966-3_2", "type": "CONF", "abstract": "In visual computing, 3D scene generation stands as a crucial component, offering applications in various fields such as gaming, virtual reality (VR), and architectural visualization. Creating realistic and versatile virtual environments, however, poses significant challenges. This work presents a novel methodology that leverages the capabilities of a widely adopted large language model (LLM) to address these challenges. Our approach utilizes the GPT API to interpret natural language prompts and generate detailed, VR-ready scenes within Unity3D. Our work is also inherently scalable, since the model accepts any database of 3D objects with minimal prior configuration. The effectiveness of the proposed system is demonstrated through a series of case studies, revealing its potential to generate diverse and functional virtual spaces. © 2023, The Author(s), under exclusive license to Springer Nature Switzerland AG."}, {"id": "C0109", "title": "Co-immersive-Creation: A Hybrid Approach for Using Virtual Reality and Telepresence Systems in Co-design Research", "authors": ["Chen, M.F.Y."], "keywords": ["Co-design", "Generative Design Research", "Remote", "Telepresence", "Virtual Reality", "Design", "Human computer interaction", "Intensive care units"], "year": "2021", "venue": "Communications in Computer and Information Science", "doi": "10.1007/978-3-030-78642-7_29", "type": "CONF", "abstract": "The Covid-19 pandemic is changing the way design researchers conduct research activities with safety regulations restricting much of in-person methods of research. Co-design (or participatory design) utilizes creative toolkits that enable stakeholders from non-design backgrounds to contribute and collaborate in the design process, from front-end to tail-end. The pandemic has forced co-design researchers to reconceptualize and adapt their research methods and toolkits into remote digital formats. This presents new challenges in conducting co-design research such as the varying levels of technological literacy of parties involved and being able to facilitate the same level of engagement and hands-on involvement as in-person co-design activities. This paper examines the exploration of a novel hybrid approach, named Co-Immersive-Creation (CIC), that combines virtual reality (VR) and telepresence systems such as video conferencing applications for remote co-design research. It presents a use case of the co-design of the interior spaces in intensive care unit (ICU) hospital rooms to reduce sleep deprivation and delirium among the patients. An outline of the technical setup and the considerations surrounding this hybrid approach is presented to encourage its continued exploration. The outcome of the exploration highlights the growing potential of CIC and the possibilities offered by i"}];
+
+/* ============================ state ============================ */
+const S = {
+  corpus: [], byId: new Map(), corpusName: "", isDemo: true,
+  decisions: new Map(),          // id -> {decision, reason, ts}
+  idx: 0, filter: "all", query: "", phase: "agreement",
+  criteria: null, requireCode: true, codeLabels: {},
+  reviewers: [],                 // [{id, name, decisions:Map}]
+  resolved: new Map(),           // id -> {final, reason}
+};
+const DEC = ["include", "maybe", "exclude"];
+const LABEL = { include: "Keep", maybe: "Maybe", exclude: "Discard" };
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const slug = s => String(s||"anon").trim().toLowerCase().replace(/[^a-z0-9]+/g,"_").replace(/^_|_$/g,"")||"anon";
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+/* ============================ storage ============================ */
+const keyFor = () => `sd:${S.corpusName}:${($("#reviewerId").value || "anon").trim()}`;
+function save() {
+  if (S.isDemo) return;
+  try {
+    localStorage.setItem(keyFor(), JSON.stringify([...S.decisions]));
+  } catch (e) { /* private window or full quota — export is the real safety net */ }
+}
+function load() {
+  if (S.isDemo) return;
+  try {
+    const raw = localStorage.getItem(keyFor());
+    if (raw) S.decisions = new Map(JSON.parse(raw));
+  } catch (e) { /* ignore */ }
+}
+
+/* ============================ RIS ============================ */
+function parseRIS(text) {
+  const out = []; let cur = null, lastTag = null;
+  for (let line of text.split(/\r?\n/)) {
+    const m = line.match(/^([A-Z][A-Z0-9])\s{2}-\s?(.*)$/);
+    if (m) {
+      const [, tag, val] = m;
+      if (tag === "TY") { cur = {}; lastTag = null; }
+      if (!cur) cur = {};
+      if (tag === "ER") { if (cur && Object.keys(cur).length) out.push(cur); cur = null; lastTag = null; continue; }
+      (cur[tag] ||= []).push(val.trim()); lastTag = tag;
+    } else if (cur && lastTag && line.trim()) {
+      cur[lastTag][cur[lastTag].length - 1] += " " + line.trim();
+    }
+  }
+  if (cur && Object.keys(cur).length) out.push(cur);
+  return out.map((r, i) => {
+    const g = t => (r[t] || [])[0] || "";
+    return {
+      id: g("ID") || g("DO") || `R${String(i + 1).padStart(4, "0")}`,
+      title: g("TI") || g("T1") || "(untitled record)",
+      authors: [...(r.AU || []), ...(r.A1 || [])],
+      keywords: r.KW || [],
+      year: (g("PY") || g("Y1") || "").match(/(19|20)\d{2}/)?.[0] || "",
+      venue: g("T2") || g("JO") || g("JA") || "",
+      doi: g("DO"), type: g("TY") || "GEN",
+      abstract: g("AB") || g("N2") || "",
+      _ris: r,
+    };
+  });
+}
+function fromCorpusJSON(data) {
+  const arr = Array.isArray(data) ? data : (data.records || data.corpus || []);
+  return arr.map((r, i) => ({
+    id: r.id || (r.cid != null ? "C" + String(r.cid).padStart(4, "0") : `R${i + 1}`),
+    title: r.title || "(untitled record)",
+    authors: r.authors || [], keywords: r.keywords || [],
+    year: String(r.year || ""), venue: r.venue || "",
+    doi: r.doi_raw || r.doi || "", type: r.type || "GEN",
+    abstract: r.abstract || "",
+  }));
+}
+
+/* ============================ loading ============================ */
+function setCorpus(recs, name, demo = false) {
+  if (!recs.length) return toast("No records found in that file.", true);
+  const seen = new Map();
+  recs.forEach(r => {                       // guarantee unique ids
+    if (seen.has(r.id)) { const n = seen.get(r.id) + 1; seen.set(r.id, n); r.id = `${r.id}#${n}`; }
+    else seen.set(r.id, 1);
+  });
+  S.corpus = recs; S.corpusName = name; S.isDemo = demo;
+  S.byId = new Map(recs.map(r => [r.id, r]));
+  S.decisions = new Map(); S.idx = 0;
+  load();
+  const firstTodo = recs.findIndex(r => !S.decisions.has(r.id));   // resume, don't restart
+  if (firstTodo > 0) S.idx = firstTodo;
+  $("#sessionPanel").hidden = demo;
+  renderCorpusInfo(); renderAll();
+}
+function renderCorpusInfo() {
+  const n = S.corpus.length;
+  const yrs = S.corpus.map(r => r.year).filter(Boolean).sort();
+  const withAb = S.corpus.filter(r => r.abstract).length;
+  const withDoi = S.corpus.filter(r => r.doi).length;
+  $("#corpusInfo").innerHTML = `
+    ${S.isDemo ? `<div class="banner" style="margin-top:14px">Demo corpus — six real records so you can try
+      the controls. Load your own file to start screening for real.</div>` : ""}
+    <div class="stats" style="margin-top:14px">
+      <div class="stat"><div class="k">Records</div><div class="v">${n.toLocaleString()}</div></div>
+      <div class="stat"><div class="k">Years</div><div class="v" style="font-size:16px">${yrs.length ? yrs[0] + "–" + yrs[yrs.length - 1] : "—"}</div></div>
+      <div class="stat"><div class="k">With abstract</div><div class="v">${Math.round(100 * withAb / n)}<small>%</small></div></div>
+      <div class="stat"><div class="k">With DOI</div><div class="v">${Math.round(100 * withDoi / n)}<small>%</small></div></div>
+    </div>
+    <p class="note">Loaded from <span class="mono">${esc(S.corpusName)}</span>.</p>`;
+}
+
+/* ============================ progress ============================ */
+function counts() {
+  const c = { include: 0, maybe: 0, exclude: 0 };
+  S.decisions.forEach(d => { if (c[d.decision] != null) c[d.decision]++; });
+  return c;
+}
+function renderProgress() {
+  const n = S.corpus.length, c = counts(), done = c.include + c.maybe + c.exclude;
+  const bar = $("#bar").children;
+  bar[0].style.width = n ? 100 * c.include / n + "%" : 0;
+  bar[1].style.width = n ? 100 * c.maybe / n + "%" : 0;
+  bar[2].style.width = n ? 100 * c.exclude / n + "%" : 0;
+  $("#progText").textContent = n
+    ? `${done.toLocaleString()} / ${n.toLocaleString()} screened  ·  ${c.include} keep  ·  ${c.maybe} maybe  ·  ${c.exclude} discard`
+    : "no corpus loaded";
+}
+
+/* ============================ rail ============================ */
+function visible() {
+  const q = S.query.toLowerCase().trim();
+  return S.corpus.filter(r => {
+    const d = S.decisions.get(r.id);
+    if (S.filter === "todo" && d) return false;
+    if (["include", "maybe", "exclude"].includes(S.filter) && (!d || d.decision !== S.filter)) return false;
+    if (!q) return true;
+    return (r.title + " " + r.authors.join(" ") + " " + r.keywords.join(" ") + " " + r.id)
+      .toLowerCase().includes(q);
+  });
+}
+function renderRail() {
+  const list = visible(), cur = S.corpus[S.idx];
+  $("#railList").innerHTML = list.length ? list.map(r => {
+    const d = S.decisions.get(r.id);
+    return `<button class="rl ${d ? "d-" + d.decision : ""}" data-id="${esc(r.id)}"
+      aria-current="${cur && r.id === cur.id}">
+      <span class="dot"></span>
+      <span><span class="t">${esc(r.title)}</span><span class="id">${esc(r.id)}${r.year ? " · " + r.year : ""}</span></span>
+    </button>`;
+  }).join("") : `<p class="note" style="padding:14px">Nothing matches.</p>`;
+  const active = $("#railList [aria-current='true']");
+  if (active) active.scrollIntoView({ block: "nearest" });
+}
+
+/* ============================ paper ============================ */
+function renderPaper() {
+  const r = S.corpus[S.idx];
+  if (!r) {
+    $("#paper").innerHTML = `<div class="empty"><b>No corpus loaded</b>
+      Open the Corpus tab and load a .ris file to begin.</div>`;
+    $("#deck").hidden = true; $("#codeBar").hidden = true; return;
+  }
+  $("#deck").hidden = false;
+  const d = S.decisions.get(r.id);
+  const au = r.authors.length ? r.authors.join("; ") : "<span style='color:var(--faint)'>No authors listed</span>";
+  $("#paper").innerHTML = `
+    <div class="crumbs">
+      <span class="pill">${esc(r.id)}</span>
+      <span class="pill">${S.idx + 1} of ${S.corpus.length}</span>
+      ${r.type ? `<span class="pill">${esc(r.type)}</span>` : ""}
+      ${d ? `<span class="pill state d-${d.decision}">${LABEL[d.decision]}</span>` : ""}
+    </div>
+    <h1>${esc(r.title)}</h1>
+    <p class="authors">${au}</p>
+    <p class="venue">${[esc(r.venue), esc(r.year)].filter(Boolean).join(" · ")}
+      ${r.doi ? ` · <a href="https://doi.org/${encodeURIComponent(r.doi)}" target="_blank" rel="noopener">${esc(r.doi)}</a>` : ""}</p>
+    ${r.keywords.length ? `<div class="kws">${r.keywords.map(k => `<span class="kw">${esc(k)}</span>`).join("")}</div>` : ""}
+    <div class="ablabel">Abstract</div>
+    <div class="abstract ${r.abstract ? "" : "none"}">${r.abstract ? esc(r.abstract) : "No abstract in this record — judge on the title and keywords, or retrieve the record."}</div>`;
+  $("#reasonBox").value = d?.reason_raw ?? [ ...(d?.codes || []), d?.reason || "" ].join(" ").trim();
+  $$(".act[data-dec]").forEach(b => b.setAttribute("aria-pressed", String(!!d && d.decision === b.dataset.dec)));
+  $("#reading").scrollTop = 0;
+  renderCodeBar();
+}
+const CODE_RE = /\b([IEie]\d{1,2})\b/g;
+function splitReason(text) {
+  const codes = [];
+  const note = String(text || "").replace(CODE_RE, (m) => { codes.push(m.toUpperCase()); return " "; })
+    .replace(/[\s,;]+/g, " ").trim();
+  return { codes: [...new Set(codes)], note };
+}
+const codesOn = () => S.phase === "agreement" && S.criteria
+  && (S.criteria.include.length || S.criteria.exclude.length);
+function renderCodeBar() {
+  const c = S.criteria;
+  $("#codeBar").hidden = !codesOn() || $("#deck").hidden;
+  if (!codesOn()) return;
+  const sel = new Set(splitReason($("#reasonBox").value).codes);
+  const grp = (list, cls, label) => list.length
+    ? `<span class="grp">${label}</span>` + list.map(x =>
+        `<button class="code ${cls}" data-code="${esc(x.code)}" title="${esc(x.label || "")}"
+          aria-pressed="${sel.has(x.code)}">${esc(x.code)}</button>`).join("")
+    : "";
+  $("#codeBar").innerHTML = grp(c.include, "i", "Keep") + grp(c.exclude, "e", "Discard");
+}
+function renderCriteria() {
+  const c = S.criteria;
+  if (!c) { $("#critInfo").innerHTML = `<p class="note">No criteria loaded — the reason box stays free text.</p>`; return; }
+  const row = x => `<tr><td class="mono">${esc(x.code)}</td><td>${esc(x.label || "")}</td></tr>`;
+  $("#critInfo").innerHTML = `
+    <div class="tablewrap" style="margin-top:14px"><table><tbody>
+      ${c.include.map(row).join("")}${c.exclude.map(row).join("")}
+    </tbody></table></div>
+    <label class="row" style="gap:8px;align-items:center;margin-top:12px;cursor:pointer">
+      <input type="checkbox" id="requireCode" ${S.requireCode ? "checked" : ""}
+        style="width:16px;height:16px;accent-color:var(--accent)">
+      <span style="font-size:13px">Require a matching code on every Agreement-phase decision</span>
+    </label>`;
+  $("#requireCode").onchange = e => {
+    S.requireCode = e.target.checked;
+    try { localStorage.setItem("sd:requireCode", S.requireCode ? "1" : "0"); } catch (err) { /* ignore */ }
+  };
+}
+const maybeOn = () => S.phase === "agreement";
+const HINTS = {
+  agreement: `<b>Agreement phase</b> — both reviewers screen the same sample, then settle
+    differences together.
+    <ol><li>Load <code>agreement/agreement_sample.ris</code> and screen all 226 on your own.
+    <b>Maybe</b> is available here.</li>
+    <li>Export your JSON, then run <code>scripts/07_kappa.py</code> on both files.</li>
+    <li>Together, use the <b>Resolve</b> tab and export
+    <code>adjudicated_screened_sample.json</code>.</li></ol>`,
+  screening: `<b>Screening phase</b> — you screen your own half alone, so nothing here gets
+    adjudicated and <b>Maybe</b> is switched off. If you are unsure, keep it and settle at full text.
+    <ol><li>Load your <code>screening/screener_1.ris</code> or <code>screener_2.ris</code>.</li>
+    <li>Export your JSON into <code>screening/</code>, replacing your agreement-phase file.</li>
+    <li>When both of you are done, run <code>scripts/09_combine.py</code>.</li></ol>`,
+};
+function applyPhase() {
+  const agree = S.phase === "agreement";
+  $$('.phase .tab').forEach(t => t.setAttribute("aria-selected", String(t.dataset.phase === S.phase)));
+  $('#phaseHint').innerHTML = HINTS[S.phase];
+  $('.act.may').hidden = !agree;
+  $("#reasonBox").hidden = !agree;
+  $("#rapidHint").hidden = agree;
+  $("#deck").classList.toggle("rapid", !agree);
+  $("#reasonBox").placeholder = S.criteria
+    ? "Reason codes — e.g. E1 E3 (plus a note if you want)"
+    : "Reason (optional) — recorded with the decision";
+  renderCodeBar();
+  $$('#railChips .chip[data-filter="maybe"]').forEach(c => { c.hidden = !agree; });
+  $$('.tab[data-view="resolve"]').forEach(t => { t.hidden = !agree; });
+  if (!agree && $("#view-resolve").classList.contains("on")) selectView("corpus");
+  if (!agree && S.filter === "maybe") { S.filter = "all";
+    $$('#railChips .chip').forEach(x => x.setAttribute("aria-pressed", String(x.dataset.filter === "all"))); }
+  try { localStorage.setItem("sd:phase", S.phase); } catch (e) { /* ignore */ }
+}
+function renderAll() { renderProgress(); renderRail(); renderPaper(); renderSessionNote(); }
+
+/* ============================ decisions ============================ */
+function decide(dec) {
+  const r = S.corpus[S.idx]; if (!r) return;
+  const box = $("#reasonBox");
+  const { codes, note } = box.hidden ? { codes: [], note: "" } : splitReason(box.value);
+  if (codesOn() && S.requireCode && dec !== "maybe") {
+    const want = dec === "include" ? "I" : "E";
+    if (!codes.some(c => c[0] === want)) {
+      const list = (dec === "include" ? S.criteria.include : S.criteria.exclude).map(x => x.code).join(", ");
+      $("#reasonBox").focus();
+      return toast(`${LABEL[dec]} needs a reason code — one of ${list}.`, true);
+    }
+  }
+  S.decisions.set(r.id, { decision: dec, codes, reason: note,
+                          reason_raw: box.hidden ? "" : box.value.trim(),
+                          ts: new Date().toISOString() });
+  save(); renderProgress(); renderRail(); renderSessionNote();
+  const next = nextUndecided();
+  if (next >= 0) { S.idx = next; renderPaper(); }
+  else { renderPaper(); toast("Every record has a decision. Export from the Corpus tab."); }
+}
+function nextUndecided() {
+  for (let i = S.idx + 1; i < S.corpus.length; i++) if (!S.decisions.has(S.corpus[i].id)) return i;
+  for (let i = 0; i < S.idx; i++) if (!S.decisions.has(S.corpus[i].id)) return i;
+  return S.idx + 1 < S.corpus.length ? S.idx + 1 : -1;
+}
+function go(delta) {
+  const n = S.corpus.length; if (!n) return;
+  S.idx = Math.min(n - 1, Math.max(0, S.idx + delta));
+  renderPaper(); renderRail();
+}
+function renderSessionNote() {
+  const c = counts(), done = c.include + c.maybe + c.exclude;
+  $("#sessionNote").innerHTML = done
+    ? `<span class="mono">${done}</span> decision(s) recorded as
+       <span class="mono">${esc(($("#reviewerId").value || "anon").trim())}</span>.
+       Kept in this browser only — export before you finish.`
+    : `No decisions yet.`;
+}
+
+/* ============================ export ============================ */
+const outName = ext => (S.phase === "agreement" ? "agreement_" : "screened_articles_")
+  + slug(($("#reviewerId").value || "anon").trim()) + "." + ext;
+function decisionsPayload() {
+  return {
+    tool: "screening-desk", schema: 1, kind: "decisions", phase: S.phase,
+    reviewer_id: ($("#reviewerId").value || "anon").trim(),
+    corpus_name: S.corpusName, corpus_size: S.corpus.length,
+    exported_at: new Date().toISOString(),
+    decisions: S.corpus.filter(r => S.decisions.has(r.id)).map(r => {
+      const d = S.decisions.get(r.id);
+      return { corpus_id: r.id, title: r.title, decision: d.decision,
+               codes: d.codes || [], reason: d.reason || "", ts: d.ts };
+    }),
+  };
+}
+function fileModal(name, text, blurb) {
+  const wrap = document.createElement("div");
+  wrap.className = "modal";
+  wrap.innerHTML = `<div class="box" role="dialog" aria-modal="true" aria-label="Save ${esc(name)}">
+    <header><h3>${esc(name)}</h3><button class="iconbtn" data-x>✕</button></header>
+    <div class="body">
+      <p class="note" style="margin:0 0 10px">${blurb}</p>
+      <textarea readonly spellcheck="false"></textarea>
+    </div>
+    <footer>
+      <button class="btn" data-copy>Copy to clipboard</button>
+      <button class="btn primary" data-dl>Download</button>
+    </footer></div>`;
+  wrap.querySelector("textarea").value = text;
+  document.body.appendChild(wrap);
+  const close = () => wrap.remove();
+  wrap.querySelector("[data-x]").onclick = close;
+  wrap.onclick = e => { if (e.target === wrap) close(); };
+  wrap.querySelector("[data-copy]").onclick = async e => {
+    try { await navigator.clipboard.writeText(text); e.target.textContent = "Copied"; }
+    catch { const t = wrap.querySelector("textarea"); t.focus(); t.select(); e.target.textContent = "Press ⌘/Ctrl+C"; }
+  };
+  const dlBtn = wrap.querySelector("[data-dl]");
+  dlBtn.onclick = async () => {
+    dlBtn.disabled = true;
+    const restore = t => { dlBtn.disabled = false; dlBtn.textContent = t || "Download"; };
+    const cap = await downloadsCap();
+    if (cap) {                                   // hosted page: the viewer confirms the save
+      dlBtn.textContent = "Saving…";
+      try { await cap.save({ filename: name, data: text }); restore("Saved"); }
+      catch (err) {
+        const code = err?.code || "unavailable";
+        if (code === "declined") restore();
+        else if (code === "rejected_extension") {
+          restore(); toast(`This page can only save .json, .csv, .txt and .md — copy ${name} to the clipboard instead.`, true);
+        } else if (code === "rate_limited") { restore(); toast("A save prompt is already open.", true); }
+        else { restore(); toast(`Could not save (${code}) — use Copy to clipboard.`, true); }
+      }
+      return;
+    }
+    try {                                        // local file: ordinary browser download
+      const url = URL.createObjectURL(new Blob([text], { type: "application/octet-stream" }));
+      const a = document.createElement("a");
+      a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+      restore("Saved");
+    } catch { restore(); toast("Download blocked here — use Copy to clipboard instead.", true); }
+  };
+  wrap.querySelector("textarea").focus();
+}
+let _dlCap;                       // undefined = not asked yet, null = unavailable here
+async function downloadsCap() {
+  if (_dlCap !== undefined) return _dlCap;
+  try { _dlCap = (await window.claude?.use?.("downloads")) ?? null; }
+  catch { _dlCap = null; }
+  return _dlCap;
+}
+function toast(msg, bad) {
+  const t = document.createElement("div");
+  t.textContent = msg;
+  t.style.cssText = `position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:95;
+    background:var(--surface);border:1px solid ${bad ? "var(--exc-line)" : "var(--line-strong)"};
+    color:${bad ? "var(--exc)" : "var(--ink)"};padding:9px 15px;border-radius:8px;
+    box-shadow:var(--shadow);font-size:13px;max-width:90vw;text-align:center`;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3200);
+}
+
+/* ============================ agreement maths ============================ */
+function cohenKappa(pairs, labels) {
+  const n = pairs.length; if (!n) return null;
+  const obs = {}, r1 = {}, r2 = {};
+  labels.forEach(a => { r1[a] = 0; r2[a] = 0; labels.forEach(b => obs[a + "|" + b] = 0); });
+  pairs.forEach(([a, b]) => { obs[a + "|" + b]++; r1[a]++; r2[b]++; });
+  const po = labels.reduce((s, l) => s + obs[l + "|" + l], 0) / n;
+  const pe = labels.reduce((s, l) => s + (r1[l] / n) * (r2[l] / n), 0);
+  const k = pe < 1 ? (po - pe) / (1 - pe) : NaN;
+  const se = pe < 1 ? Math.sqrt(po * (1 - po) / (n * (1 - pe) ** 2)) : NaN;
+  return { n, po, pe, k, se, obs, r1, r2, labels };
+}
+// Krippendorff's alpha, nominal. Handles any number of coders and missing values.
+function krippendorffAlpha(units) {          // units: array of arrays of labels
+  const o = {}, nc = {};
+  let total = 0;
+  units.forEach(vals => {
+    const m = vals.length; if (m < 2) return;
+    for (let i = 0; i < m; i++) for (let j = 0; j < m; j++) {
+      if (i === j) continue;
+      const key = vals[i] + "|" + vals[j];
+      o[key] = (o[key] || 0) + 1 / (m - 1);
+      total += 1 / (m - 1);
+    }
+  });
+  if (!total) return null;
+  Object.entries(o).forEach(([k, v]) => { const c = k.split("|")[0]; nc[c] = (nc[c] || 0) + v; });
+  let Do = 0;
+  Object.entries(o).forEach(([k, v]) => { const [c, d] = k.split("|"); if (c !== d) Do += v; });
+  let De = 0;
+  const cats = Object.keys(nc);
+  cats.forEach(c => cats.forEach(d => { if (c !== d) De += nc[c] * nc[d] / (total - 1); }));
+  return De > 0 ? 1 - Do / De : null;
+}
+const kBand = k => k >= .81 ? ["almost perfect", "ok"] : k >= .61 ? ["substantial", "ok"]
+  : k >= .41 ? ["moderate", "warn"] : k >= .21 ? ["fair", "warn"] : ["slight", "bad"];
+
+/* ============================ resolve ============================ */
+function addReviewerFile(name, json) {
+  let data; try { data = JSON.parse(json); } catch { return toast(`${name} is not valid JSON.`, true); }
+  const rows = data.decisions || data;
+  if (!Array.isArray(rows)) return toast(`${name} has no decisions array.`, true);
+  const id = data.reviewer_id || name.replace(/\.json$/i, "");
+  if (S.reviewers.some(r => r.id === id)) return toast(`Reviewer "${id}" is already loaded.`, true);
+  const m = new Map();
+  rows.forEach(d => { if (d.corpus_id && d.decision) m.set(d.corpus_id, d); });
+  S.reviewers.push({ id, name, decisions: m });
+  renderResolve();
+}
+function renderResolve() {
+  $("#revList").innerHTML = S.reviewers.length ? `
+    <div class="stats" style="margin-top:14px">
+      ${S.reviewers.map(r => `<div class="stat"><div class="k">${esc(r.id)}</div>
+        <div class="v">${r.decisions.size.toLocaleString()}</div></div>`).join("")}
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn" id="clearRev">Clear reviewers</button></div>` : "";
+  if ($("#clearRev")) $("#clearRev").onclick = () => { S.reviewers = []; S.resolved.clear(); renderResolve(); };
+  if (S.reviewers.length < 2) { $("#agreeOut").innerHTML = ""; $("#conflictOut").innerHTML = ""; return; }
+
+  const common = [...S.reviewers[0].decisions.keys()]
+    .filter(id => S.reviewers.every(r => r.decisions.has(id)));
+  if (!common.length) {
+    $("#agreeOut").innerHTML = `<div class="panel"><h2>No overlap</h2>
+      <p class="sub">These files share no records, so agreement cannot be computed. Reviewers must
+      screen the same records — that is what the shared overlap in a split is for.</p></div>`;
+    $("#conflictOut").innerHTML = ""; return;
+  }
+  const used = new Set();
+  common.forEach(id => S.reviewers.forEach(r => used.add(r.decisions.get(id).decision)));
+  const labels = DEC.filter(l => used.has(l));
+  const units = common.map(id => S.reviewers.map(r => r.decisions.get(id).decision));
+  const alpha = krippendorffAlpha(units);
+  const two = S.reviewers.length === 2;
+  const ck = two ? cohenKappa(common.map(id =>
+    [S.reviewers[0].decisions.get(id).decision, S.reviewers[1].decisions.get(id).decision]), labels) : null;
+
+  // binary collapse: maybe carried forward to full text
+  const bin = common.map(id => S.reviewers.map(r =>
+    r.decisions.get(id).decision === "exclude" ? "exclude" : "include"));
+  const alphaB = krippendorffAlpha(bin);
+  const ckB = two ? cohenKappa(bin.map(u => [u[0], u[1]]), ["include", "exclude"]) : null;
+
+  const agree = units.filter(u => u.every(v => v === u[0])).length;
+  const incRate = units.flat().filter(v => v === "include").length / units.flat().length;
+  const band = ck ? kBand(ck.k) : (alpha != null ? kBand(alpha) : ["—", ""]);
+
+  $("#agreeOut").innerHTML = `
+    <div class="panel">
+      <h2>Agreement</h2>
+      <p class="sub">Computed on the ${common.length.toLocaleString()} record(s) every reviewer screened.</p>
+      <div class="stats">
+        <div class="stat"><div class="k">Double-screened</div><div class="v">${common.length.toLocaleString()}</div></div>
+        <div class="stat"><div class="k">Raw agreement</div><div class="v">${(100 * agree / common.length).toFixed(1)}<small>%</small></div></div>
+        ${ck ? `<div class="stat"><div class="k">Cohen's κ</div><div class="v ${band[1]}">${ck.k.toFixed(3)}</div></div>` : ""}
+        <div class="stat"><div class="k">Krippendorff's α</div><div class="v">${alpha == null ? "—" : alpha.toFixed(3)}</div></div>
+        <div class="stat"><div class="k">Inclusion rate</div><div class="v">${(100 * incRate).toFixed(1)}<small>%</small></div></div>
+      </div>
+      <p class="note">${ck ? `95% CI for κ: <span class="mono">${(ck.k - 1.96 * ck.se).toFixed(3)} – ${Math.min(1, ck.k + 1.96 * ck.se).toFixed(3)}</span> ·
+        <b>${band[0]}</b> (Landis &amp; Koch).` : `${S.reviewers.length} reviewers — α is the right statistic here; κ is defined for two.`}</p>
+      ${incRate < .10 || incRate > .90 ? `<div class="banner" style="margin-top:12px">One category is rare
+        (inclusion ${(100 * incRate).toFixed(1)}%). κ and α get unstable at this prevalence — read the raw
+        agreement and the matrix below alongside them.</div>` : ""}
+      <p class="note" style="margin-top:14px">Treating <b>maybe</b> as carried forward to full text:
+        raw ${(100 * bin.filter(u => u.every(v => v === u[0])).length / bin.length).toFixed(1)}%${ckB ? `, κ ${ckB.k.toFixed(3)}` : ""}${alphaB != null ? `, α ${alphaB.toFixed(3)}` : ""}.</p>
+      ${ck ? matrixHTML(ck) : ""}
+      ${frictionHTML(common)}
+    </div>`;
+  renderConflicts(common);
+}
+function frictionHTML(common) {
+  const tally = new Map();
+  common.forEach(id => {
+    const ds = S.reviewers.map(r => r.decisions.get(id));
+    if (ds.every(d => d.decision === ds[0].decision) && !ds.some(d => d.decision === "maybe")) return;
+    const key = ds.map(d => (d.codes || []).join("+") || "—").join("  vs  ");
+    if (key === S.reviewers.map(() => "—").join("  vs  ")) return;
+    tally.set(key, (tally.get(key) || 0) + 1);
+  });
+  const rows = [...tally.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+  if (!rows.length) return "";
+  return `<h2 style="margin-top:22px">Where the criteria pull apart</h2>
+    <p class="sub">The codes each reviewer applied to the records you disagreed on. A pair that keeps
+      recurring is a boundary worth rewording before you screen the rest of the corpus.</p>
+    <div class="tablewrap friction"><table>
+      <thead><tr><th>${S.reviewers.map(r => esc(r.id)).join("</th><th>")}</th><th class="num">Records</th></tr></thead>
+      <tbody>${rows.map(([k, v]) => `<tr>${k.split("  vs  ").map(c =>
+        `<td class="pair">${esc(c)}</td>`).join("")}<td class="num">${v}</td></tr>`).join("")}
+      </tbody></table></div>`;
+}
+function matrixHTML(ck) {
+  const L = ck.labels;
+  return `<div class="tablewrap" style="margin-top:16px"><table>
+    <thead><tr><th>${esc(S.reviewers[0].id)} ↓ / ${esc(S.reviewers[1].id)} →</th>
+      ${L.map(l => `<th class="num">${LABEL[l]}</th>`).join("")}<th class="num">Total</th></tr></thead>
+    <tbody>${L.map(a => `<tr><th>${LABEL[a]}</th>
+      ${L.map(b => `<td class="num ${a === b ? "diag" : ""}">${ck.obs[a + "|" + b]}</td>`).join("")}
+      <td class="num">${ck.r1[a]}</td></tr>`).join("")}
+      <tr><th>Total</th>${L.map(b => `<td class="num">${ck.r2[b]}</td>`).join("")}
+      <td class="num">${ck.n}</td></tr></tbody></table></div>`;
+}
+function renderConflicts(common) {
+  const queue = common.filter(id => {
+    const ds = S.reviewers.map(r => r.decisions.get(id).decision);
+    return ds.some(d => d !== ds[0]) || ds.some(d => d === "maybe");
+  });
+  if (!queue.length) {
+    $("#conflictOut").innerHTML = `<div class="panel"><h2>Nothing to reconcile</h2>
+      <p class="sub">Reviewers agreed on every record and none was marked maybe.</p></div>`;
+    return;
+  }
+  const done = queue.filter(id => S.resolved.has(id)).length;
+  $("#conflictOut").innerHTML = `
+    <div class="panel">
+      <h2>Reconcile</h2>
+      <p class="sub">Every disagreement, plus everything either reviewer marked <b>maybe</b>. Settle each
+        one together and record the agreed decision — that is what goes into the review.</p>
+      <div class="row">
+        <span class="mono" style="font-size:12.5px;color:var(--muted)">${done} of ${queue.length} settled</span>
+        <div class="spacer"></div>
+        <button class="btn primary" id="exportResolved" ${done ? "" : "disabled"}>Export final decisions</button>
+      </div>
+    </div>
+    <div id="queue">${queue.map(id => conflictHTML(id)).join("")}</div>`;
+  $("#exportResolved").onclick = () => {
+    const payload = {
+      tool: "screening-desk", schema: 1, kind: "resolution",
+      reviewers: S.reviewers.map(r => r.id), resolved_at: new Date().toISOString(),
+      records: queue.filter(id => S.resolved.has(id)).map(id => ({
+        corpus_id: id, title: S.byId.get(id)?.title || "",
+        votes: Object.fromEntries(S.reviewers.map(r => [r.id, r.decisions.get(id).decision])),
+        final: S.resolved.get(id).final, reason: S.resolved.get(id).reason || "",
+      })),
+      agreed: common.filter(id => {
+        const ds = S.reviewers.map(r => r.decisions.get(id).decision);
+        return ds.every(d => d === ds[0]) && ds[0] !== "maybe";
+      }).map(id => ({ corpus_id: id, final: S.reviewers[0].decisions.get(id).decision })),
+    };
+    fileModal(`adjudicated_screened_sample.json`, JSON.stringify(payload, null, 1),
+      "The adjudicated agreement sample: every reconciled record plus the ones both reviewers " +
+      "already agreed on. 08_combine.py folds this into the study corpus.");
+  };
+  $$("#queue [data-final]").forEach(b => b.onclick = () => {
+    const id = b.closest(".conflict").dataset.id;
+    const reason = b.closest(".conflict").querySelector("[data-why]").value.trim();
+    S.resolved.set(id, { final: b.dataset.final, reason });
+    renderConflicts(common);
+  });
+}
+function conflictHTML(id) {
+  const rec = S.byId.get(id);
+  const res = S.resolved.get(id);
+  const votes = S.reviewers.map(r => {
+    const d = r.decisions.get(id);
+    const cs = (d.codes || []);
+    return `<div class="vote d-${d.decision}"><div class="r">${esc(r.id)}</div>
+      <div class="d">${LABEL[d.decision]}</div>
+      ${cs.length ? `<div class="vcodes">${cs.map(c =>
+        `<span class="vcode" title="${esc(S.codeLabels[c] || "")}">${esc(c)}</span>`).join("")}</div>` : ""}
+      ${d.reason ? `<div class="why">“${esc(d.reason)}”</div>` : ""}</div>`;
+  }).join("");
+  const title = rec?.title || S.reviewers.map(r => r.decisions.get(id)?.title).find(Boolean) || id;
+  return `<div class="conflict" data-id="${esc(id)}">
+    <div class="crumbs"><span class="pill">${esc(id)}</span>
+      ${rec?.year ? `<span class="pill">${esc(rec.year)}</span>` : ""}
+      ${res ? `<span class="pill state d-${res.final}">Settled — ${LABEL[res.final]}</span>` : ""}</div>
+    <h3>${esc(title)}</h3>
+    ${rec?.venue ? `<p class="venue">${esc(rec.venue)}${rec.doi ? ` · <a href="https://doi.org/${encodeURIComponent(rec.doi)}" target="_blank" rel="noopener">${esc(rec.doi)}</a>` : ""}</p>` : ""}
+    <div class="votes">${votes}</div>
+    ${rec?.abstract ? `<details><summary>Read the abstract</summary>
+      <div class="abstract">${esc(rec.abstract)}</div></details>`
+      : `<p class="note">Load the corpus on the Corpus tab to read abstracts here.</p>`}
+    <div class="kbar">
+      <input class="reason" data-why placeholder="Why you settled on this (optional)"
+        style="flex:1 1 200px;min-width:0;padding:8px 11px;border:1px solid var(--line-strong);
+        border-radius:7px;background:var(--ground);font-size:13px" value="${esc(res?.reason || "")}">
+      <button class="act inc" data-final="include">Keep</button>
+      <button class="act exc" data-final="exclude">Discard</button>
+    </div>
+  </div>`;
+}
+
+/* ============================ wiring ============================ */
+function readFiles(files, cb) {
+  [...files].forEach(f => { const fr = new FileReader(); fr.onload = () => cb(f.name, fr.result); fr.readAsText(f); });
+}
+function hookDrop(dropEl, inputEl, handler) {
+  dropEl.onclick = () => inputEl.click();
+  dropEl.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); inputEl.click(); } };
+  inputEl.onchange = () => { readFiles(inputEl.files, handler); inputEl.value = ""; };
+  ["dragenter", "dragover"].forEach(ev => dropEl.addEventListener(ev, e => {
+    e.preventDefault(); dropEl.classList.add("over");
+  }));
+  ["dragleave", "drop"].forEach(ev => dropEl.addEventListener(ev, e => {
+    e.preventDefault(); dropEl.classList.remove("over");
+  }));
+  dropEl.addEventListener("drop", e => { if (e.dataTransfer?.files?.length) readFiles(e.dataTransfer.files, handler); });
+}
+hookDrop($("#corpusDrop"), $("#corpusFile"), (name, text) => {
+  try {
+    const recs = /\.json$/i.test(name) ? fromCorpusJSON(JSON.parse(text)) : parseRIS(text);
+    setCorpus(recs, name);
+    toast(`Loaded ${recs.length.toLocaleString()} records.`);
+  } catch (err) { toast(`Could not read ${name}: ${err.message}`, true); }
+});
+hookDrop($("#revDrop"), $("#revFile"), addReviewerFile);
+hookDrop($("#critDrop"), $("#critFile"), (name, text) => {
+  try {
+    const c = JSON.parse(text);
+    const norm = a => (a || []).filter(x => x && x.code).map(x => ({ code: String(x.code).toUpperCase(), label: x.label || "" }));
+    const crit = { include: norm(c.include), exclude: norm(c.exclude) };
+    if (!crit.include.length && !crit.exclude.length) return toast(`${name} lists no codes.`, true);
+    S.criteria = crit;
+    S.codeLabels = Object.fromEntries([...crit.include, ...crit.exclude].map(x => [x.code, x.label]));
+    try { localStorage.setItem("sd:criteria", JSON.stringify(crit)); } catch (e) { /* ignore */ }
+    renderCriteria(); renderCodeBar();
+    toast(`Loaded ${crit.include.length} include and ${crit.exclude.length} exclude codes.`);
+  } catch (err) { toast(`Could not read ${name}: ${err.message}`, true); }
+});
+$("#codeBar").onclick = e => {
+  const b = e.target.closest(".code"); if (!b) return;
+  const box = $("#reasonBox"), cur = splitReason(box.value);
+  const on = cur.codes.includes(b.dataset.code);
+  const codes = on ? cur.codes.filter(c => c !== b.dataset.code) : [...cur.codes, b.dataset.code];
+  box.value = [codes.join(" "), cur.note].filter(Boolean).join(" ").trim();
+  renderCodeBar();
+};
+$("#reasonBox").addEventListener("input", renderCodeBar);
+
+function selectView(name) {
+  $$(".tab[data-view]").forEach(x => x.setAttribute("aria-selected", String(x.dataset.view === name)));
+  $$(".view").forEach(v => v.classList.toggle("on", v.id === "view-" + name));
+  if (name === "screen") renderPaper();
+}
+$$(".tab[data-view]").forEach(t => t.onclick = () => selectView(t.dataset.view));
+$$(".phase .tab").forEach(t => t.onclick = () => {
+  S.phase = t.dataset.phase; applyPhase(); renderRail(); renderPaper();
+});
+$$(".act[data-dec]").forEach(b => b.onclick = () => decide(b.dataset.dec));
+$("#prevBtn").onclick = () => go(-1);
+$("#nextBtn").onclick = () => go(1);
+$("#railList").onclick = e => {
+  const b = e.target.closest(".rl"); if (!b) return;
+  const i = S.corpus.findIndex(r => r.id === b.dataset.id);
+  if (i >= 0) { S.idx = i; renderPaper(); renderRail(); $("#rail").classList.remove("show"); }
+};
+$("#railSearch").oninput = e => { S.query = e.target.value; renderRail(); };
+$("#railChips").onclick = e => {
+  const c = e.target.closest(".chip"); if (!c) return;
+  S.filter = c.dataset.filter;
+  $$("#railChips .chip").forEach(x => x.setAttribute("aria-pressed", String(x === c)));
+  renderRail();
+};
+$("#railToggle").onclick = () => $("#rail").classList.toggle("show");
+$("#reviewerId").oninput = () => { load(); renderAll(); };
+$("#exportDecisions").onclick = () => {
+  const p = decisionsPayload();
+  if (!p.decisions.length) return toast("No decisions to export yet.", true);
+  fileModal(outName("json"), JSON.stringify(p, null, 1), S.phase === "agreement"
+    ? "Agreement phase. Save into <code>screening/</code>. 07_kappa.py compares it with the other reviewer's file, and the Resolve tab loads both."
+    : "Screening phase. Save into <code>screening/</code>. 09_combine.py reads it to build the study corpus.");
+};
+$("#exportCsv").onclick = () => {
+  const p = decisionsPayload();
+  if (!p.decisions.length) return toast("No decisions to export yet.", true);
+  const q = s => `"${String(s ?? "").replace(/"/g, '""')}"`;
+  const csv = ["corpus_id,reviewer,decision,codes,reason,title,timestamp",
+    ...p.decisions.map(d => [d.corpus_id, p.reviewer_id, d.decision, (d.codes || []).join(" "),
+                             d.reason, d.title, d.ts].map(q).join(","))].join("\n");
+  fileModal(outName("csv"), csv,
+    "Spreadsheet-friendly copy of the same decisions.");
+};
+$("#importDecisions").onclick = () => $("#decisionsFile").click();
+$("#decisionsFile").onchange = () => readFiles($("#decisionsFile").files, (name, text) => {
+  try {
+    const data = JSON.parse(text), rows = data.decisions || data;
+    let n = 0;
+    rows.forEach(d => {
+      if (!d.corpus_id || !d.decision) return;
+      S.decisions.set(d.corpus_id, { decision: d.decision, reason: d.reason || "", ts: d.ts || "" });
+      n++;
+    });
+    if (data.reviewer_id) $("#reviewerId").value = data.reviewer_id;
+    save(); renderAll(); toast(`Restored ${n} decision(s).`);
+  } catch (e) { toast(`Could not read ${name}.`, true); }
+  $("#decisionsFile").value = "";
+});
+$("#clearSession").onclick = () => {
+  if (!confirm("Delete every decision in this session? Export first if you want to keep them.")) return;
+  S.decisions.clear(); save(); renderAll(); toast("Decisions cleared.");
+};
+$("#themeBtn").onclick = () => {
+  const cur = document.documentElement.getAttribute("data-theme");
+  const dark = cur ? cur === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.setAttribute("data-theme", dark ? "light" : "dark");
+};
+document.addEventListener("keydown", e => {
+  const t = e.target.tagName;
+  if (t === "INPUT" || t === "TEXTAREA" || e.metaKey || e.ctrlKey || e.altKey) {
+    if (e.key === "Enter" && e.target.id === "reasonBox") $(".act.inc").focus();
+    return;
+  }
+  if (!$("#view-screen").classList.contains("on")) return;
+  const map = { "1": "include", k: "include", "2": "maybe", m: "maybe", "3": "exclude", d: "exclude" };
+  const hit = map[e.key.toLowerCase()];
+  if (hit) { e.preventDefault(); if (hit !== "maybe" || maybeOn()) decide(hit); }
+  else if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+  else if (e.key === "/") { e.preventDefault(); $("#railSearch").focus(); }
+  else if (e.key === "n") { e.preventDefault(); $("#reasonBox").focus(); }
+});
+window.addEventListener("beforeunload", e => {
+  if (!S.isDemo && S.decisions.size) { e.preventDefault(); e.returnValue = ""; }
+});
+
+try { S.phase = localStorage.getItem("sd:phase") === "screening" ? "screening" : "agreement"; }
+catch (e) { /* ignore */ }
+try {
+  const raw = localStorage.getItem("sd:criteria");
+  if (raw) {
+    S.criteria = JSON.parse(raw);
+    S.codeLabels = Object.fromEntries(
+      [...S.criteria.include, ...S.criteria.exclude].map(x => [x.code, x.label]));
+  }
+  S.requireCode = localStorage.getItem("sd:requireCode") !== "0";
+} catch (e) { /* ignore */ }
+renderCriteria();
+applyPhase();
+setCorpus(DEMO_RECORDS.map(r => ({ ...r, keywords: r.keywords || [] })), "demo corpus", true);
+</script>

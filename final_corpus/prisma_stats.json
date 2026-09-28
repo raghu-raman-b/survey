@@ -1,0 +1,196 @@
+{
+ "per_file": [
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.32.1.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.33.40.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.34.16.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.34.42.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.35.51.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.35.8.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.36.17.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.37.2.ris",
+   "IEEE Xplore",
+   40
+  ],
+  [
+   "IEEE Xplore Citation RIS Download 2026.9.28.13.37.27.ris",
+   "IEEE Xplore",
+   100
+  ],
+  [
+   "export_faeceae4-b9ae-472a-ad3b-70c123c9fa6d_2026-09-28T080128.750558238.ris",
+   "Scopus",
+   1900
+  ],
+  [
+   "acm.bib",
+   "ACM Digital Library",
+   529
+  ]
+ ],
+ "identified_by_db": {
+  "IEEE Xplore": 840,
+  "Scopus": 1900,
+  "ACM Digital Library": 529
+ },
+ "n_identified": 3269,
+ "n_unique": 2263,
+ "n_removed": 1006,
+ "removed_by_db": {
+  "IEEE Xplore": 477,
+  "Scopus": 134,
+  "ACM Digital Library": 395
+ },
+ "retained_by_db": {
+  "Scopus": 1766,
+  "IEEE Xplore": 363,
+  "ACM Digital Library": 134
+ },
+ "found_in_combos": {
+  "Scopus": 908,
+  "IEEE Xplore + Scopus": 583,
+  "ACM Digital Library + Scopus": 391,
+  "IEEE Xplore": 244,
+  "ACM Digital Library": 129,
+  "ACM Digital Library + IEEE Xplore + Scopus": 8
+ },
+ "cluster_sizes": {
+  "1": 1278,
+  "2": 971,
+  "3": 7,
+  "4": 7
+ },
+ "types": {
+  "CONF": 1537,
+  "JOUR": 639,
+  "CHAP": 79,
+  "BOOK": 7,
+  "STD": 1
+ },
+ "years": {
+  "2018": 18,
+  "2019": 44,
+  "2020": 36,
+  "2021": 51,
+  "2022": 66,
+  "2023": 152,
+  "2024": 372,
+  "2025": 755,
+  "2026": 769
+ },
+ "top_venues": [
+  [
+   "Conference on Human Factors in Computing Systems - Proceedings",
+   90
+  ],
+  [
+   "Lecture Notes in Computer Science",
+   61
+  ],
+  [
+   "IEEE Transactions on Visualization and Computer Graphics",
+   48
+  ],
+  [
+   "Proceedings - 2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops, VRW 2026",
+   38
+  ],
+  [
+   "IEEE Access",
+   37
+  ],
+  [
+   "Proceedings of the 2nd International Conference on Artificial Intelligence, Virtual Reality and Interaction Design",
+   37
+  ],
+  [
+   "Proceedings - 2025 IEEE International Symposium on Mixed and Augmented Reality Adjunct, ISMAR-Adjunct 2025",
+   36
+  ],
+  [
+   "Communications in Computer and Information Science",
+   33
+  ],
+  [
+   "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
+   30
+  ],
+  [
+   "Proceedings of the 2025 International Conference on Artificial Intelligence, Virtual Reality and Interaction Design",
+   25
+  ],
+  [
+   "CEUR Workshop Proceedings",
+   24
+  ],
+  [
+   "Proceedings - 2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops, VRW 2025",
+   24
+  ],
+  [
+   "Proceedings - 2026 IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality, AIxVR 2026",
+   23
+  ],
+  [
+   "ACM International Conference Proceeding Series",
+   22
+  ],
+  [
+   "Proceedings of the ACM Symposium on Virtual Reality Software and Technology, VRST",
+   15
+  ],
+  [
+   "Lecture Notes in Networks and Systems",
+   15
+  ],
+  [
+   "International Journal of Human-Computer Interaction",
+   12
+  ],
+  [
+   "Proceedings - 2024 IEEE International Symposium on Mixed and Augmented Reality Adjunct, ISMAR-Adjunct 2024",
+   12
+  ],
+  [
+   "Frontiers in Virtual Reality",
+   11
+  ],
+  [
+   "UIST 2025 - Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology",
+   11
+  ]
+ ],
+ "missing_doi": 79,
+ "missing_abstract": 3,
+ "missing_year": 0,
+ "run_date": "2026-09-28",
+ "n_manual_merges": 7
+}

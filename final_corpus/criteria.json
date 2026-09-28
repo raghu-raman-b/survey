@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "note": "Replace the labels below with your actual criteria. Codes must stay in the form I<n> / E<n>. Keep labels short (under ~36 characters) so they fit the PRISMA diagram box. Both screeners must use the same file.",
+  "include": [
+    { "code": "I1", "label": "REPLACE ME — population/context in scope (e.g. AR/VR/XR)" },
+    { "code": "I2", "label": "REPLACE ME — technique in scope (e.g. generative AI / foundation model)" },
+    { "code": "I3", "label": "REPLACE ME — contributes a system, study or evaluation" }
+  ],
+  "exclude": [
+    { "code": "E1", "label": "REPLACE ME — not an AR/VR/XR context" },
+    { "code": "E2", "label": "REPLACE ME — no generative-AI component" },
+    { "code": "E3", "label": "REPLACE ME — not a primary study (editorial, keynote, poster abstract)" },
+    { "code": "E4", "label": "REPLACE ME — not peer-reviewed / not retrievable" },
+    { "code": "E5", "label": "REPLACE ME — not in English" },
+    { "code": "E6", "label": "REPLACE ME — retracted" }
+  ]
+}
