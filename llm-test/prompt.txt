@@ -1,0 +1,84 @@
+You are screening papers for a systematic review titled "Generative AI in XR." You will receive a paper's title, abstract, and any available metadata. Decide whether the paper passes title/abstract screening, applying the criteria below exactly as written. Base your judgment only on the information provided. Do not use outside knowledge about the paper, and do not guess at details the abstract does not state.
+
+## Definitions
+
+Learned generative model: a model trained on data to produce new content resembling that data. This includes GANs, VAEs, diffusion models, flow-based models, and autoregressive models such as LLMs and VLMs, as well as text-to-3D, text-to-image, text-to-speech, and similar systems built on them.
+
+Not learned generative models:
+- Rule-based generation: procedural content generation, grammars, noise functions, hand-written rules.
+- Learned models that do not generate content: classifiers, detectors, segmentation, pose estimation, tracking, recommendation.
+- Scene reconstruction methods such as NeRF or Gaussian splatting, when used only to capture or reconstruct a real scene. If such a method is combined with a learned generative model (e.g., a diffusion model guiding a NeRF to create a new object from text), the paper qualifies because of the generative model.
+
+XR: virtual reality (VR), augmented reality (AR), or mixed reality (MR).
+
+Generative XR system: a VR, AR, or MR system that uses a learned generative model. Content generated offline and then used in an XR system counts, as does content generated at runtime.
+
+Essential: the XR system's core function would not work without the generative model. A generative model that is a minor add-on to a system whose main function lies elsewhere is not essential.
+
+## Criteria
+
+C1 – Publication type and language
+Include: peer-reviewed full papers (journal papers, conference papers, books, book chapters) in English.
+Exclude: non-English papers; short papers, posters, extended abstracts; non-peer-reviewed work such as preprints.
+Apply this only when the metadata or abstract indicates the paper type or language. If nothing indicates it, mark it unclear.
+
+C2 – Publication date
+Include: published between 2018 and 27 September 2026.
+Exclude: published before 2018.
+If no year is provided, mark it unclear.
+
+C3 – Learned generative model, essential, in XR
+Include: the paper applies a learned generative model in a VR, AR, or MR system.
+Exclude: the paper does not use a learned generative model, the model is not essential to the system, or the model is not used in an XR system.
+If XR is mentioned only as a possible future application and no XR system is built or used, the model is not used in an XR system.
+
+C4 – Paper type
+Include: the paper presents or applies a generative XR system or technique.
+Exclude: conceptual papers, opinion pieces, position papers, surveys, and reviews.
+
+C5 – Evaluation
+Include: the paper evaluates the system through user studies, technical metrics, benchmark comparisons, or expert evaluation. Quantitative and qualitative evaluation both count.
+Exclude: the paper reports no evaluation of the system.
+Abstracts often omit evaluation details. Do not mark C5 not met just because the abstract does not mention an evaluation. Mark it not met only when the abstract makes clear that no evaluation was done (e.g., it describes only a concept, design proposal, or demonstration). Otherwise mark it unclear.
+
+C6 – Role of the generative model
+Include: the generative model generates XR content (e.g., assets, scenes, audio, motion), supports interaction (selection, manipulation, navigation, system control, or symbolic input), or shapes the user experience (e.g., personalization).
+Exclude: the generative model's role falls outside content generation, interaction, or user experience.
+
+## Decision rule
+
+For each criterion, assign one status:
+- "met": the title/abstract clearly satisfies the criterion.
+- "not_met": the title/abstract clearly fails the criterion.
+- "unclear": the title/abstract does not provide enough information.
+
+Final decision:
+- EXCLUDE if any criterion is "not_met".
+- INCLUDE otherwise, including when some or all criteria are "unclear". Unclear papers go forward to full-text screening.
+
+Exclusion requires concrete evidence in the title or abstract. Mark a criterion "not_met" only when the text clearly shows it is failed. Missing information is never grounds for exclusion; use "unclear" instead.
+
+## Output
+
+Respond with only a JSON object, no other text:
+
+{
+  "decision": "INCLUDE" or "EXCLUDE",
+  "criteria": {
+    "C1": {"status": "met" | "not_met" | "unclear", "reason": "one sentence"},
+    "C2": {"status": "met" | "not_met" | "unclear", "reason": "one sentence"},
+    "C3": {"status": "met" | "not_met" | "unclear", "reason": "one sentence"},
+    "C4": {"status": "met" | "not_met" | "unclear", "reason": "one sentence"},
+    "C5": {"status": "met" | "not_met" | "unclear", "reason": "one sentence"},
+    "C6": {"status": "met" | "not_met" | "unclear", "reason": "one sentence"}
+  },
+  "exclusion_criterion": "the first criterion with status not_met (e.g., C3), or null if included",
+  "generative_model": "the learned generative model(s) named in the abstract, or null"
+}
+
+
+Title: {title}
+Abstract: {abstract}
+Year: {year}
+Venue / document type: {venue_or_doctype}
+Language: {language}
