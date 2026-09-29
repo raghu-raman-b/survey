@@ -7,17 +7,39 @@
 
 Reports raw agreement, Cohen's kappa (two raters) with a 95% CI, Krippendorff's
 alpha (any number of raters), the confusion matrix and every disagreement.
-"""
-import csv, os, sys, math, json, glob, collections, itertools
 
-AGREE  = '/home/prex_san/Documents/survey/final_corpus/agreement'
-SCREEN = '/home/prex_san/Documents/survey/final_corpus/screening'
+The pass/redo threshold is binary kappa >= 0.80 (alpha for three or more raters), with
+'maybe' counted as include: the Screening phase only decides include vs exclude, and a
+maybe goes to full text just like an include. 0.80 follows McHugh (2012, Biochemia
+Medica 22(3):276-282) and Krippendorff's 0.800 for reliable data; the interpretation
+bands are McHugh's, not Landis & Koch's.
+"""
+import csv, os, sys, math, json, glob, collections, itertools, io, datetime
+
+AGREE   = '/home/prex_san/Documents/survey/final_corpus/agreement'
+SCREEN  = '/home/prex_san/Documents/survey/final_corpus/screening'
+RESULTS = '/home/prex_san/Documents/survey/final_corpus/agreement_results'
+
+# Everything printed also goes into a report under agreement_results/, one file per
+# run, so each pilot round keeps its own record.
+class Tee:
+    def __init__(self, *streams): self.streams = streams
+    def write(self, s):
+        for st in self.streams: st.write(s)
+    def flush(self):
+        for st in self.streams: st.flush()
+REPORT = io.StringIO()
+STARTED = datetime.datetime.now()
+sys.stdout = Tee(sys.__stdout__, REPORT)
+print(f"Agreement report - {STARTED:%Y-%m-%d %H:%M}")
+print(f"command: python3 07_kappa.py {' '.join(sys.argv[1:])}".rstrip() + "\n")
 NORM = {'i': 'include', 'include': 'include', 'inc': 'include', '1': 'include', 'keep': 'include',
         'yes': 'include', 'y': 'include', 'true': 'include',
         'e': 'exclude', 'exclude': 'exclude', 'exc': 'exclude', '0': 'exclude', 'discard': 'exclude',
         'no': 'exclude', 'n': 'exclude', 'false': 'exclude',
         'm': 'maybe', 'maybe': 'maybe', '?': 'maybe', 'unsure': 'maybe'}
 ORDER = ['include', 'maybe', 'exclude']
+THRESHOLD = 0.80       # binary kappa (maybe -> include) needed before Part 2
 def norm(v):
     v = (v or '').strip().lower()
     return NORM.get(v) if v else None
@@ -99,11 +121,11 @@ def alpha(units):
     De = sum(nc[c] * nc[d] / (total - 1) for c in nc for d in nc if c != d)
     return 1 - Do / De if De else None
 
-def band(k):
-    for lo, lbl in [(.81, 'almost perfect'), (.61, 'substantial'), (.41, 'moderate'),
-                    (.21, 'fair'), (0, 'slight')]:
+def band(k):            # McHugh (2012)
+    for lo, lbl in [(.90, 'almost perfect'), (.80, 'strong'), (.60, 'moderate'),
+                    (.40, 'weak'), (.21, 'minimal'), (0, 'none')]:
         if k >= lo: return lbl
-    return 'poor (worse than chance)'
+    return 'worse than chance'
 
 def report(title, units, labels):
     n = len(units)
@@ -123,24 +145,28 @@ def report(title, units, labels):
         print(f"  expected by chance  {pe:.3f}")
         print(f"  Cohen's kappa       {k:.3f}   [95% CI {k-1.96*se:.3f}, {min(1.0, k+1.96*se):.3f}]")
         print(f"  Krippendorff alpha  {a:.3f}" if a is not None else "  Krippendorff alpha  n/a")
-        print(f"  interpretation      {band(k)} (Landis & Koch)")
+        print(f"  interpretation      {band(k)} (McHugh 2012)")
+        stat = ("Cohen's kappa", k, k - 1.96 * se, min(1.0, k + 1.96 * se))
     else:
         print(f"  raw agreement       {agree/n:.3f}  ({agree:,}/{n:,} unanimous)")
         print(f"  Krippendorff alpha  {a:.3f}" if a is not None else "  Krippendorff alpha  n/a")
-        print(f"  interpretation      {band(a)} (Landis & Koch bands)" if a is not None else "")
+        print(f"  interpretation      {band(a)} (McHugh bands)" if a is not None else "")
+        stat = ("Krippendorff alpha", a, None, None)
     flat = [v for u in units for v in u]
     inc = flat.count('include') / len(flat)
     print(f"  inclusion rate      {inc:.1%}  (mean across reviewers)")
     if inc < 0.10 or inc > 0.90:
         print("  ! one class is rare, so kappa/alpha are unstable here - read the raw")
         print("    agreement and the matrix alongside them.")
+    return stat
 
 used = {v for u in units for v in u}
 labels = [l for l in ORDER if l in used]
-report("Agreement as screened", units, labels)
+gate = report("Agreement as screened", units, labels)
 if 'maybe' in used:
     binary = [['exclude' if v == 'exclude' else 'include' for v in u] for u in units]
-    report("Agreement with 'maybe' carried forward to full text", binary, ['include', 'exclude'])
+    gate = report("Agreement with 'maybe' carried forward to full text  <- threshold",
+                  binary, ['include', 'exclude'])
 
 dis = [(c, u) for c, u in zip(common, units) if len(set(u)) > 1 or 'maybe' in u]
 if dis:
@@ -152,7 +178,15 @@ if dis:
             bits.append(f"{n}={v}" + (f" [{' '.join(cs)}]" if cs else ""))
         print("  " + c + "  " + "  ".join(bits))
         if titles.get(c): print(f"        {titles[c][:70]}")
-    if len(dis) > 40: print(f"  ... and {len(dis)-40:,} more")
+    if len(dis) > 40:                   # terminal stops at 40; the report file gets them all
+        sys.__stdout__.write(f"  ... and {len(dis)-40:,} more - full list in the report file\n")
+        for c, u in dis[40:]:
+            bits = []
+            for n, v in zip(names, u):
+                cs = codes.get(n, {}).get(c) or []
+                bits.append(f"{n}={v}" + (f" [{' '.join(cs)}]" if cs else ""))
+            REPORT.write("  " + c + "  " + "  ".join(bits) + "\n")
+            if titles.get(c): REPORT.write(f"        {titles[c][:70]}\n")
 
     friction = collections.Counter()
     for c, _u in dis:
@@ -167,4 +201,24 @@ if dis:
     print("\n  Settle these on the Resolve tab of screening_tool.html.")
 else:
     print("\nNo disagreements and no maybes - nothing to reconcile.")
+
+name, val, lo, hi = gate
+print(f"\n{'='*64}\nThreshold: binary {name} >= {THRESHOLD:.2f}\n{'='*64}")
+if val is None or math.isnan(val):
+    print("  Not computable - every rating falls in one category. Read the raw agreement.")
+else:
+    ci = f"  [95% CI {lo:.3f}, {hi:.3f}]" if lo is not None else ""
+    if val >= THRESHOLD:
+        print(f"  {val:.3f}{ci}  PASS - reconcile on the Resolve tab, then go to Part 2.")
+    else:
+        print(f"  {val:.3f}{ci}  REDO - reword the criteria that pull apart, change SEED in")
+        print("  06_agreement_sample.py, redraw, and screen the new sample.")
 print()
+
+sys.stdout = sys.__stdout__
+os.makedirs(RESULTS, exist_ok=True)
+out = os.path.join(RESULTS, f"agreement_report_{STARTED:%Y%m%d_%H%M%S}.txt")
+with open(out, 'w', encoding='utf-8') as f:
+    f.write(REPORT.getvalue())
+rel = os.path.relpath(out)
+print(f"report written to {out if rel.startswith('..') else rel}")

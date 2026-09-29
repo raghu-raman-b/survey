@@ -37,6 +37,7 @@
   --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{height:100%}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
   font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -122,7 +123,7 @@ main{flex:1;min-height:0;overflow:auto}
 .stat .v small{font-size:12px;color:var(--muted);margin-left:3px}
 
 /* ---------- screening layout ---------- */
-.screen-grid{display:grid;grid-template-columns:262px minmax(0,1fr);height:100%}
+.screen-grid{display:grid;grid-template-columns:262px minmax(0,1fr) 440px;height:100%}
 .rail{border-right:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;min-height:0}
 .rail-top{padding:10px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
 .rail-top input{width:100%;padding:6px 9px;border:1px solid var(--line-strong);border-radius:6px;
@@ -167,33 +168,74 @@ main{flex:1;min-height:0;overflow:auto}
 .ablabel{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);
   font-weight:500;margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--line)}
 
-/* ---------- decision bar ---------- */
-.codebar{position:sticky;bottom:57px;background:var(--surface);border-top:1px solid var(--line);
-  padding:8px 16px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}
-.codebar .grp{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);
-  font-weight:500;margin-right:2px}
-.code{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line-strong);background:var(--ground);
-  border-radius:5px;padding:3px 8px;cursor:pointer;color:var(--muted)}
-.code:hover{color:var(--ink);border-color:var(--faint)}
-.code[aria-pressed="true"].i{background:var(--inc-soft);border-color:var(--inc);color:var(--inc)}
-.code[aria-pressed="true"].e{background:var(--exc-soft);border-color:var(--exc);color:var(--exc)}
-.deck{position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--line);
-  padding:11px 16px calc(11px + env(safe-area-inset-bottom,0px));
-  display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.deck .reason{flex:1 1 220px;min-width:0;padding:8px 11px;border:1px solid var(--line-strong);
+/* ---------- criteria flow ---------- */
+.flow{border-left:1px solid var(--line);background:var(--surface);min-height:0;overflow:auto;
+  display:flex;flex-direction:column;padding:16px 16px 0}
+.flow-head{display:flex;align-items:baseline;gap:8px;margin-bottom:3px}
+.flow-head h2{font-size:13px;font-weight:600;letter-spacing:.02em;flex:1}
+.linkbtn{border:0;background:none;padding:0;font-size:12px;color:var(--accent);cursor:pointer;font-weight:500}
+.linkbtn:hover{text-decoration:underline}
+.flow-sub{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.45}
+.flow-sub code,.flow-empty code{font-family:var(--mono);font-size:11.5px}
+.flow-empty{border:1.5px dashed var(--line-strong);border-radius:9px;padding:16px;font-size:12.5px;
+  color:var(--muted);text-align:center;line-height:1.5}
+.cols,.step,.flow-arrow{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr)}
+.cols span{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;font-weight:500;padding:0 2px 6px}
+.cols .ci{color:var(--inc)} .cols .ce{color:var(--exc);grid-column:3}
+.step{padding:4px 0}
+.node{position:relative;display:flex;align-items:center;justify-content:center}
+.node::before{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;width:2px;
+  background:var(--line-strong);transform:translateX(-50%)}
+.step:first-child .node::before{top:50%}
+.node::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line-strong)}
+.stepnum{position:relative;z-index:1;width:22px;height:22px;border-radius:99px;background:var(--surface);
+  border:1.5px solid var(--line-strong);font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  display:grid;place-items:center}
+.step.s-i .stepnum{background:var(--inc);border-color:var(--inc);color:#fff}
+.step.s-e .stepnum{background:var(--exc);border-color:var(--exc);color:#fff}
+.crit{text-align:left;border:1px solid var(--line);border-radius:8px;padding:7px 9px;
+  background:var(--ground);font-size:12.5px;line-height:1.35;color:var(--ink-2);width:100%;
+  display:flex;flex-direction:column;gap:2px;min-width:0}
+.crit .cc{font-family:var(--mono);font-size:10.5px;font-weight:500}
+.crit.i .cc{color:var(--inc)} .crit.e .cc{color:var(--exc)}
+.crit .desc{display:none;font-size:11.5px;color:var(--muted);margin-top:3px}
+.flow.full .crit .desc{display:block}
+.crit.blank{visibility:hidden}
+button.crit{cursor:pointer}
+button.crit:hover{border-color:var(--faint);color:var(--ink)}
+.crit.i[aria-pressed="true"]{background:var(--inc-soft);border-color:var(--inc);color:var(--ink)}
+.crit.e[aria-pressed="true"]{background:var(--exc-soft);border-color:var(--exc);color:var(--ink)}
+.flow-arrow{height:26px}
+.flow-arrow i{position:relative;display:block}
+.flow-arrow i::before{content:"";position:absolute;left:50%;top:0;bottom:6px;width:2px;
+  background:var(--line-strong);transform:translateX(-50%)}
+.flow-arrow i::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  border:6px solid transparent;border-top-color:var(--line-strong);border-bottom:0}
+.verdict{position:sticky;bottom:0;margin:0 -16px;padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px));
+  background:var(--surface);border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px}
+.vbox{border:1.5px solid var(--line-strong);border-radius:10px;padding:11px;display:flex;
+  flex-direction:column;gap:9px;background:var(--surface)}
+.vhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vhead b{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);font-weight:500}
+.vcodes.sel{margin:0}
+.vcode.i{color:var(--inc);border-color:var(--inc-line);background:var(--inc-soft)}
+.vcode.e{color:var(--exc);border-color:var(--exc-line);background:var(--exc-soft)}
+.vnone{font-size:12px;color:var(--faint)}
+.reason{width:100%;min-width:0;padding:8px 11px;border:1px solid var(--line-strong);
   border-radius:7px;background:var(--ground);font-size:13px}
+.vmsg{margin:0;font-size:12.5px;color:var(--exc);line-height:1.4}
+.vmsg:empty{display:none}
 .acts{display:flex;gap:7px}
+.verdict .act{flex:1 1 0;justify-content:center}
 .act{border:1px solid var(--line-strong);background:var(--surface);border-radius:8px;
-  padding:9px 15px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px}
+  padding:9px 12px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px}
 .act kbd{font-family:var(--mono);font-size:10px;font-weight:400;padding:1px 4px;border-radius:3px;
   background:var(--surface-2);color:var(--faint);border:1px solid var(--line)}
 .act.inc:hover,.act.inc[aria-pressed="true"]{background:var(--inc-soft);border-color:var(--inc);color:var(--inc)}
 .act.may:hover,.act.may[aria-pressed="true"]{background:var(--may-soft);border-color:var(--may);color:var(--may)}
 .act.exc:hover,.act.exc[aria-pressed="true"]{background:var(--exc-soft);border-color:var(--exc);color:var(--exc)}
-.rapidhint{font-size:12.5px;color:var(--faint);flex:1 1 auto;min-width:0}
-.deck.rapid{padding-block:14px}
-.deck.rapid .acts{gap:10px}
-.deck.rapid .act{padding:13px 30px;font-size:14.5px}
+.verdict.rapid .act{padding:13px 12px;font-size:14.5px}.vfoot{display:flex;align-items:center;gap:10px}
+.rapidhint{font-size:12px;color:var(--faint);flex:1 1 auto;min-width:0}
 .nav{display:flex;gap:5px}
 .nav button{border:1px solid var(--line-strong);background:var(--surface);border-radius:7px;
   width:34px;height:34px;cursor:pointer;color:var(--muted);font-size:15px}
@@ -254,10 +296,16 @@ td.diag{background:var(--accent-soft)}
   border-radius:8px;padding:9px 13px;font-size:12.5px;margin-bottom:14px}
 .ok{color:var(--inc)} .bad{color:var(--exc)} .warn{color:var(--may)}
 
-@media (max-width:820px){
-  .screen-grid{grid-template-columns:1fr}
+@media (max-width:1180px){
+  .screen-grid{grid-template-columns:minmax(0,1fr) 400px}
   .rail{display:none}
-  .rail.show{display:flex;position:fixed;inset:auto 0 0 0;top:54px;z-index:30}
+  .rail.show{display:flex;position:fixed;left:0;bottom:0;top:54px;width:300px;z-index:30;box-shadow:var(--shadow)}
+}
+@media (max-width:820px){
+  .screen-grid{display:block;height:auto}
+  .reading{overflow:visible}
+  .flow{border-left:0;border-top:1px solid var(--line);overflow:visible}
+  .rail.show{inset:auto 0 0 0;top:54px;width:auto}
   .paper{padding:22px 16px}
   .paper h1{font-size:22px}
   .abstract{font-size:16.5px}
@@ -311,12 +359,12 @@ td.diag{background:var(--accent-soft)}
         </div>
 
         <div class="panel" id="criteriaPanel">
-          <h2>Reason codes</h2>
-          <p class="sub">Used in the <b>Agreement phase</b> only — typing a code on all 2,000-odd
-            records of your own half buys nothing, since PRISMA asks for exclusion reasons at full
-            text, not at title/abstract. Load <code>criteria.json</code> so both screeners use the
-            same codes, then type them into the reason box (<span class="mono">E1 E3</span>) or click
-            them. Anything that isn't a code is kept as a free note.</p>
+          <h2>Criteria</h2>
+          <p class="sub">Load <code>criteria.json</code> so both screeners work from the same list. It
+            appears as a flow beside the abstract on the Screen tab. In the <b>Agreement phase</b> you
+            mark each criterion the abstract meets or fails, and those codes are recorded with the
+            decision. In the <b>Screening phase</b> the flow is reference only — PRISMA asks for
+            exclusion reasons at full text, not at title/abstract.</p>
           <div class="drop" id="critDrop" tabindex="0" role="button">
             <b>Drop criteria.json here</b>
             or click to choose
@@ -352,29 +400,41 @@ td.diag{background:var(--accent-soft)}
               <button class="chip" data-filter="todo" aria-pressed="false">To do</button>
               <button class="chip" data-filter="include" aria-pressed="false">Keep</button>
               <button class="chip" data-filter="maybe" aria-pressed="false">Maybe</button>
-              <button class="chip" data-filter="exclude" aria-pressed="false">Discard</button>
-            </div>
+              <button class="chip" data-filter="exclude" aria-pressed="false">Discard</button>            </div>
           </div>
           <div class="rail-list" id="railList"></div>
         </aside>
         <div class="reading" id="reading">
           <div class="paper" id="paper"></div>
         </div>
-      </div>
-      <div class="codebar" id="codeBar" hidden></div>
-      <div class="deck" id="deck" hidden>
-        <div class="nav">
-          <button id="prevBtn" title="Previous (←)">‹</button>
-          <button id="nextBtn" title="Next (→)">›</button>
-        </div>
-        <input class="reason" id="reasonBox" placeholder="Reason (optional) — recorded with the decision"
-               autocomplete="off">
-        <span class="rapidhint" id="rapidHint" hidden>Title and abstract only — keep it moving</span>
-        <div class="acts">
-          <button class="act inc" data-dec="include">Keep <kbd>1</kbd></button>
-          <button class="act may" data-dec="maybe">Maybe <kbd>2</kbd></button>
-          <button class="act exc" data-dec="exclude">Discard <kbd>3</kbd></button>
-        </div>
+        <aside class="flow" id="flow" aria-label="Criteria flow">
+          <div class="flow-head">
+            <h2>Criteria</h2>
+            <button class="linkbtn" id="descToggle" aria-pressed="false">Show full wording</button>
+          </div>
+          <p class="flow-sub" id="flowSub"></p>
+          <div id="steps"></div>
+          <div class="verdict" id="verdict">
+            <div class="vbox">
+              <div class="vhead"><b>Verdict</b><span id="vsel"></span></div>
+              <input class="reason" id="reasonBox" autocomplete="off"
+                     placeholder="Reason — required for Maybe, optional otherwise">
+              <div class="acts">
+                <button class="act inc" data-dec="include">Keep <kbd>1</kbd></button>
+                <button class="act may" data-dec="maybe">Maybe <kbd>2</kbd></button>
+                <button class="act exc" data-dec="exclude">Discard <kbd>3</kbd></button>
+              </div>
+              <p class="vmsg" id="vmsg" role="status"></p>
+            </div>
+            <div class="vfoot">
+              <div class="nav">
+                <button id="prevBtn" title="Previous (←)">‹</button>
+                <button id="nextBtn" title="Next (→)">›</button>
+              </div>
+              <span class="rapidhint" id="rapidHint"></span>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -410,6 +470,7 @@ const S = {
   decisions: new Map(),          // id -> {decision, reason, ts}
   idx: 0, filter: "all", query: "", phase: "agreement",
   criteria: null, requireCode: true, codeLabels: {},
+  sel: new Set(), showDesc: false,  // criteria ticked on the current record; full wording toggle
   reviewers: [],                 // [{id, name, decisions:Map}]
   resolved: new Map(),           // id -> {final, reason}
 };
@@ -536,8 +597,7 @@ function visible() {
   const q = S.query.toLowerCase().trim();
   return S.corpus.filter(r => {
     const d = S.decisions.get(r.id);
-    if (S.filter === "todo" && d) return false;
-    if (["include", "maybe", "exclude"].includes(S.filter) && (!d || d.decision !== S.filter)) return false;
+    if (S.filter === "todo" && d) return false;    if (["include", "maybe", "exclude"].includes(S.filter) && (!d || d.decision !== S.filter)) return false;
     if (!q) return true;
     return (r.title + " " + r.authors.join(" ") + " " + r.keywords.join(" ") + " " + r.id)
       .toLowerCase().includes(q);
@@ -563,9 +623,9 @@ function renderPaper() {
   if (!r) {
     $("#paper").innerHTML = `<div class="empty"><b>No corpus loaded</b>
       Open the Corpus tab and load a .ris file to begin.</div>`;
-    $("#deck").hidden = true; $("#codeBar").hidden = true; return;
+    $("#flow").hidden = true; return;
   }
-  $("#deck").hidden = false;
+  $("#flow").hidden = false;
   const d = S.decisions.get(r.id);
   const au = r.authors.length ? r.authors.join("; ") : "<span style='color:var(--faint)'>No authors listed</span>";
   $("#paper").innerHTML = `
@@ -573,8 +633,7 @@ function renderPaper() {
       <span class="pill">${esc(r.id)}</span>
       <span class="pill">${S.idx + 1} of ${S.corpus.length}</span>
       ${r.type ? `<span class="pill">${esc(r.type)}</span>` : ""}
-      ${d ? `<span class="pill state d-${d.decision}">${LABEL[d.decision]}</span>` : ""}
-    </div>
+      ${d ? `<span class="pill state d-${d.decision}">${LABEL[d.decision]}</span>` : ""}    </div>
     <h1>${esc(r.title)}</h1>
     <p class="authors">${au}</p>
     <p class="venue">${[esc(r.venue), esc(r.year)].filter(Boolean).join(" · ")}
@@ -582,36 +641,60 @@ function renderPaper() {
     ${r.keywords.length ? `<div class="kws">${r.keywords.map(k => `<span class="kw">${esc(k)}</span>`).join("")}</div>` : ""}
     <div class="ablabel">Abstract</div>
     <div class="abstract ${r.abstract ? "" : "none"}">${r.abstract ? esc(r.abstract) : "No abstract in this record — judge on the title and keywords, or retrieve the record."}</div>`;
-  $("#reasonBox").value = d?.reason_raw ?? [ ...(d?.codes || []), d?.reason || "" ].join(" ").trim();
+  S.sel = new Set(d?.codes || []);  $("#reasonBox").value = d?.reason || "";
+  $("#vmsg").textContent = "";
   $$(".act[data-dec]").forEach(b => b.setAttribute("aria-pressed", String(!!d && d.decision === b.dataset.dec)));
   $("#reading").scrollTop = 0;
-  renderCodeBar();
-}
-const CODE_RE = /\b([IEie]\d{1,2})\b/g;
-function splitReason(text) {
-  const codes = [];
-  const note = String(text || "").replace(CODE_RE, (m) => { codes.push(m.toUpperCase()); return " "; })
-    .replace(/[\s,;]+/g, " ").trim();
-  return { codes: [...new Set(codes)], note };
+  renderFlow();
 }
 const codesOn = () => S.phase === "agreement" && S.criteria
   && (S.criteria.include.length || S.criteria.exclude.length);
-function renderCodeBar() {
-  const c = S.criteria;
-  $("#codeBar").hidden = !codesOn() || $("#deck").hidden;
-  if (!codesOn()) return;
-  const sel = new Set(splitReason($("#reasonBox").value).codes);
-  const grp = (list, cls, label) => list.length
-    ? `<span class="grp">${label}</span>` + list.map(x =>
-        `<button class="code ${cls}" data-code="${esc(x.code)}" title="${esc(x.label || "")}"
-          aria-pressed="${sel.has(x.code)}">${esc(x.code)}</button>`).join("")
-    : "";
-  $("#codeBar").innerHTML = grp(c.include, "i", "Keep") + grp(c.exclude, "e", "Discard");
+// Criteria laid out as a top-to-bottom flow: row n pairs In (meets) with En (fails).
+function renderFlow() {
+  const c = S.criteria, pick = codesOn(), agree = S.phase === "agreement";
+  $("#flow").classList.toggle("full", S.showDesc);
+  $("#descToggle").hidden = !c;
+  $("#descToggle").textContent = S.showDesc ? "Short labels" : "Show full wording";
+  $("#descToggle").setAttribute("aria-pressed", String(S.showDesc));
+  $("#flowSub").innerHTML = !c ? ""
+    : agree ? `Work down the rows. Pick the left box if the abstract shows the paper meets the
+        criterion, the right one if it fails it. Leave a row blank if the abstract can't tell you.`
+    : `For reference — no codes in this phase. Keep or Discard on title and abstract; if unsure, Keep.`;
+  if (!c) {
+    $("#steps").innerHTML = `<div class="flow-empty">No criteria loaded.<br>
+      <button class="linkbtn" id="flowLoadCrit">Load <code>criteria.json</code></button></div>`;
+    $("#flowLoadCrit").onclick = () => $("#critFile").click();
+  } else {
+    const n = Math.max(c.include.length, c.exclude.length);
+    const cell = (x, cls, pair) => {
+      if (!x) return `<div class="crit blank"></div>`;
+      const inner = `<span class="cc">${esc(x.code)}</span><span>${esc(x.label || x.code)}</span>
+        ${x.description ? `<span class="desc">${esc(x.description)}</span>` : ""}`;
+      return pick
+        ? `<button class="crit ${cls}" data-code="${esc(x.code)}" data-pair="${esc(pair?.code || "")}"
+            aria-pressed="${S.sel.has(x.code)}" title="${esc(x.description || x.label || "")}">${inner}</button>`
+        : `<div class="crit ${cls}" title="${esc(x.description || x.label || "")}">${inner}</div>`;
+    };
+    let rows = "";
+    for (let k = 0; k < n; k++) {
+      const i = c.include[k], e = c.exclude[k];
+      const st = pick && i && S.sel.has(i.code) ? "s-i" : pick && e && S.sel.has(e.code) ? "s-e" : "";
+      rows += `<div class="step ${st}">${cell(i, "i", e)}<div class="node"><span class="stepnum">${k + 1}</span></div>${cell(e, "e", i)}</div>`;
+    }
+    $("#steps").innerHTML = `<div class="cols"><span class="ci">Include if</span><span class="ce">Exclude if</span></div>
+      <div>${rows}</div><div class="flow-arrow"><span></span><i></i><span></span></div>`;
+  }
+  const sel = [...S.sel];
+  $("#vsel").innerHTML = !pick ? ""
+    : sel.length ? `<span class="vcodes sel">${sel.map(x =>
+        `<span class="vcode ${x[0] === "I" ? "i" : "e"}" title="${esc(S.codeLabels[x] || "")}">${esc(x)}</span>`).join("")}</span>`
+    : `<span class="vnone">nothing selected yet</span>`;
 }
 function renderCriteria() {
   const c = S.criteria;
-  if (!c) { $("#critInfo").innerHTML = `<p class="note">No criteria loaded — the reason box stays free text.</p>`; return; }
-  const row = x => `<tr><td class="mono">${esc(x.code)}</td><td>${esc(x.label || "")}</td></tr>`;
+  if (!c) { $("#critInfo").innerHTML = `<p class="note">No criteria loaded — decisions are Keep / Maybe / Discard with a free-text reason.</p>`; return; }
+  const row = x => `<tr><td class="mono">${esc(x.code)}</td><td>${esc(x.label || "")}${x.description
+    ? `<div class="note" style="margin-top:2px">${esc(x.description)}</div>` : ""}</td></tr>`;
   $("#critInfo").innerHTML = `
     <div class="tablewrap" style="margin-top:14px"><table><tbody>
       ${c.include.map(row).join("")}${c.exclude.map(row).join("")}
@@ -619,7 +702,8 @@ function renderCriteria() {
     <label class="row" style="gap:8px;align-items:center;margin-top:12px;cursor:pointer">
       <input type="checkbox" id="requireCode" ${S.requireCode ? "checked" : ""}
         style="width:16px;height:16px;accent-color:var(--accent)">
-      <span style="font-size:13px">Require a matching code on every Agreement-phase decision</span>
+      <span style="font-size:13px">Check every Agreement-phase verdict: Keep needs an inclusion
+        criterion, Discard an exclusion criterion, Maybe a written reason</span>
     </label>`;
   $("#requireCode").onchange = e => {
     S.requireCode = e.target.checked;
@@ -647,12 +731,11 @@ function applyPhase() {
   $('#phaseHint').innerHTML = HINTS[S.phase];
   $('.act.may').hidden = !agree;
   $("#reasonBox").hidden = !agree;
-  $("#rapidHint").hidden = agree;
-  $("#deck").classList.toggle("rapid", !agree);
-  $("#reasonBox").placeholder = S.criteria
-    ? "Reason codes — e.g. E1 E3 (plus a note if you want)"
-    : "Reason (optional) — recorded with the decision";
-  renderCodeBar();
+  $("#vsel").hidden = !agree;
+  $("#rapidHint").textContent = agree ? "← → move · n reason" : "Title and abstract only — keep it moving";
+  $("#verdict").classList.toggle("rapid", !agree);
+  $("#vmsg").textContent = "";
+  renderFlow();
   $$('#railChips .chip[data-filter="maybe"]').forEach(c => { c.hidden = !agree; });
   $$('.tab[data-view="resolve"]').forEach(t => { t.hidden = !agree; });
   if (!agree && $("#view-resolve").classList.contains("on")) selectView("corpus");
@@ -665,19 +748,28 @@ function renderAll() { renderProgress(); renderRail(); renderPaper(); renderSess
 /* ============================ decisions ============================ */
 function decide(dec) {
   const r = S.corpus[S.idx]; if (!r) return;
-  const box = $("#reasonBox");
-  const { codes, note } = box.hidden ? { codes: [], note: "" } : splitReason(box.value);
-  if (codesOn() && S.requireCode && dec !== "maybe") {
-    const want = dec === "include" ? "I" : "E";
-    if (!codes.some(c => c[0] === want)) {
-      const list = (dec === "include" ? S.criteria.include : S.criteria.exclude).map(x => x.code).join(", ");
-      $("#reasonBox").focus();
-      return toast(`${LABEL[dec]} needs a reason code — one of ${list}.`, true);
+  const agree = S.phase === "agreement";
+  const codes = codesOn() ? [...S.sel] : [];
+  const note = agree ? $("#reasonBox").value.trim() : "";
+  if (agree && S.requireCode) {
+    const inc = codes.filter(c => c[0] === "I"), exc = codes.filter(c => c[0] === "E");
+    const range = list => list.map(x => x.code).join(", ");
+    let msg = "";
+    if (dec === "maybe" && !note)
+      msg = "Maybe needs a reason — write what the abstract doesn't tell you.";
+    else if (codesOn() && dec === "include" && !inc.length)
+      msg = `Keep needs at least one inclusion criterion selected (${range(S.criteria.include)}).`;
+    else if (codesOn() && dec === "include" && exc.length)
+      msg = `Keep, but ${exc.join(", ")} is marked as failed — clear it or Discard.`;
+    else if (codesOn() && dec === "exclude" && !exc.length)
+      msg = `Discard needs at least one exclusion criterion selected (${range(S.criteria.exclude)}).`;
+    if (msg) {
+      $("#vmsg").textContent = msg;
+      if (dec === "maybe") $("#reasonBox").focus();
+      return;
     }
   }
-  S.decisions.set(r.id, { decision: dec, codes, reason: note,
-                          reason_raw: box.hidden ? "" : box.value.trim(),
-                          ts: new Date().toISOString() });
+  S.decisions.set(r.id, { decision: dec, codes, reason: note, ts: new Date().toISOString() });
   save(); renderProgress(); renderRail(); renderSessionNote();
   const next = nextUndecided();
   if (next >= 0) { S.idx = next; renderPaper(); }
@@ -820,8 +912,12 @@ function krippendorffAlpha(units) {          // units: array of arrays of labels
   cats.forEach(c => cats.forEach(d => { if (c !== d) De += nc[c] * nc[d] / (total - 1); }));
   return De > 0 ? 1 - Do / De : null;
 }
-const kBand = k => k >= .81 ? ["almost perfect", "ok"] : k >= .61 ? ["substantial", "ok"]
-  : k >= .41 ? ["moderate", "warn"] : k >= .21 ? ["fair", "warn"] : ["slight", "bad"];
+// Pass mark for the agreement phase: binary kappa (maybe counted as keep), per McHugh (2012)
+// and Krippendorff's 0.800. Bands are McHugh's, not Landis & Koch's.
+const THRESHOLD = 0.80;
+const kBand = k => k >= .90 ? ["almost perfect", "ok"] : k >= .80 ? ["strong", "ok"]
+  : k >= .60 ? ["moderate", "warn"] : k >= .40 ? ["weak", "bad"] : k >= .21 ? ["minimal", "bad"]
+  : k >= 0 ? ["none", "bad"] : ["worse than chance", "bad"];
 
 /* ============================ resolve ============================ */
 function addReviewerFile(name, json) {
@@ -870,27 +966,43 @@ function renderResolve() {
   const ckB = two ? cohenKappa(bin.map(u => [u[0], u[1]]), ["include", "exclude"]) : null;
 
   const agree = units.filter(u => u.every(v => v === u[0])).length;
-  const incRate = units.flat().filter(v => v === "include").length / units.flat().length;
-  const band = ck ? kBand(ck.k) : (alpha != null ? kBand(alpha) : ["—", ""]);
+  const hasMaybe = used.has("maybe");
+  const rawB = bin.filter(u => u.every(v => v === u[0])).length / bin.length;
+  const incRate = bin.flat().filter(v => v === "include").length / bin.flat().length;
+  // the gate: binary kappa for two reviewers, binary alpha for more
+  const gName = two ? "Cohen's κ" : "Krippendorff's α";
+  const gVal = two ? ckB?.k : alphaB;
+  const ok = gVal != null && !Number.isNaN(gVal);
+  const band = ok ? kBand(gVal) : ["not computable", ""];
+  const pass = ok && gVal >= THRESHOLD;
+  const ci = two && ok ? `${(gVal - 1.96 * ckB.se).toFixed(3)} – ${Math.min(1, gVal + 1.96 * ckB.se).toFixed(3)}` : "";
 
   $("#agreeOut").innerHTML = `
     <div class="panel">
       <h2>Agreement</h2>
-      <p class="sub">Computed on the ${common.length.toLocaleString()} record(s) every reviewer screened.</p>
+      <p class="sub">Computed on the ${common.length.toLocaleString()} record(s) every reviewer screened.
+        The pass mark is <b>binary ${gName} ≥ ${THRESHOLD.toFixed(2)}</b>, with <b>maybe</b> counted as keep —
+        the Screening phase only decides keep vs discard, and a maybe goes to full text like a keep.</p>
       <div class="stats">
         <div class="stat"><div class="k">Double-screened</div><div class="v">${common.length.toLocaleString()}</div></div>
-        <div class="stat"><div class="k">Raw agreement</div><div class="v">${(100 * agree / common.length).toFixed(1)}<small>%</small></div></div>
-        ${ck ? `<div class="stat"><div class="k">Cohen's κ</div><div class="v ${band[1]}">${ck.k.toFixed(3)}</div></div>` : ""}
-        <div class="stat"><div class="k">Krippendorff's α</div><div class="v">${alpha == null ? "—" : alpha.toFixed(3)}</div></div>
-        <div class="stat"><div class="k">Inclusion rate</div><div class="v">${(100 * incRate).toFixed(1)}<small>%</small></div></div>
+        <div class="stat"><div class="k">Raw agreement</div><div class="v">${(100 * rawB).toFixed(1)}<small>%</small></div></div>
+        <div class="stat"><div class="k">${gName} · binary</div><div class="v ${band[1]}">${ok ? gVal.toFixed(3) : "—"}</div></div>
+        ${two && alphaB != null ? `<div class="stat"><div class="k">Krippendorff's α</div><div class="v">${alphaB.toFixed(3)}</div></div>` : ""}
+        <div class="stat"><div class="k">Keep rate</div><div class="v">${(100 * incRate).toFixed(1)}<small>%</small></div></div>
       </div>
-      <p class="note">${ck ? `95% CI for κ: <span class="mono">${(ck.k - 1.96 * ck.se).toFixed(3)} – ${Math.min(1, ck.k + 1.96 * ck.se).toFixed(3)}</span> ·
-        <b>${band[0]}</b> (Landis &amp; Koch).` : `${S.reviewers.length} reviewers — α is the right statistic here; κ is defined for two.`}</p>
+      <p class="note">${ci ? `95% CI for κ: <span class="mono">${ci}</span> · ` : ""}<b>${band[0]}</b> (McHugh 2012).</p>
+      <div class="banner" style="margin-top:12px;${pass ? "background:var(--inc-soft);border-color:var(--inc-line);color:var(--inc)"
+        : ok ? "background:var(--exc-soft);border-color:var(--exc-line);color:var(--exc)" : ""}">
+        ${pass ? `<b>Pass</b> — ${gVal.toFixed(3)} ≥ ${THRESHOLD.toFixed(2)}. Reconcile below, export the final decisions, then start the Screening phase.`
+          : ok ? `<b>Redo</b> — ${gVal.toFixed(3)} is below ${THRESHOLD.toFixed(2)}. Reword the criteria that pull apart (table below),
+            redraw the sample with a new seed, and screen it again. Don't re-score these records.`
+          : `Agreement can't be computed — every rating falls in one category. Read the raw agreement instead.`}</div>
       ${incRate < .10 || incRate > .90 ? `<div class="banner" style="margin-top:12px">One category is rare
-        (inclusion ${(100 * incRate).toFixed(1)}%). κ and α get unstable at this prevalence — read the raw
+        (keep rate ${(100 * incRate).toFixed(1)}%). κ and α get unstable at this prevalence — read the raw
         agreement and the matrix below alongside them.</div>` : ""}
-      <p class="note" style="margin-top:14px">Treating <b>maybe</b> as carried forward to full text:
-        raw ${(100 * bin.filter(u => u.every(v => v === u[0])).length / bin.length).toFixed(1)}%${ckB ? `, κ ${ckB.k.toFixed(3)}` : ""}${alphaB != null ? `, α ${alphaB.toFixed(3)}` : ""}.</p>
+      ${hasMaybe ? `<p class="note" style="margin-top:14px">As screened, with <b>maybe</b> as its own category
+        (reported for completeness, not the pass mark): raw ${(100 * agree / common.length).toFixed(1)}%${ck ? `,
+        κ ${ck.k.toFixed(3)}` : ""}${alpha != null ? `, α ${alpha.toFixed(3)}` : ""}.</p>` : ""}
       ${ck ? matrixHTML(ck) : ""}
       ${frictionHTML(common)}
     </div>`;
@@ -957,8 +1069,7 @@ function renderConflicts(common) {
       records: queue.filter(id => S.resolved.has(id)).map(id => ({
         corpus_id: id, title: S.byId.get(id)?.title || "",
         votes: Object.fromEntries(S.reviewers.map(r => [r.id, r.decisions.get(id).decision])),
-        final: S.resolved.get(id).final, reason: S.resolved.get(id).reason || "",
-      })),
+        final: S.resolved.get(id).final, reason: S.resolved.get(id).reason || "",      })),
       agreed: common.filter(id => {
         const ds = S.reviewers.map(r => r.decisions.get(id).decision);
         return ds.every(d => d === ds[0]) && ds[0] !== "maybe";
@@ -1035,25 +1146,30 @@ hookDrop($("#revDrop"), $("#revFile"), addReviewerFile);
 hookDrop($("#critDrop"), $("#critFile"), (name, text) => {
   try {
     const c = JSON.parse(text);
-    const norm = a => (a || []).filter(x => x && x.code).map(x => ({ code: String(x.code).toUpperCase(), label: x.label || "" }));
+    const norm = a => (a || []).filter(x => x && x.code).map(x => ({ code: String(x.code).toUpperCase(),
+      label: x.label || "", description: x.description || "" }));
     const crit = { include: norm(c.include), exclude: norm(c.exclude) };
     if (!crit.include.length && !crit.exclude.length) return toast(`${name} lists no codes.`, true);
     S.criteria = crit;
     S.codeLabels = Object.fromEntries([...crit.include, ...crit.exclude].map(x => [x.code, x.label]));
     try { localStorage.setItem("sd:criteria", JSON.stringify(crit)); } catch (e) { /* ignore */ }
-    renderCriteria(); renderCodeBar();
+    renderCriteria(); renderFlow();
     toast(`Loaded ${crit.include.length} include and ${crit.exclude.length} exclude codes.`);
   } catch (err) { toast(`Could not read ${name}: ${err.message}`, true); }
 });
-$("#codeBar").onclick = e => {
-  const b = e.target.closest(".code"); if (!b) return;
-  const box = $("#reasonBox"), cur = splitReason(box.value);
-  const on = cur.codes.includes(b.dataset.code);
-  const codes = on ? cur.codes.filter(c => c !== b.dataset.code) : [...cur.codes, b.dataset.code];
-  box.value = [codes.join(" "), cur.note].filter(Boolean).join(" ").trim();
-  renderCodeBar();
+$("#steps").onclick = e => {
+  const b = e.target.closest("button.crit[data-code]"); if (!b) return;
+  const code = b.dataset.code;
+  if (S.sel.has(code)) S.sel.delete(code);
+  else { S.sel.add(code); S.sel.delete(b.dataset.pair); }   // a row is met or failed, not both
+  $("#vmsg").textContent = "";
+  renderFlow();
 };
-$("#reasonBox").addEventListener("input", renderCodeBar);
+$("#reasonBox").addEventListener("input", () => { $("#vmsg").textContent = ""; });$("#descToggle").onclick = () => {
+  S.showDesc = !S.showDesc;
+  try { localStorage.setItem("sd:showDesc", S.showDesc ? "1" : "0"); } catch (e) { /* ignore */ }
+  renderFlow();
+};
 
 function selectView(name) {
   $$(".tab[data-view]").forEach(x => x.setAttribute("aria-selected", String(x.dataset.view === name)));
@@ -1105,7 +1221,8 @@ $("#decisionsFile").onchange = () => readFiles($("#decisionsFile").files, (name,
     let n = 0;
     rows.forEach(d => {
       if (!d.corpus_id || !d.decision) return;
-      S.decisions.set(d.corpus_id, { decision: d.decision, reason: d.reason || "", ts: d.ts || "" });
+      S.decisions.set(d.corpus_id, { decision: d.decision, codes: d.codes || [],
+                                     reason: d.reason || "", ts: d.ts || "" });
       n++;
     });
     if (data.reviewer_id) $("#reviewerId").value = data.reviewer_id;
@@ -1135,8 +1252,7 @@ document.addEventListener("keydown", e => {
   else if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
   else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
   else if (e.key === "/") { e.preventDefault(); $("#railSearch").focus(); }
-  else if (e.key === "n") { e.preventDefault(); $("#reasonBox").focus(); }
-});
+  else if (e.key === "n" && maybeOn()) { e.preventDefault(); $("#reasonBox").focus(); }});
 window.addEventListener("beforeunload", e => {
   if (!S.isDemo && S.decisions.size) { e.preventDefault(); e.returnValue = ""; }
 });
@@ -1151,6 +1267,7 @@ try {
       [...S.criteria.include, ...S.criteria.exclude].map(x => [x.code, x.label]));
   }
   S.requireCode = localStorage.getItem("sd:requireCode") !== "0";
+  S.showDesc = localStorage.getItem("sd:showDesc") === "1";
 } catch (e) { /* ignore */ }
 renderCriteria();
 applyPhase();

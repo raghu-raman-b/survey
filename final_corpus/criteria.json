@@ -1,17 +1,32 @@
 {
-  "version": 1,
-  "note": "Replace the labels below with your actual criteria. Codes must stay in the form I<n> / E<n>. Keep labels short (under ~36 characters) so they fit the PRISMA diagram box. Both screeners must use the same file.",
+  "version": 2,
+  "note": "Codes must stay in the form I<n> / E<n>. Labels are kept short (under ~36 characters) so they fit the PRISMA diagram box; the full wording is in 'description'. Both screeners must use the same file.",
   "include": [
-    { "code": "I1", "label": "REPLACE ME — population/context in scope (e.g. AR/VR/XR)" },
-    { "code": "I2", "label": "REPLACE ME — technique in scope (e.g. generative AI / foundation model)" },
-    { "code": "I3", "label": "REPLACE ME — contributes a system, study or evaluation" }
+    { "code": "I1", "label": "Peer-reviewed full paper, English",
+      "description": "Peer-reviewed full paper articles, including journal papers, conference papers, books, and book chapters, published in English." },
+    { "code": "I2", "label": "Published 2018 – Sept 2026",
+      "description": "Research published between 2018 and September 2026, to ensure relevance to recent developments in generative AI and XR technology." },
+    { "code": "I3", "label": "Learned generative model in VR/AR/MR",
+      "description": "Research applying learned generative models, such as LLMs, GANs, and diffusion models, in VR, AR, or MR systems." },
+    { "code": "I4", "label": "Presents/applies generative XR",
+      "description": "Articles that present or apply a generative XR system or technique." },
+    { "code": "I5", "label": "Evaluates the generative XR system",
+      "description": "Studies that evaluate a generative XR system through user studies, technical metrics, benchmark comparisons, or expert evaluation." },
+    { "code": "I6", "label": "GenAI for content, interaction or UX",
+      "description": "The generative model generates XR content (e.g., assets, scenes, audio, motion), supports interaction (selection, manipulation, navigation, system control, or symbolic input), or shapes the user experience (e.g., personalization)." }
   ],
   "exclude": [
-    { "code": "E1", "label": "REPLACE ME — not an AR/VR/XR context" },
-    { "code": "E2", "label": "REPLACE ME — no generative-AI component" },
-    { "code": "E3", "label": "REPLACE ME — not a primary study (editorial, keynote, poster abstract)" },
-    { "code": "E4", "label": "REPLACE ME — not peer-reviewed / not retrievable" },
-    { "code": "E5", "label": "REPLACE ME — not in English" },
-    { "code": "E6", "label": "REPLACE ME — retracted" }
+    { "code": "E1", "label": "Non-English, short paper or abstract",
+      "description": "Studies published in languages other than English, or short papers, posters, and extended abstracts." },
+    { "code": "E2", "label": "Published before 2018",
+      "description": "Studies published before 2018, to focus on the period when learned generative models became practical for XR." },
+    { "code": "E3", "label": "No learned model, or not essential",
+      "description": "Studies that do not use a learned generative model, or where the model is not essential to the system." },
+    { "code": "E4", "label": "Conceptual, opinion or review",
+      "description": "Conceptual papers, opinion pieces, surveys, and reviews." },
+    { "code": "E5", "label": "No evaluation reported",
+      "description": "Papers that do not report any evaluation of the system." },
+    { "code": "E6", "label": "GenAI not for content/interaction/UX",
+      "description": "The generative model's role falls outside content generation, interaction, or user experience." }
   ]
 }
