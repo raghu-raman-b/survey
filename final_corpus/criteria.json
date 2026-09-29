@@ -21,7 +21,7 @@
     { "code": "E2", "label": "Published before 2018",
       "description": "Studies published before 2018, to focus on the period when learned generative models became practical for XR." },
     { "code": "E3", "label": "No learned model, or not essential",
-      "description": "Studies that do not use a learned generative model, or where the model is not essential to the system." },
+      "description": "Studies that do not use a learned generative model, where the model is not essential to the system, or where it is not used in an XR system." },
     { "code": "E4", "label": "Conceptual, opinion or review",
       "description": "Conceptual papers, opinion pieces, surveys, and reviews." },
     { "code": "E5", "label": "No evaluation reported",
