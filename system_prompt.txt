@@ -116,3 +116,4 @@ Rules for the fields:
 - "relevance" is an integer from 0 to 3.
 - "evidence" must come from the record. When the record says nothing relevant, write "not stated".
 - "decision" must follow the decision rules exactly, given your criterion verdicts and relevance score.
+
