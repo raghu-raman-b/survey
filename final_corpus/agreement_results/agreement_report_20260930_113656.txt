@@ -1,0 +1,44 @@
+Agreement report - 2026-09-30 11:36
+command: python3 07_kappa.py ../agreement_nikhil.json ../agreement_raghuraman.json
+
+agreement_nikhil.json                        Nikhil              100 decisions
+agreement_raghuraman.json                    raghuraman           26 decisions
+
+records screened by all 2 reviewers: 26
+
+================================================================
+Agreement as screened  (n = 26)
+================================================================
+     →          include  exclude    total
+     include         13        1       14
+     exclude          0       12       12
+     total           13       13       26
+
+  rows = Nikhil   columns = raghuraman
+
+  raw agreement       0.962  (25/26)
+  expected by chance  0.500
+  Cohen's kappa       0.923   [95% CI 0.775, 1.000]
+  Krippendorff alpha  0.924
+  interpretation      almost perfect (McHugh 2012)
+  inclusion rate      51.9%  (mean across reviewers)
+
+================================================================
+To reconcile: 1 record(s) - disagreements and maybes
+================================================================
+  C0371  Nikhil=include [I1 I2 I3 I4 I5 I6]  raghuraman=exclude [E3]
+        3D Model Design and Interactive Experience Optimization of Cultural Cr
+
+  Where the criteria pull apart (Nikhil vs raghuraman):
+       1x  I1 I2 I3 I4 I5 I6  vs  E3
+
+  A pair that keeps recurring is a boundary worth rewording before you
+  screen the rest of the corpus.
+
+  Settle these on the Resolve tab of screening_tool.html.
+
+================================================================
+Threshold: binary Cohen's kappa >= 0.80
+================================================================
+  0.923  [95% CI 0.775, 1.000]  PASS - reconcile on the Resolve tab, then go to Part 2.
+

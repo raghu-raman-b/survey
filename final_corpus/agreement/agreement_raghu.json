@@ -1,0 +1,866 @@
+{
+ "tool": "screening-desk",
+ "schema": 1,
+ "kind": "decisions",
+ "phase": "agreement",
+ "reviewer_id": "anon",
+ "corpus_name": "agreement_sample.ris",
+ "corpus_size": 226,
+ "exported_at": "2026-09-30T06:46:46.550Z",
+ "decisions": [
+  {
+   "corpus_id": "C0076",
+   "title": "Estimating VR Sickness Caused By Camera Shake in VR Videography",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T10:31:08.378Z"
+  },
+  {
+   "corpus_id": "C1185",
+   "title": "InteractGuide: LLM-Enhanced Multimodal Reasoning for User-Centric Interaction Recommendations in AR-HRI Authoring",
+   "decision": "include",
+   "codes": [
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T10:32:32.773Z"
+  },
+  {
+   "corpus_id": "C1874",
+   "title": "Generative-AI for XR Content Transmission in the Metaverse: Potential Approaches, Challenges, and a Generation-Driven Transmission Framework",
+   "decision": "include",
+   "codes": [
+    "I1",
+    "I2",
+    "I3",
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T06:24:42.108Z"
+  },
+  {
+   "corpus_id": "C2208",
+   "title": "Transforming Career Development Through Immersive and Data-Driven Solutions",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T10:41:00.500Z"
+  },
+  {
+   "corpus_id": "C0371",
+   "title": "3D Model Design and Interactive Experience Optimization of Cultural Creativity Product Based on Virtual Reality Technology",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T10:46:56.834Z"
+  },
+  {
+   "corpus_id": "C2230",
+   "title": "Virtual Minds, Real Work: LLM-Powered Preference-Based Planning through Spatial Multi-Agent-Human Collaboration",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:35:54.083Z"
+  },
+  {
+   "corpus_id": "C1189",
+   "title": "Interactive Information Exploration Framework of Cultural Heritage with Generative AI",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T10:55:20.796Z"
+  },
+  {
+   "corpus_id": "C0698",
+   "title": "Toward Facilitating Search in VR With the Assistance of Vision Large Language Models",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T10:57:28.287Z"
+  },
+  {
+   "corpus_id": "C0906",
+   "title": "Case Study: Augmented Reality Enabled Mental Health Chatbot",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:37:00.886Z"
+  },
+  {
+   "corpus_id": "C0760",
+   "title": "A Modular Pipeline for Context-Aware AI Assistance in XR Environments",
+   "decision": "include",
+   "codes": [
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:40:21.806Z"
+  },
+  {
+   "corpus_id": "C0085",
+   "title": "JeL: Breathing together to connect with others and nature",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:06:13.696Z"
+  },
+  {
+   "corpus_id": "C0615",
+   "title": "Napkinmatic App as a Ubiquitous Pocket AGI: Utility-Context-Sensitive 3D AR XR HCI for Vision-To-LLM",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:07:19.224Z"
+  },
+  {
+   "corpus_id": "C0204",
+   "title": "\"Slurp\" Revisited: Using 'system re-presencing' to look back on, encounter, and design with the history of spatial interactivity and locative media",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:09:16.586Z"
+  },
+  {
+   "corpus_id": "C1905",
+   "title": "ImmersiProtor: A Collaborative Mixed-Prototype Tool Integrating Spatial Augmented Reality and Component-layered Generation",
+   "decision": "include",
+   "codes": [
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:12:16.233Z"
+  },
+  {
+   "corpus_id": "C1151",
+   "title": "Immersive human–computer interaction system combining AI and augmented reality technologies",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:13:11.761Z"
+  },
+  {
+   "corpus_id": "C2138",
+   "title": "Speech-to-3D in Real Time: A Toolchain for Generating and Integrating 3D Objects at Runtime in a VR Application",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:15:13.817Z"
+  },
+  {
+   "corpus_id": "C1261",
+   "title": "Museum in the Classroom: Engaging Students with Augmented Reality Museum Artifacts and Generative AI",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:23:03.157Z"
+  },
+  {
+   "corpus_id": "C0103",
+   "title": "A Multimodal Mixed Reality Data Exploration Framework for Tactical Decision Making",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:24:35.005Z"
+  },
+  {
+   "corpus_id": "C1273",
+   "title": "On an AI-Based System Architecture to Generate Robotic Cells in VR Environments",
+   "decision": "include",
+   "codes": [
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:44:54.093Z"
+  },
+  {
+   "corpus_id": "C0436",
+   "title": "CGLight: An effective indoor illumination estimation method based on improved convmixer and GauGAN",
+   "decision": "include",
+   "codes": [
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:26:42.195Z"
+  },
+  {
+   "corpus_id": "C2268",
+   "title": "XSynth: GenAI-Empowered Shared Mental Model Building for Conceptual Design Collaboration in Extended Reality",
+   "decision": "include",
+   "codes": [
+    "I5"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:28:53.703Z"
+  },
+  {
+   "corpus_id": "C1449",
+   "title": "Uncharted Territories: Exploring Virtual Reality-Artificial Intelligence Integration in Social Work Education",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:46:30.901Z"
+  },
+  {
+   "corpus_id": "C1420",
+   "title": "Thing2Reality: Enabling Spontaneous Creation of 3D Objects from 2D Content using Generative AI in XR Meetings",
+   "decision": "include",
+   "codes": [
+    "I5",
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:48:07.725Z"
+  },
+  {
+   "corpus_id": "C0217",
+   "title": "VR-FAM: Variance-Reduced Encoder with Nonlinear Transformation for Facial Attribute Manipulation",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:49:22.169Z"
+  },
+  {
+   "corpus_id": "C2216",
+   "title": "User-Centric Spatial Referring for Tabletop RobotManipulation with MR Grounding and LLMs",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:50:48.968Z"
+  },
+  {
+   "corpus_id": "C1316",
+   "title": "Real-time and image-based bridge inspection using augmented reality and artificial intelligence",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-29T11:52:02.722Z"
+  },
+  {
+   "corpus_id": "C1869",
+   "title": "Generative AI-Assisted Visualization Prototyping for Cultural Heritage: A Computational Framework from 2D Planes to 3D Immersive Scenes",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I5"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T04:53:10.723Z"
+  },
+  {
+   "corpus_id": "C1987",
+   "title": "Modulated Reality (MoR) Using Depth Map From Generative AI",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T04:56:10.428Z"
+  },
+  {
+   "corpus_id": "C1963",
+   "title": "LIVE-GS: LLM Powers Interactive VR Experience with Physics-Aware Gaussian Splatting",
+   "decision": "include",
+   "codes": [
+    "I5",
+    "I4",
+    "I3",
+    "I2",
+    "I1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T04:57:21.246Z"
+  },
+  {
+   "corpus_id": "C1310",
+   "title": "Radiant Horizons of Augmented Reality and Virtual Reality in Customer-Centric Choices for Products: Artificial Intelligence (AI) Solutions Path to Fueling Business Towards Innovation Vague Futuristic Approach",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T04:58:27.397Z"
+  },
+  {
+   "corpus_id": "C2194",
+   "title": "Toward Inclusive Tabletop Gaming: A Prototype System Using LLMs, Computer Vision, and Extended Reality to Support Autistic Players with Neurotypical Peers",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:01:34.795Z"
+  },
+  {
+   "corpus_id": "C0025",
+   "title": "Applying Generative Adversarial Network to Combine Occupant Responses to Design Contexts in Immersive Virtual Reality with Existing Building Performance Models",
+   "decision": "exclude",
+   "codes": [
+    "E4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:02:48.670Z"
+  },
+  {
+   "corpus_id": "C0403",
+   "title": "Application and Design Implementation of Deep Learning Algorithms Based on Artificial Intelligence in Virtual Reality Interaction",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:03:54.687Z"
+  },
+  {
+   "corpus_id": "C0881",
+   "title": "AUTOVR: Automated UI Exploration for Detecting Sensitive Data Flow Exposures in Virtual Reality Apps",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:04:47.413Z"
+  },
+  {
+   "corpus_id": "C2105",
+   "title": "Revolutionizing safety training: enhancing safety knowledge acquisition, retention, and user experience with adaptive VR-LLM integration",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I5"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:05:58.049Z"
+  },
+  {
+   "corpus_id": "C1507",
+   "title": "A Conversational Ethics Bot (CALEB) Versus GPT-4o for Medical Ethics Education: Transcript Analysis and Extended Reality Feasibility Study",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:08:01.248Z"
+  },
+  {
+   "corpus_id": "C0457",
+   "title": "Decentralized Cooperative Caching and Offloading for Virtual Reality Task Based on GAN-Powered Multi-Agent Reinforcement Learning",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:09:09.351Z"
+  },
+  {
+   "corpus_id": "C1875",
+   "title": "Generative AI in Game Development: A Bibliometric Study with an Auditable Computing Workflow",
+   "decision": "exclude",
+   "codes": [
+    "E4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:09:38.394Z"
+  },
+  {
+   "corpus_id": "C0852",
+   "title": "AR/VR Digital Twin for Simulation and Data Collection of Robotic Environments",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:10:38.923Z"
+  },
+  {
+   "corpus_id": "C1251",
+   "title": "Multi-Channel Tactile-Force Rendering: A Microcurrent-Based Computational Framework for High-Resolution Haptic Feedback",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:11:57.589Z"
+  },
+  {
+   "corpus_id": "C0742",
+   "title": "XR Composition in the Wild: The Impact of User Environments on Creativity, UX and Flow during Music Production in Augmented Reality",
+   "decision": "exclude",
+   "codes": [
+    "E4",
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:12:54.270Z"
+  },
+  {
+   "corpus_id": "C0975",
+   "title": "Designing Memory-Augmented AR Agents for Spatiotemporal Reasoning in Personalized Task Assistance",
+   "decision": "exclude",
+   "codes": [
+    "E4",
+    "E5"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:14:14.865Z"
+  },
+  {
+   "corpus_id": "C0553",
+   "title": "Generative Multi-Modal Artificial Intelligence for Dynamic Real-Time Context-Aware Content Creation in Augmented Reality",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:16:16.336Z"
+  },
+  {
+   "corpus_id": "C2145",
+   "title": "State-of-the-art in deep learning approaches for automatic single-panorama indoor modeling and exploration",
+   "decision": "exclude",
+   "codes": [
+    "E4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:17:53.345Z"
+  },
+  {
+   "corpus_id": "C0369",
+   "title": "Where was the toaster? A systematic investigation of semantic construction in a new virtual episodic memory paradigm",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:18:34.286Z"
+  },
+  {
+   "corpus_id": "C1650",
+   "title": "Author-Guided, Hybrid LLM Dialogue Systems for Educational VR Simulations",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:20:10.179Z"
+  },
+  {
+   "corpus_id": "C2112",
+   "title": "Science and mathematics preservice teachers’ perceptions and experiences of practicing dialogic teaching in generative AI-powered virtual reality simulation",
+   "decision": "include",
+   "codes": [
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:21:22.161Z"
+  },
+  {
+   "corpus_id": "C0706",
+   "title": "Towards Intelligent Wearable Assistants",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:24:48.571Z"
+  },
+  {
+   "corpus_id": "C1793",
+   "title": "Enhancing Immersive Exergames through Reflection-In-Action through Voice Encouragement via LLM",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:25:46.189Z"
+  },
+  {
+   "corpus_id": "C0549",
+   "title": "Generative AI-Enabled Energy-Efficient Mobile Augmented Reality in Multi-Access Edge Computing",
+   "decision": "maybe",
+   "codes": [
+    "I3"
+   ],
+   "reason": "Talks about using GenAI to reduce latency - could be useful",
+   "ts": "2026-09-30T05:28:26.390Z"
+  },
+  {
+   "corpus_id": "C1747",
+   "title": "Dialogs with GenAI NPCs: Exploring Player Interactions with Speech Agents in a VR Game",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:29:08.345Z"
+  },
+  {
+   "corpus_id": "C2063",
+   "title": "(Re)thinking Sexual and Reproductive Health Education with Bloom's Taxonomy",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:30:07.578Z"
+  },
+  {
+   "corpus_id": "C1827",
+   "title": "Feasibility of LLM-Augmented VR Micro-Coaching for Children with ADHD",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:33:32.845Z"
+  },
+  {
+   "corpus_id": "C0164",
+   "title": "Conceptual Architecture Development of Virtual Reality – Motion Capture System to Analyze Accessibility and Clearance in Front-End Engineering Design Process: An Exploratory Study",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:34:15.730Z"
+  },
+  {
+   "corpus_id": "C0956",
+   "title": "Dance Choreography Driven by Swarm Intelligence in Extended Reality Scenarios: Perspectives and Implications",
+   "decision": "exclude",
+   "codes": [
+    "E4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:35:02.272Z"
+  },
+  {
+   "corpus_id": "C0907",
+   "title": "Celestial Blossom: A Collaborative, Meditative VR Journey of Fractal Art and Music",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:35:19.383Z"
+  },
+  {
+   "corpus_id": "C2211",
+   "title": "Two of Us: Bridging Asymmetric Perspectives",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:36:23.469Z"
+  },
+  {
+   "corpus_id": "C1620",
+   "title": "AR-CITIZEN: AI-Powered AR Civic Engagement Platform",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:37:28.695Z"
+  },
+  {
+   "corpus_id": "C2023",
+   "title": "Participatory Landscape Design and Tool Innovation through Natural Language Processing: A Case Study of the Qingnian East Road Community in Jinan",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:38:37.302Z"
+  },
+  {
+   "corpus_id": "C2215",
+   "title": "Unlocking shop-tertainment: Media richness and social presence theory in ARY’s immersive marketing",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:39:25.416Z"
+  },
+  {
+   "corpus_id": "C1671",
+   "title": "Bot or Not? Differences in Cognitive Load Between Human- and Chatbot-Led Post-Simulation Debriefings",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:41:39.825Z"
+  },
+  {
+   "corpus_id": "C1103",
+   "title": "Generative AI for Personalized Multisensory Immersive Experiences: Challenges and Opportunities for Stress Reduction",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:42:50.971Z"
+  },
+  {
+   "corpus_id": "C0018",
+   "title": "Wiener Loss: A Strong Correlative Loss Applied to Conditional GAN for Color Prediction",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:43:27.027Z"
+  },
+  {
+   "corpus_id": "C0843",
+   "title": "Anatomically-constrained Near-eye Gaze Tracking and Movement Classification using Transformer",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:44:27.358Z"
+  },
+  {
+   "corpus_id": "C0587",
+   "title": "Integrating Virtual Reality and Artificial Intelligence in Agricultural Planning: Insights from the V.A.I.F.A.R.M. Application",
+   "decision": "include",
+   "codes": [
+    "I3",
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:46:33.226Z"
+  },
+  {
+   "corpus_id": "C1324",
+   "title": "Reducing Foreign Language Anxiety in Icebreaker Sessions Using LLM-Controlled Multilingual Virtual Agents in VR",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:47:03.379Z"
+  },
+  {
+   "corpus_id": "C0225",
+   "title": "AICRID: AI-Empowered CR For Interior Design",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:50:14.419Z"
+  },
+  {
+   "corpus_id": "C0048",
+   "title": "Model-Driven Development of an Augmented Reality-Based Application for English Language Teaching to Children between 9 and 12 Years Old",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:50:48.347Z"
+  },
+  {
+   "corpus_id": "C1028",
+   "title": "Enhancing Technological Innovation Through Advanced (IIOT) and Augmented Reality Integration",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:51:14.651Z"
+  },
+  {
+   "corpus_id": "C1124",
+   "title": "GesPrompt: Leveraging Co-Speech Gestures to Augment LLM-Based Interaction in Virtual Reality",
+   "decision": "include",
+   "codes": [
+    "I3",
+    "I4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:51:28.001Z"
+  },
+  {
+   "corpus_id": "C0360",
+   "title": "Using AI Tools to Develop Training Materials for Aviation: Ethical, Technical, and Practical Concerns",
+   "decision": "exclude",
+   "codes": [
+    "E4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:52:57.257Z"
+  },
+  {
+   "corpus_id": "C0588",
+   "title": "Interactive Storytelling Apps: Increasing Immersion and Realism with Artificial Intelligence?",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:54:29.296Z"
+  },
+  {
+   "corpus_id": "C0086",
+   "title": "Malicious Design in AIVR, Falsehood and Cybersecurity-oriented Immersive Defenses",
+   "decision": "exclude",
+   "codes": [
+    "E4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:57:10.877Z"
+  },
+  {
+   "corpus_id": "C1014",
+   "title": "Enhancing Educational Inclusion Through Advanced Assistive Technologies: Impact of AR, VR and AI Integration in Supporting Students with Motor and Communication Impairments",
+   "decision": "exclude",
+   "codes": [
+    "E4"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:56:23.001Z"
+  },
+  {
+   "corpus_id": "C0763",
+   "title": "A Proposal for a VR Serious Game for Training of Earthquake Early Warning Systems for Wearable Devices in the Context of Critical Environments",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:57:02.573Z"
+  },
+  {
+   "corpus_id": "C1946",
+   "title": "\"it Depends\": Re-Authoring Play Through Clinical Reasoning in Wearable AR Rehab Games",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:56:27.476Z"
+  },
+  {
+   "corpus_id": "C0972",
+   "title": "Designing and Evaluating Gen-AI for Cultural Resilience",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:56:35.028Z"
+  },
+  {
+   "corpus_id": "C2180",
+   "title": "The Llama–ARCS Adaptive Learning framework: AI–VR Integration System for Real-Time Motivational Feedback in Higher Education",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:56:45.567Z"
+  },
+  {
+   "corpus_id": "C0889",
+   "title": "Blending Mixed Reality and Generative AI to Teach Geography: An MR+GenAI Learning Environment",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I5"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T06:46:37.522Z"
+  },
+  {
+   "corpus_id": "C2024",
+   "title": "PathoSynth-XR: Biomedical Text-Conditioned Diffusion with Cross-Attention for Rare Cancer Histopathology",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:57:21.651Z"
+  },
+  {
+   "corpus_id": "C1851",
+   "title": "From the Perspective of Artificial Intelligence: Design and Application of Song Brocade Patterns Based on the Theory of Qualia",
+   "decision": "exclude",
+   "codes": [
+    "E3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:59:07.224Z"
+  },
+  {
+   "corpus_id": "C1291",
+   "title": "Pla-tsugi: Terrain as Fracture",
+   "decision": "exclude",
+   "codes": [
+    "E1"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:59:10.750Z"
+  },
+  {
+   "corpus_id": "C0745",
+   "title": "A 3D geospatial platform and AI tour application for visualizing archaeological, analytical, and conservation data: the case of the Vryokastro archaeological ensemble, Kythnos Island",
+   "decision": "include",
+   "codes": [
+    "I4",
+    "I3"
+   ],
+   "reason": "",
+   "ts": "2026-09-30T05:59:15.168Z"
+  }
+ ]
+}

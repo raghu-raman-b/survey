@@ -1,0 +1,75 @@
+Agreement report - 2026-09-30 12:17
+command: python3 07_kappa.py ../agreement_nikhil.json ../agreement_raghu.json
+
+agreement_nikhil.json                        Nikhil              100 decisions
+agreement_raghu.json                         anon                 83 decisions
+
+records screened by all 2 reviewers: 83
+
+================================================================
+Agreement as screened  (n = 83)
+================================================================
+     →          include    maybe  exclude    total
+     include         26        1        4       31
+     maybe            0        0        0        0
+     exclude          1        0       51       52
+     total           27        1       55       83
+
+  rows = Nikhil   columns = anon
+
+  raw agreement       0.928  (77/83)
+  expected by chance  0.537
+  Cohen's kappa       0.844   [95% CI 0.724, 0.964]
+  Krippendorff alpha  0.845
+  interpretation      strong (McHugh 2012)
+  inclusion rate      34.9%  (mean across reviewers)
+
+================================================================
+Agreement with 'maybe' carried forward to full text  <- threshold  (n = 83)
+================================================================
+     →          include  exclude    total
+     include         27        4       31
+     exclude          1       51       52
+     total           28       55       83
+
+  rows = Nikhil   columns = anon
+
+  raw agreement       0.940  (78/83)
+  expected by chance  0.541
+  Cohen's kappa       0.869   [95% CI 0.757, 0.980]
+  Krippendorff alpha  0.869
+  interpretation      strong (McHugh 2012)
+  inclusion rate      35.5%  (mean across reviewers)
+
+================================================================
+To reconcile: 6 record(s) - disagreements and maybes
+================================================================
+  C0225  Nikhil=exclude [E1 E4]  anon=include [I4 I3]
+        AICRID: AI-Empowered CR For Interior Design
+  C0371  Nikhil=include [I1 I2 I3 I4 I5 I6]  anon=exclude [E3]
+        3D Model Design and Interactive Experience Optimization of Cultural Cr
+  C0549  Nikhil=include [I1 I2 I3 I4 I6]  anon=maybe [I3]
+        Generative AI-Enabled Energy-Efficient Mobile Augmented Reality in Mul
+  C1507  Nikhil=include [I1 I2 I3 I4 I6]  anon=exclude [E3]
+        A Conversational Ethics Bot (CALEB) Versus GPT-4o for Medical Ethics E
+  C1620  Nikhil=include [I1 I2 I3 I4 I6]  anon=exclude [E3]
+        AR-CITIZEN: AI-Powered AR Civic Engagement Platform
+  C1987  Nikhil=include [I1 I2 I3 I4 I5 I6]  anon=exclude [E3]
+        Modulated Reality (MoR) Using Depth Map From Generative AI
+
+  Where the criteria pull apart (Nikhil vs anon):
+       2x  I1 I2 I3 I4 I5 I6  vs  E3
+       2x  I1 I2 I3 I4 I6  vs  E3
+       1x  E1 E4  vs  I4 I3
+       1x  I1 I2 I3 I4 I6  vs  I3
+
+  A pair that keeps recurring is a boundary worth rewording before you
+  screen the rest of the corpus.
+
+  Settle these on the Resolve tab of screening_tool.html.
+
+================================================================
+Threshold: binary Cohen's kappa >= 0.80
+================================================================
+  0.869  [95% CI 0.757, 0.980]  PASS - reconcile on the Resolve tab, then go to Part 2.
+
