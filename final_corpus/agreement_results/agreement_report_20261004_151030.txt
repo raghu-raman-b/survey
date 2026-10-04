@@ -1,0 +1,89 @@
+Agreement report - 2026-10-04 15:10
+command: python3 07_kappa.py ../in/agreement_rr.json ../in/agreement_n.json
+
+agreement_rr.json                            rr                  226 decisions
+agreement_n.json                             Nikhil              226 decisions
+
+records screened by all 2 reviewers: 226
+
+================================================================
+Agreement as screened  (n = 226)
+================================================================
+     →          include  exclude    total
+     include         70        4       74
+     exclude         15      137      152
+     total           85      141      226
+
+  rows = rr   columns = Nikhil
+
+  raw agreement       0.916  (207/226)
+  expected by chance  0.543
+  Cohen's kappa       0.816   [95% CI 0.737, 0.895]
+  Krippendorff alpha  0.816
+  interpretation      strong (McHugh 2012)
+  inclusion rate      35.2%  (mean across reviewers)
+
+================================================================
+To reconcile: 19 record(s) - disagreements and maybes
+================================================================
+  C0212  rr=include [I3 I2 I4 I5]  Nikhil=exclude [E3]
+        Towards an AI-driven talking avatar in virtual reality for investigati
+  C0264  rr=include [I3 I4]  Nikhil=exclude [E3]
+        Evaluation of organic matter in sakesar and patala formations in South
+  C0275  rr=exclude [E1]  Nikhil=include [I1 I2 I3 I4 I6]
+        From Expanded Cinema to Extended Reality: How AI Can Expand and Extend
+  C0279  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4 I6]
+        Generative AI-empowered Effective Physical-Virtual Synchronization in 
+  C0280  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4 I6]
+        Generative AI-Empowered Simulation for Autonomous Driving in Vehicular
+  C0371  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4 I5 I6]
+        3D Model Design and Interactive Experience Optimization of Cultural Cr
+  C0499  rr=exclude [E4 E5]  Nikhil=include [I1 I2 I3 I4 I6]
+        Enhancing Historical Understanding in School Students: Designing a VR 
+  C0536  rr=exclude [E1]  Nikhil=include [I1 I2 I3 I4 I6]
+        Function-Adaptive Affordance Extraction from 3D Objects Using LLM for 
+  C0717  rr=exclude [E4]  Nikhil=include [I1 I2 I3 I4 I5 I6]
+        Using artmaking generative AIs to support augmented reality learning d
+  C0764  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4 I6]
+        A Real-Time Method for Inserting Virtual Objects Into Neural Radiance 
+  C0933  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I5]
+        Context-Rich Interactions in Mixed Reality Through Edge AI Co-processi
+  C0950  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4 I6]
+        Cross-Format Retrieval-Augmented Generation in XR with LLMs for Contex
+  C1008  rr=exclude [E1 E4]  Nikhil=include [I1 I2 I3 I4 I6]
+        Empathy in VR: Immersive Storytelling to Combat Loneliness and Amplify
+  C1336  rr=include [I3 I4]  Nikhil=exclude [E3]
+        Research on Sustainable Real-Time Adaptation and Interactive Design of
+  C1349  rr=include [I4 I3]  Nikhil=exclude [E1 E3]
+        Safety Assessment of 3D Generation Models in AR/VR Applications
+  C1519  rr=exclude [E3]  Nikhil=include [I3 I4]
+        A Lightweight Image-Recognition WebAR Narrative System for Low-Barrier
+  C1570  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4]
+        AI and VR in automotive design: a circular approach for efficient next
+  C1620  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4 I6]
+        AR-CITIZEN: AI-Powered AR Civic Engagement Platform
+  C1987  rr=exclude [E3]  Nikhil=include [I1 I2 I3 I4 I5 I6]
+        Modulated Reality (MoR) Using Depth Map From Generative AI
+
+  Where the criteria pull apart (rr vs Nikhil):
+       5x  E3  vs  I1 I2 I3 I4 I6
+       2x  I3 I4  vs  E3
+       2x  E1  vs  I1 I2 I3 I4 I6
+       2x  E3  vs  I1 I2 I3 I4 I5 I6
+       1x  I3 I2 I4 I5  vs  E3
+       1x  E4 E5  vs  I1 I2 I3 I4 I6
+       1x  E4  vs  I1 I2 I3 I4 I5 I6
+       1x  E3  vs  I1 I2 I3 I5
+       1x  E1 E4  vs  I1 I2 I3 I4 I6
+       1x  I4 I3  vs  E1 E3
+
+  A pair that keeps recurring is a boundary worth rewording before you
+  screen the rest of the corpus.
+
+  Settle these on the Resolve tab of screening_tool.html.
+
+================================================================
+Threshold: binary Cohen's kappa >= 0.80
+================================================================
+  0.816  [95% CI 0.737, 0.895]  PASS - reconcile on the Resolve tab, then go to Part 2.
+
