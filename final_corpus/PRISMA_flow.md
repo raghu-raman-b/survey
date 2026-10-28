@@ -4,6 +4,7 @@
 **Records identified:** 3,269  
 **Duplicates removed:** 1,006  
 **Records for screening:** 2,263 — [`final_corpus.ris`](final_corpus.ris)  
+**Screened:** 2,263 · **Excluded:** 1,383 · **Taken to full text:** 880
 
 ---
 
@@ -24,17 +25,17 @@ Vector version for the manuscript: [`prisma_flow_diagram.svg`](prisma_flow_diagr
                          ▼
   SCREENING
   ┌────────────────────────────────────────────┐        ┌──────────────────────────────────────────┐
-  │ Records screened            n = 2,263      │───────▶│ Records excluded            n =  ____    │
+  │ Records screened            n = 2,263      │───────▶│ Records excluded            n = 1,383    │
   └──────────────────────┬─────────────────────┘        └──────────────────────────────────────────┘
                          │
                          ▼
   ┌────────────────────────────────────────────┐        ┌──────────────────────────────────────────┐
-  │ Reports sought for retrieval  n =  ____    │───────▶│ Reports not retrieved       n = ____     │
+  │ Reports sought for retrieval  n =   880    │───────▶│ Reports not retrieved       n =    39    │
   └──────────────────────┬─────────────────────┘        └──────────────────────────────────────────┘
                          │
                          ▼
   ┌────────────────────────────────────────────┐        ┌──────────────────────────────────────────┐
-  │ Reports assessed for eligibility  n = ____ │        │ Reports excluded:                        │
+  │ Reports assessed for eligibility n =   841 │        │ Reports excluded:                        │
   │                                            │        │     Reason 1                n = ____     │
   │                                            │───────▶│     Reason 2                n = ____     │
   │                                            │        │     Reason 3                n = ____     │
@@ -43,11 +44,51 @@ Vector version for the manuscript: [`prisma_flow_diagram.svg`](prisma_flow_diagr
                          ▼
   INCLUDED
   ┌────────────────────────────────────────────┐
-  │ Studies included in review  n = ____       │
+  │ Studies included in review  n =  ____      │
   └────────────────────────────────────────────┘
 ```
 
-Boxes marked `n = ____` are filled in after title/abstract and full-text screening.
+**Provisional (dashed in the SVG):** from the retrieval tracker. Of the 73 papers marked not retrievable, 34 were noted as short papers, abstracts, demos or work in progress; PRISMA counts those as *assessed and excluded* (E1), so *not retrieved* is the other 39. A screener can still mark a paper as not retrieved during full-text screening, so both numbers are final only once `scripts/12_fulltext_combine.py` has run. Boxes marked `n = ____` are filled in then.
+
+### Retrieval (from the tracker)
+
+|                                                             | Reports |
+|-------------------------------------------------------------|---------|
+| Reports sought for retrieval                                | 880     |
+| Acquired                                                    | 807     |
+| Marked not retrievable                                      | 73      |
+|     of which: no access / not found                         | 16      |
+|     of which: not a full paper (short, abstract, demo, WiP) | 34      |
+|     of which: no note                                       | 23      |
+
+---
+
+## Screening
+
+|                            | Records |
+|----------------------------|---------|
+| Records screened           | 2,263   |
+| Excluded at title/abstract | 1,383   |
+| Taken forward to full text | 880     |
+
+### Why records were excluded, in the agreement sample
+
+Reason codes were recorded during the agreement phase only (0 records), not
+across the full corpus — PRISMA asks for exclusion reasons at full text, not at
+title/abstract. These figures characterise the criteria; they are not the breakdown of
+all 1,383 exclusions. A record can carry more than one code.
+
+| Code | Reason                             | Records in sample |
+|------|------------------------------------|-------------------|
+| `E3` | No learned model, or not essential | 14                |
+
+### By reviewer
+
+| Reviewer  | Screened | Included | Inclusion rate |
+|-----------|----------|----------|----------------|
+| Nikhil    | 1,020    | 483      | 47.4%          |
+| Raghu     | 1,017    | 316      | 31.1%          |
+| rr+Nikhil | 226      | 81       | 35.8%          |
 
 ---
 

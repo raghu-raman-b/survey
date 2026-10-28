@@ -1,32 +1,191 @@
 {
-  "version": 2,
+  "version": 3,
   "note": "Codes must stay in the form I<n> / E<n>. Labels are kept short (under ~36 characters) so they fit the PRISMA diagram box; the full wording is in 'description'. Both screeners must use the same file.",
   "include": [
-    { "code": "I1", "label": "Peer-reviewed full paper, English",
-      "description": "Peer-reviewed full paper articles, including journal papers, conference papers, books, and book chapters, published in English." },
-    { "code": "I2", "label": "Published 2018 – Sept 2026",
-      "description": "Research published between 2018 and September 2026, to ensure relevance to recent developments in generative AI and XR technology." },
-    { "code": "I3", "label": "Learned generative model in VR/AR/MR",
-      "description": "Research applying learned generative models, such as LLMs, GANs, and diffusion models, in VR, AR, or MR systems." },
-    { "code": "I4", "label": "Presents/applies generative XR",
-      "description": "Articles that present or apply a generative XR system or technique." },
-    { "code": "I5", "label": "Evaluates the generative XR system",
-      "description": "Studies that evaluate a generative XR system through user studies, technical metrics, benchmark comparisons, or expert evaluation." },
-    { "code": "I6", "label": "GenAI for content, interaction or UX",
-      "description": "The generative model generates XR content (e.g., assets, scenes, audio, motion), supports interaction (selection, manipulation, navigation, system control, or symbolic input), or shapes the user experience (e.g., personalization)." }
+    {
+      "code": "I1",
+      "label": "Peer-reviewed full paper, English",
+      "description": "Peer-reviewed full paper articles, including journal papers, conference papers, books, and book chapters, published in English."
+    },
+    {
+      "code": "I2",
+      "label": "Published 2018 – Sept 2026",
+      "description": "Research published between 2018 and September 2026, to ensure relevance to recent developments in generative AI and XR technology."
+    },
+    {
+      "code": "I3",
+      "label": "Learned generative model in VR/AR/MR",
+      "description": "Research applying learned generative models, such as LLMs, GANs, and diffusion models, in VR, AR, or MR systems."
+    },
+    {
+      "code": "I4",
+      "label": "Presents/applies generative XR",
+      "description": "Articles that present or apply a generative XR system or technique."
+    },
+    {
+      "code": "I5",
+      "label": "Evaluates the generative XR system",
+      "description": "Studies that evaluate a generative XR system through user studies, technical metrics, benchmark comparisons, or expert evaluation."
+    },
+    {
+      "code": "I6",
+      "label": "GenAI for content, interaction or UX",
+      "description": "The generative model generates XR content (e.g., assets, scenes, audio, motion), supports interaction (selection, manipulation, navigation, system control, or symbolic input), or shapes the user experience (e.g., personalization)."
+    }
   ],
   "exclude": [
-    { "code": "E1", "label": "Non-English, short paper or abstract",
-      "description": "Studies published in languages other than English, or short papers, posters, and extended abstracts." },
-    { "code": "E2", "label": "Published before 2018",
-      "description": "Studies published before 2018, to focus on the period when learned generative models became practical for XR." },
-    { "code": "E3", "label": "No learned model, or not essential",
-      "description": "Studies that do not use a learned generative model, where the model is not essential to the system, or where it is not used in an XR system." },
-    { "code": "E4", "label": "Conceptual, opinion or review",
-      "description": "Conceptual papers, opinion pieces, surveys, and reviews." },
-    { "code": "E5", "label": "No evaluation reported",
-      "description": "Papers that do not report any evaluation of the system." },
-    { "code": "E6", "label": "GenAI not for content/interaction/UX",
-      "description": "The generative model's role falls outside content generation, interaction, or user experience." }
-  ]
+    {
+      "code": "E1",
+      "label": "Non-English, short paper or abstract",
+      "description": "Studies published in languages other than English, or short papers, posters, and extended abstracts."
+    },
+    {
+      "code": "E2",
+      "label": "Published before 2018",
+      "description": "Studies published before 2018, to focus on the period when learned generative models became practical for XR."
+    },
+    {
+      "code": "E3",
+      "label": "No learned model, or not essential",
+      "description": "Studies that do not use a learned generative model, where the model is not essential to the system, or where it is not used in an XR system."
+    },
+    {
+      "code": "E4",
+      "label": "Conceptual, opinion or review",
+      "description": "Conceptual papers, opinion pieces, surveys, and reviews."
+    },
+    {
+      "code": "E5",
+      "label": "No evaluation reported",
+      "description": "Papers that do not report any evaluation of the system."
+    },
+    {
+      "code": "E6",
+      "label": "GenAI not for content/interaction/UX",
+      "description": "The generative model's role falls outside content generation, interaction, or user experience."
+    }
+  ],
+  "research_questions": [
+    {
+      "code": "RQ1",
+      "text": "What generative AI content-creation techniques are applied in XR?",
+      "look_for": "Method: what the model makes (3D assets, scenes, textures, audio, motion, dialogue) and how (text-to-3D, diffusion, LLM layout…)."
+    },
+    {
+      "code": "RQ2",
+      "text": "How are these content-creation techniques distributed across output types, model architectures, computational infrastructure, generation timing, and application domains?",
+      "look_for": "Method + system overview figure: output type, named model, cloud vs on-device, runtime vs offline generation, application domain."
+    },
+    {
+      "code": "RQ3",
+      "text": "What interaction techniques in XR involve generative AI?",
+      "look_for": "Interaction / system section: how the user triggers or steers generation (voice, natural language, gesture, sketch, gaze, agent)."
+    },
+    {
+      "code": "RQ4",
+      "text": "How do these interaction paradigms compare to those in non-generative XR systems?",
+      "look_for": "Study design: a baseline condition with conventional (non-generative) interaction."
+    },
+    {
+      "code": "RQ5",
+      "text": "What computational costs and benefits are reported for generative XR systems?",
+      "look_for": "Results / implementation: latency, generation time, FPS, GPU / memory, API cost, quality metrics."
+    },
+    {
+      "code": "RQ6",
+      "text": "How do these costs and benefits compare to prior non-generative approaches, such as procedural generation?",
+      "look_for": "Results: a comparison against procedural, manual or other non-generative pipelines."
+    },
+    {
+      "code": "RQ7",
+      "text": "How does generative AI affect user experience in XR compared to non-generative systems?",
+      "look_for": "User study: UX measures (presence, SUS, NASA-TLX, engagement, interviews), ideally against a non-generative condition."
+    }
+  ],
+  "fulltext_skim": {
+    "note": "One check at a time, cheapest and most decisive first. The first check a paper fails is its exclusion reason. About 2 minutes per paper. The RQ hints say what to notice while you are in that part of the paper; they are not extra criteria.",
+    "steps": [
+      {
+        "codes": [
+          "I1",
+          "E1"
+        ],
+        "title": "Format and language",
+        "secs": 10,
+        "where": "First page, page count, venue track",
+        "look": "English? A full paper, not a poster, demo, work-in-progress, extended abstract or short paper (about 4 pages or fewer, or an Adjunct / Abstracts / Posters track)."
+      },
+      {
+        "codes": [
+          "I2",
+          "E2"
+        ],
+        "title": "Publication date",
+        "secs": 0,
+        "where": "Metadata (filled in for you)",
+        "look": "Published 2018 to September 2026.",
+        "auto": {
+          "field": "year",
+          "min": 2018,
+          "max": 2026
+        }
+      },
+      {
+        "codes": [
+          "I5",
+          "E5"
+        ],
+        "title": "Evaluation",
+        "secs": 15,
+        "where": "Section headings, results tables and figures",
+        "look": "Is there a user study, technical metrics, benchmark comparison or expert evaluation? A demo, use case or 'future work' alone fails.",
+        "rqs": [
+          "RQ4",
+          "RQ5",
+          "RQ6",
+          "RQ7"
+        ]
+      },
+      {
+        "codes": [
+          "I4",
+          "E4"
+        ],
+        "title": "Kind of paper",
+        "secs": 15,
+        "where": "End of abstract, contribution list in the introduction",
+        "look": "Does it present or apply a system or technique? Surveys, reviews, position or vision papers and conceptual frameworks fail."
+      },
+      {
+        "codes": [
+          "I3",
+          "E3"
+        ],
+        "title": "Learned generative model",
+        "secs": 40,
+        "where": "Method / system overview figure",
+        "look": "Names a learned generative model (LLM, diffusion, GAN, VAE, text-to-3D, TTS…). Essential: remove it and the system no longer does its main job. Used in a VR/AR/MR system. Procedural or rule-based generation, or only discriminative ML (detection, classification, pose), fails.",
+        "rqs": [
+          "RQ1",
+          "RQ2"
+        ]
+      },
+      {
+        "codes": [
+          "I6",
+          "E6"
+        ],
+        "title": "Role of the model",
+        "secs": 15,
+        "where": "Same method pass: what the model outputs",
+        "look": "Its output is XR content, supports interaction (selection, manipulation, navigation, system control, symbolic input) or shapes the user experience. Training-data augmentation or offline analytics only fails.",
+        "rqs": [
+          "RQ1",
+          "RQ3",
+          "RQ7"
+        ]
+      }
+    ]
+  },
+  "research_questions_note": "Shown as hints under the full-text checks listed in fulltext_skim.steps[].rqs."
 }

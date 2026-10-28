@@ -192,5 +192,45 @@
  "missing_abstract": 3,
  "missing_year": 0,
  "run_date": "2026-09-28",
- "n_manual_merges": 7
+ "n_manual_merges": 7,
+ "screening": {
+  "screened": 2263,
+  "excluded": 1383,
+  "included": 880,
+  "exclusion_reasons": [
+   {
+    "code": "E3",
+    "label": "No learned model, or not essential",
+    "n": 14
+   }
+  ],
+  "uncoded_exclusions": 1369,
+  "by_reviewer": {
+   "rr+Nikhil": {
+    "screened": 226,
+    "included": 81
+   },
+   "Nikhil": {
+    "screened": 1020,
+    "included": 483
+   },
+   "Raghu": {
+    "screened": 1017,
+    "included": 316
+   }
+  },
+  "updated": "2026-10-20"
+ },
+ "retrieval": {
+  "sought": 880,
+  "not_retrieved": 39,
+  "preset_e1_retrieval_note": 34,
+  "preset_e1_short_pages": 8,
+  "acquired": 807,
+  "marked_not_retrievable": 73,
+  "not_full_paper": 34,
+  "no_access": 16,
+  "unexplained": 23,
+  "updated": "2026-10-25"
+ }
 }

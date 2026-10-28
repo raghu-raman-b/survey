@@ -1,0 +1,4 @@
+code,label,decision,records,share_of_decision
+E3,"No learned model, or not essential",exclude,14,1.0%
+I3,Learned generative model in VR/AR/MR,include,11,1.2%
+I1,"Peer-reviewed full paper, English",include,1,0.1%

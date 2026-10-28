@@ -16,6 +16,23 @@ SCRN = f"{SC['screened']:,}"  if SC else "____"
 SEXC = f"{SC['excluded']:,}"  if SC else "____"
 SINC = f"{SC['included']:,}"  if SC else "____"
 REASONS = (SC or {}).get('exclusion_reasons', [])
+# Retrieval and full text: 'fulltext' (from 12_fulltext_combine.py) once both screeners are done;
+# until then the retrieval tracker's own marks (from 11_fulltext_corpus.py), shown as provisional.
+RT = S.get('retrieval')
+FT = S.get('fulltext') if (S.get('fulltext') or {}).get('complete') else None
+if FT:
+    NRET, ASSESS, INCL = n(FT['not_retrieved']), n(FT['assessed']), n(FT['included'])
+elif RT:
+    _nr = RT.get('not_retrieved', RT['marked_not_retrievable'])
+    NRET, ASSESS, INCL = n(_nr), n(RT['sought'] - _nr), "____"
+else:
+    NRET = ASSESS = INCL = "____"
+FT_EXCL = n(FT['excluded']) if FT else "____"
+FT_REASONS = FT.get('reasons', []) if FT else []
+def excl_lines(fmt):
+    if FT_REASONS:
+        return [f"Reports excluded (n = {FT_EXCL}):"] + [fmt(r) for r in FT_REASONS]
+    return ["Reports excluded:"] + [fmt({'code': f'Reason {k}', 'label': '', 'n': None}) for k in (1, 2, 3)]
 RUN = S.get('run_date') or datetime.date.today().isoformat()
 PRETTY = datetime.date.fromisoformat(RUN).strftime('%d %B %Y')
 
@@ -65,21 +82,24 @@ arrow(BOXL_X + BOXL_W, y + 20, BOXR_X - 2, y + 20)
 prev = y + 40
 
 prev = max(prev, y + _eh)
-for left, right, rh in [([f"Reports sought for retrieval (n = {SINC})"], ["Reports not retrieved (n = ____)"], 40),
-                        (["Reports assessed for eligibility (n = ____)"],
-                         ["Reports excluded:", "    Reason 1 (n = ____)",
-                          "    Reason 2 (n = ____)", "    Reason 3 (n = ____)"], 92)]:
-    y = prev + 40
-    box(BOXL_X, y, BOXL_W, 40, left, dashed=(left[0].endswith("____)")))
-    box(BOXR_X, y, BOXR_W, rh, right, dashed=True)
+_svg_reason = lambda r: (f"    {r['code']}: {r['label']} (n = {n(r['n'])})" if r['n'] is not None
+                         else f"    {r['code']} (n = ____)")
+_ex = excl_lines(_svg_reason)
+space = prev                       # bottom of the taller box in the row above
+for left, right, rh, final in [
+        ([f"Reports sought for retrieval (n = {SINC})"], [f"Reports not retrieved (n = {NRET})"], 40, bool(FT)),
+        ([f"Reports assessed for eligibility (n = {ASSESS})"], _ex, 26 + 17 * len(_ex), bool(FT))]:
+    y = space + 40
+    box(BOXL_X, y, BOXL_W, 40, left, dashed=("____" in left[0] or (not final and "sought" not in left[0])))
+    box(BOXR_X, y, BOXR_W, rh, right, dashed=not final)
     arrow(BOXL_X + BOXL_W / 2, prev, BOXL_X + BOXL_W / 2, y - 2)
     arrow(BOXL_X + BOXL_W, y + 20, BOXR_X - 2, y + 20)
-    prev = y + 40
-bandbox(scr_top, prev - scr_top + 12, "Screening")
+    prev, space = y + 40, y + max(40, rh)
+bandbox(scr_top, space - scr_top + 12, "Screening")
 
-y = prev + 46
+y = space + 46
 bandbox(y - 10, 62, "Included")
-box(BOXL_X, y, BOXL_W, 40, ["Studies included in review (n = ____)"], dashed=True)
+box(BOXL_X, y, BOXL_W, 40, [f"Studies included in review (n = {INCL})"], dashed=not FT)
 arrow(BOXL_X + BOXL_W / 2, prev, BOXL_X + BOXL_W / 2, y - 2)
 H = y + 40 + 40
 
@@ -145,18 +165,48 @@ flow += conn() + ["  SCREENING"]
 flow += stage([f"Records screened            n = {n(UNIQ):>5}"],
               [f"Records excluded            n = {SEXC:>5}"])
 flow += conn()
-flow += stage([f"Reports sought for retrieval  n = {SINC:>5}"], ["Reports not retrieved       n = ____"])
+flow += stage([f"Reports sought for retrieval  n = {SINC:>5}"], [f"Reports not retrieved       n = {NRET:>5}"])
 flow += conn()
-flow += stage(["Reports assessed for eligibility  n = ____"],
-              ["Reports excluded:", "    Reason 1                n = ____",
-               "    Reason 2                n = ____", "    Reason 3                n = ____"])
+_md_reason = lambda r: (f"    {(r['code'] + ' ' + r['label'])[:26]:<26} n = {n(r['n']):>4}" if r['n'] is not None
+                        else f"    {r['code']:<23} n = ____")
+flow += stage([f"Reports assessed for eligibility n = {ASSESS:>5}"], excl_lines(_md_reason))
 flow += conn() + ["  INCLUDED"]
-flow += stage([f"Studies included in review  n = ____"], exit_down=False)
+flow += stage([f"Studies included in review  n = {INCL:>5}"], exit_down=False)
 A("```text")
 for ln in flow: A(ln.rstrip())
 A("```\n")
-A("Boxes marked `n = ____` are filled in after full-text screening.\n" if SC
-  else "Boxes marked `n = ____` are filled in after title/abstract and full-text screening.\n")
+if FT:
+    A("All boxes are final.\n")
+elif RT:
+    A(f"**Provisional (dashed in the SVG):** from the retrieval tracker. Of the "
+      f"{RT['marked_not_retrievable']} papers marked not retrievable, {RT['not_full_paper']} were noted as "
+      f"short papers, abstracts, demos or work in progress; PRISMA counts those as *assessed and excluded* "
+      f"(E1), so *not retrieved* is the other {NRET}. A screener can still mark a paper as not retrieved "
+      f"during full-text screening, so both numbers are final only once `scripts/12_fulltext_combine.py` "
+      f"has run. Boxes marked `n = ____` are filled in then.\n")
+else:
+    A("Boxes marked `n = ____` are filled in after full-text screening.\n" if SC
+      else "Boxes marked `n = ____` are filled in after title/abstract and full-text screening.\n")
+if RT and not FT:
+    A("### Retrieval (from the tracker)\n")
+    A(tbl([["Reports sought for retrieval", n(RT['sought'])],
+           ["Acquired", n(RT['acquired'])],
+           ["Marked not retrievable", n(RT['marked_not_retrievable'])],
+           ["    of which: no access / not found", n(RT['no_access'])],
+           ["    of which: not a full paper (short, abstract, demo, WiP)", n(RT['not_full_paper'])],
+           ["    of which: no note", n(RT['unexplained'])]], ['', 'Reports']))
+    A("")
+if FT:
+    A("### Full-text screening\n")
+    A(tbl([["Reports sought for retrieval", n(FT['sought'])],
+           ["Not retrieved", n(FT['not_retrieved'])],
+           ["Assessed for eligibility", n(FT['assessed'])],
+           ["Excluded", n(FT['excluded'])],
+           ["Included", n(FT['included'])]], ['', 'Reports']))
+    A("")
+    A("Each excluded report is counted once, under the first criterion it failed in the skim order.\n")
+    A(tbl([[f"`{r['code']}`", r['label'], n(r['n'])] for r in FT_REASONS], ['Code', 'Reason', 'Reports']))
+    A("")
 if SC:
     A("---\n")
     A("## Screening\n")

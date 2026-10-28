@@ -48,6 +48,34 @@ blocks on unsettled `maybe`s, contradictions between files, and records with no 
 at all. `--allow-partial` overrides only the last of those, for a mid-way build; don't use
 it on the final run.
 
+## Retrieval and full-text screening
+
+    python3 10_retrieval_sheet.py       # study_corpus/ -> retrieval/retrieval_tracker.xlsx (split in two)
+    python3 11_fulltext_corpus.py       # completed tracker -> fulltext/fulltext_corpus.json
+    python3 12_fulltext_combine.py      # fulltext/fulltext_<name>.json x2 -> PRISMA boxes
+
+`11_fulltext_corpus.py` reads `retrieval/retrieval_tracker_complete.xlsx` and writes the
+file both screeners load into `../../tools/fulltext_screening.html`. It pre-sets what is
+already known: papers marked not retrievable with a note like "Short Paper", "Abstract",
+"Demo" or "WiP" are excluded under E1, the rest of the not-retrievable ones are not
+retrieved (neither appears in the tool), and acquired papers of 4 pages or fewer are pre-set
+to E1 but stay visible under "Pre-set" so they can be overridden. It also records the
+retrieval counts in `prisma_stats.json`, so the diagram shows them (dashed, as provisional)
+until full-text screening is combined.
+
+In the tool each screener picks their name and sees only their own papers that need
+screening. Per paper: copy the title into Zotero → "Got it" starts the clock → one check
+at a time, in the order of `fulltext_skim` in `criteria.json`. The first failed check
+excludes the paper with that E code; passing every check includes it. The RQs appear as
+"also note" hints under the checks they belong to (`fulltext_skim.steps[].rqs`). Export
+`fulltext_<name>.json` into `fulltext/`.
+
+`12_fulltext_combine.py` fills in the presets for papers nobody decided, then blocks on papers decided by the wrong screener, conflicting
+decisions, exclusions with no reason, and undecided papers (`--allow-partial` writes an
+interim summary only and leaves the diagram alone). Each excluded report is counted once,
+under the check it failed. It writes `fulltext/fulltext_log.csv`,
+`included_studies.json/.csv/.ris` and `fulltext_summary.md`, then reruns `02_report.py`.
+
 ## Step numbering
 
 `04` was a threshold sweep used once to reconcile this corpus against another tool's

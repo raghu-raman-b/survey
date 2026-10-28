@@ -1,0 +1,1032 @@
+{
+ "tool": "screening-desk",
+ "schema": 1,
+ "kind": "resolution",
+ "reviewers": [
+  "rr",
+  "Nikhil"
+ ],
+ "resolved_at": "2026-10-04T15:43:51.123Z",
+ "records": [
+  {
+   "corpus_id": "C0371",
+   "title": "3D Model Design and Interactive Experience Optimization of Cultural Creativity Product Based on Virtual Reality Technology",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C1987",
+   "title": "Modulated Reality (MoR) Using Depth Map From Generative AI",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C1620",
+   "title": "AR-CITIZEN: AI-Powered AR Civic Engagement Platform",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0536",
+   "title": "Function-Adaptive Affordance Extraction from 3D Objects Using LLM for Interaction Authoring with Augmented Artifacts",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C1349",
+   "title": "Safety Assessment of 3D Generation Models in AR/VR Applications",
+   "votes": {
+    "rr": "include",
+    "Nikhil": "exclude"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0280",
+   "title": "Generative AI-Empowered Simulation for Autonomous Driving in Vehicular Mixed Reality Metaverses",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0933",
+   "title": "Context-Rich Interactions in Mixed Reality Through Edge AI Co-processing",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0264",
+   "title": "Evaluation of organic matter in sakesar and patala formations in Southern and Northern potwar basin, Pakistan",
+   "votes": {
+    "rr": "include",
+    "Nikhil": "exclude"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C1570",
+   "title": "AI and VR in automotive design: a circular approach for efficient next-generation development",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0764",
+   "title": "A Real-Time Method for Inserting Virtual Objects Into Neural Radiance Fields",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0279",
+   "title": "Generative AI-empowered Effective Physical-Virtual Synchronization in the Vehicular Metaverse",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0717",
+   "title": "Using artmaking generative AIs to support augmented reality learning designs with adobe aero app",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0275",
+   "title": "From Expanded Cinema to Extended Reality: How AI Can Expand and Extend Cinematic Experiences",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C1008",
+   "title": "Empathy in VR: Immersive Storytelling to Combat Loneliness and Amplify Marginalized Voices",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0212",
+   "title": "Towards an AI-driven talking avatar in virtual reality for investigative interviews of children",
+   "votes": {
+    "rr": "include",
+    "Nikhil": "exclude"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0499",
+   "title": "Enhancing Historical Understanding in School Students: Designing a VR Application with AI-Animated Characters",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C1519",
+   "title": "A Lightweight Image-Recognition WebAR Narrative System for Low-Barrier Digital Prototyping in Wellness-Oriented Cultural Tourism Parks",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "exclude",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C0950",
+   "title": "Cross-Format Retrieval-Augmented Generation in XR with LLMs for Context-Aware Maintenance Assistance",
+   "votes": {
+    "rr": "exclude",
+    "Nikhil": "include"
+   },
+   "final": "include",
+   "reason": ""
+  },
+  {
+   "corpus_id": "C1336",
+   "title": "Research on Sustainable Real-Time Adaptation and Interactive Design of Generative Visual Content in Immersive AR/VR Experiences",
+   "votes": {
+    "rr": "include",
+    "Nikhil": "exclude"
+   },
+   "final": "include",
+   "reason": ""
+  }
+ ],
+ "agreed": [
+  {
+   "corpus_id": "C0076",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1185",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1874",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2208",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2230",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1189",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0698",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0906",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0760",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0085",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0615",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0204",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1905",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1151",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2138",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1261",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0103",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1273",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0436",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2268",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1449",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1420",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0217",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2216",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1316",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1869",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1963",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1310",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2194",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0025",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0403",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0881",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2105",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1507",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0457",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1875",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0852",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1251",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0742",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0975",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0553",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2145",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0369",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1650",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2112",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0706",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1793",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0549",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1747",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2063",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1827",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0164",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0956",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0907",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2211",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2023",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2215",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1671",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1103",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0018",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0843",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0587",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1324",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0225",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0048",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1028",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1124",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0360",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0588",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0086",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1014",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0763",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1946",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0972",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2180",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0889",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2024",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1851",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1291",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0745",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2188",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1142",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1387",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1237",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0681",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0674",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1996",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0718",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0556",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0590",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1087",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0844",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1991",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1005",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0211",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0560",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0292",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1728",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1134",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0658",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0375",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0925",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0905",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0417",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1762",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0733",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1411",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0495",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2114",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2172",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0634",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1609",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0866",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1172",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1652",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0310",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0143",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1186",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1153",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2111",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1518",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2207",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0021",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1654",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1047",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1732",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0661",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0169",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0342",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1583",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0102",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1627",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1657",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0711",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0752",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0690",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2091",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1716",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0097",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0961",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1892",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1414",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0952",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1294",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1056",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1805",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0846",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1318",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2171",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1025",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1640",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1980",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0032",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1913",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0395",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1323",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0630",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0837",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1320",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0261",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2270",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1686",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1219",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0159",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1950",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0009",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0863",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1934",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0743",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0130",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0244",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0117",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1397",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1838",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1060",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2106",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0272",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0755",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0713",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0490",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2222",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2169",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1289",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1811",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0808",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1928",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0662",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1777",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0379",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1590",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1358",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1462",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2184",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0304",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1700",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1560",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1432",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2115",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C2181",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2141",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1962",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C0791",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1092",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C1340",
+   "final": "include"
+  },
+  {
+   "corpus_id": "C2068",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C0263",
+   "final": "exclude"
+  },
+  {
+   "corpus_id": "C1211",
+   "final": "include"
+  }
+ ]
+}
