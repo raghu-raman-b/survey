@@ -77,7 +77,9 @@ def system_prompt(c, crit):
         "",
         "RULES",
         "- Use only the provided text. Do not use outside knowledge of the paper, its authors or its venue.",
-        "- Give page references as [p.N]. Quotes are short (under 30 words) and copied exactly.",
+        "- Give page references as [p.N]. Quotes are short (under 30 words) and copied character for "
+        "character from the text, keeping its typos, missing letters and odd spacing. If you are "
+        "restating or shortening, it is not a quote: put it in the evidence text instead.",
         "- Name models exactly as written (e.g. \"GPT-4o\", \"Stable Diffusion XL\", \"Shap-E\").",
         "- The text is machine-extracted: words may be run together, tables flattened and parts cut "
         "(marked \"[… omitted …]\"). Mention extraction problems that limit what you can tell.",
@@ -162,14 +164,19 @@ def schema(c):
 # ---------------------------------------------------------------- API plumbing
 
 def api_key():
+    """OPENAI_API_KEY from the environment, else from final_corpus/.env or the repo's .env
+    (names OPENAI_API_KEY or OPEN-AI-KEY, spaces around '=' allowed)."""
     k = os.environ.get("OPENAI_API_KEY")
-    env = os.path.join(REPO, ".env")
-    if not k and os.path.exists(env):
+    for env in (os.path.join(ROOT, ".env"), os.path.join(REPO, ".env")):
+        if k or not os.path.exists(env):
+            continue
         for line in open(env):
-            if line.strip().startswith("OPENAI_API_KEY="):
-                k = line.split("=", 1)[1].strip().strip("\"'")
+            name, sep, val = line.partition("=")
+            if sep and name.strip() in ("OPENAI_API_KEY", "OPEN-AI-KEY"):
+                k = val.strip().strip("\"'")
+                break
     if not k:
-        sys.exit("No API key: set OPENAI_API_KEY or add OPENAI_API_KEY=... to the repo's .env")
+        sys.exit("No API key: set OPENAI_API_KEY, or put OPENAI_API_KEY=... in final_corpus/.env")
     return k
 
 def http(method, path, key, body=None, raw=None, ctype="application/json", tries=6):
@@ -242,8 +249,28 @@ def log_usage(paper_id, model, usage, batch):
                     (usage.get("input_tokens_details") or {}).get("cached_tokens", 0),
                     usage.get("output_tokens"), round(cost(usage, batch), 5)])
 
+def _qnorm(s, loose=False):
+    s = re.sub(r"[^a-z0-9]", "", s.lower().replace("ﬁ", "fi").replace("ﬂ", "fl"))
+    # loose: also ignore f/i/l, which PDF ligatures often drop ("flled" for "filled")
+    return re.sub(r"[fil]", "", s) if loose else s
+
+def verify_quotes(data, extract_md):
+    """Mark each quote verified: true if it is in the extracted text (ignoring spacing,
+    punctuation and lost ligatures), false if not. The panel flags the false ones."""
+    exact, loose = _qnorm(extract_md), _qnorm(extract_md, True)
+    groups = list(data.get("checks", {}).values()) + list(data.get("research_questions", {}).values())
+    bad = 0
+    for g in groups:
+        for q in g.get("quotes", []):
+            t = q.get("text", "")
+            q["verified"] = bool(t) and (_qnorm(t) in exact or _qnorm(t, True) in loose)
+            bad += not q["verified"]
+    return bad
+
 def save_summary(paper_id, model, text, usage, batch, save_as="summary.json"):
     data = json.loads(text)
+    md = open(os.path.join(EXTRACTS, paper_id, "extract.md"), encoding="utf-8").read()
+    data["_unverified_quotes"] = verify_quotes(data, md)
     data["_meta"] = {"model": model, "created": datetime.datetime.now().isoformat(timespec="seconds"),
                      "usage": usage, "mode": "batch" if batch else "sync"}
     json.dump(data, open(os.path.join(EXTRACTS, paper_id, save_as), "w", encoding="utf-8"),

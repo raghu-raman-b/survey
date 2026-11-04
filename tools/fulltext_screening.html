@@ -238,6 +238,8 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
 .bchk p{margin:0;font-size:13.2px;color:var(--ink-2);line-height:1.55}
 .bq{margin:6px 0 0;padding:3px 10px;border-left:3px solid var(--line-strong);font-family:var(--serif);font-size:13px;color:var(--ink-2);font-style:italic}
 .bq .pg{margin-left:6px}
+.bq .unv{font-family:var(--sans);font-style:normal;font-size:10.5px;color:var(--nr);background:var(--nr-soft);
+  border:1px solid var(--nr-line);border-radius:4px;padding:0 5px;margin-left:4px;white-space:nowrap}
 .bchk .gap{margin-top:7px;font-size:12.5px;color:var(--nr)}
 .bchk .gap b{font-weight:600}
 .rqrow{margin-top:12px}
@@ -883,7 +885,8 @@ async function briefData(id) {
 const pgLink = (n, label) => `<a class="pg" href="#" data-page="${parseInt(n, 10) || 1}" title="Open the PDF at this page">${label}</a>`;
 const pageRefs = t => esc(t || "").replace(/\[p\.\s?((\d+)(?:[–-]\d+)?)\]/g, (_, all, first) => pgLink(first, "p." + all));
 const quoteHtml = qs => (qs || []).map(q =>
-  `<blockquote class="bq">“${esc(q.text)}”${pgLink(q.page, "p." + esc(q.page))}</blockquote>`).join("");
+  `<blockquote class="bq">“${esc(q.text)}”${pgLink(q.page, "p." + esc(q.page))}${q.verified === false
+    ? ` <span class="unv" title="These words aren't found verbatim in the extracted text — check the page before relying on them">not verbatim</span>` : ""}</blockquote>`).join("");
 function hasPdf(id) { return B.files.has(`${B.prefix}${id}/paper.pdf`); }
 async function openPdf(page) {
   const r = curPaper();
