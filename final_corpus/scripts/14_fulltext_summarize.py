@@ -194,7 +194,7 @@ def http(method, path, key, body=None, raw=None, ctype="application/json", tries
                 time.sleep(min(60, 2 ** attempt * 3))
                 continue
             raise RuntimeError(f"HTTP {e.code}: {msg}")
-        except (urllib.error.URLError, TimeoutError) as e:
+        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:   # incl. connection resets
             if attempt < tries - 1:
                 time.sleep(5)
                 continue
