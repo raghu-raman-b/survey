@@ -21,3 +21,8 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# Full-text screening: local PDFs, the venv, and extracts (copyrighted paper text and figures)
+.venv/
+survey-papers/
+final_corpus/fulltext/extracts/

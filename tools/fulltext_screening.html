@@ -211,6 +211,49 @@ th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--fa
 tbody tr:last-child td{border-bottom:0}
 td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
 
+/* ---------- briefing panel ---------- */
+.screen-grid.with-brief{grid-template-columns:250px minmax(0,1fr) minmax(0,1.15fr)}
+.brief{border-left:1px solid var(--line);background:var(--surface);min-height:0;overflow:auto;display:none}
+.screen-grid.with-brief .brief{display:block}
+.brief-in{padding:18px 20px 48px;max-width:820px}
+.brief-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.brief-top h2{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:500;flex:1}
+.brief .lede{font-family:var(--serif);font-size:17px;line-height:1.42;margin:6px 0 6px;color:var(--ink)}
+.brief .ptype{font-size:12.8px;color:var(--muted);margin:0 0 12px;line-height:1.5}
+.brief details{border-top:1px solid var(--line);padding:10px 0 12px}
+.brief summary{cursor:pointer;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--faint);font-weight:500}
+.brief summary:hover{color:var(--ink-2)}
+.brief .fld{margin:10px 0 0}
+.brief .fld b,.rqrow>b{display:block;font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:2px}
+.brief .fld p,.brief .fld li,.rqrow p{margin:0;font-size:13.2px;color:var(--ink-2);line-height:1.55}
+.brief ul{margin:2px 0 0;padding-left:18px}
+.brief .pg{font-family:var(--mono);font-style:normal;font-size:10.5px;color:var(--accent);white-space:nowrap;text-decoration:none;
+  border-bottom:1px dotted var(--accent);cursor:pointer}
+.brief .pg:hover{color:var(--accent-ink);border-bottom-style:solid}
+.brief-top .tbtn{padding:4px 10px;font-size:12px}
+.bchk{border:1px solid var(--line);border-radius:9px;padding:10px 12px;margin-top:8px;transition:border-color .15s}
+.bchk.cur{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.bchk h4{margin:0 0 4px;font-size:13px;font-weight:600;display:flex;gap:8px;align-items:baseline}
+.bchk h4 .cc,.rqrow .rc{font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:500}
+.bchk p{margin:0;font-size:13.2px;color:var(--ink-2);line-height:1.55}
+.bq{margin:6px 0 0;padding:3px 10px;border-left:3px solid var(--line-strong);font-family:var(--serif);font-size:13px;color:var(--ink-2);font-style:italic}
+.bq .pg{margin-left:6px}
+.bchk .gap{margin-top:7px;font-size:12.5px;color:var(--nr)}
+.bchk .gap b{font-weight:600}
+.rqrow{margin-top:12px}
+.rqdl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:3px 12px;margin:4px 0 6px;font-size:12.8px}
+.rqdl dt{color:var(--faint);font-size:11.5px} .rqdl dd{margin:0;color:var(--ink-2)}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:8px}
+.fig{border:1px solid var(--line);border-radius:8px;background:var(--ground);padding:6px;cursor:zoom-in;text-align:left;font:inherit;color:inherit}
+.fig:hover{border-color:var(--accent)}
+.fig img{width:100%;height:110px;object-fit:contain;background:#fff;border-radius:4px;display:block}
+.fig span{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.fig span b{color:var(--ink-2)}
+.lightbox .box{max-width:min(1200px,96vw)}
+.lightbox img{max-width:100%;max-height:70vh;display:block;margin:0 auto;background:#fff;border-radius:4px}
+.sig{font-size:12.5px;color:var(--ink-2);margin:6px 0 0} .sig li{margin:3px 0}
+.sig .mono{font-size:11.5px;color:var(--muted)}
+
 /* ---------- modal & toast ---------- */
 .modal{position:fixed;inset:0;z-index:90;background:rgba(14,18,26,.55);display:flex;align-items:center;justify-content:center;padding:16px}
 .modal .box{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);max-width:660px;width:100%;max-height:86vh;display:flex;flex-direction:column;overflow:hidden}
@@ -225,8 +268,13 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
 .toast.bad{border-color:var(--exc-line);color:var(--exc)}
 .toast button{border:0;background:none;color:var(--accent);font-weight:600;cursor:pointer;padding:0}
 
+@media (max-width:1280px){
+  .screen-grid.with-brief{grid-template-columns:250px minmax(0,1fr)}
+  .screen-grid.with-brief .brief{display:none}
+  .screen-grid.with-brief .brief.show{display:block;position:fixed;right:0;top:54px;bottom:0;width:min(620px,100vw);z-index:35;box-shadow:var(--shadow)}
+}
 @media (max-width:1000px){
-  .screen-grid{grid-template-columns:minmax(0,1fr)}
+  .screen-grid,.screen-grid.with-brief{grid-template-columns:minmax(0,1fr)}
   .rail{display:none}
   .rail.show{display:flex;position:fixed;left:0;bottom:0;top:54px;width:300px;z-index:30;box-shadow:var(--shadow)}
 }
@@ -251,6 +299,7 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
     <div class="spacer"></div>
     <span class="whopill none" id="whoPill">no screener</span>
     <button class="iconbtn" id="railToggle" title="Toggle paper list">☰</button>
+    <button class="iconbtn" id="briefToggle" title="Show or hide the briefing (B)" hidden>Briefing</button>
     <button class="iconbtn" id="themeBtn" title="Switch theme">◐</button>
     <div class="prog">
       <div class="bar" id="bar"><i class="b-inc"></i><i class="b-exc"></i><i class="b-nr"></i></div>
@@ -295,8 +344,19 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
           <div id="whoInfo"><p class="note" style="margin:0">Load the corpus first.</p></div>
         </div>
 
+        <div class="panel" id="pBrief">
+          <h2><span class="stepbadge">4</span>Briefings <span style="font-weight:400;color:var(--faint)">optional</span></h2>
+          <p class="sub">The folder <code>final_corpus/fulltext/extracts</code>, made by <code>13_fulltext_extract.py</code> and
+            <code>14_fulltext_summarize.py</code>. The Screen tab then shows each paper's LLM briefing, its figures and the
+            format signals beside the checks. The briefing gives context only; every decision is yours.
+            Choose the folder again after reloading the page.</p>
+          <div class="drop" id="briefDrop" tabindex="0" role="button"><b>Choose the extracts folder</b>The browser asks you to confirm. Nothing is uploaded.</div>
+          <input type="file" id="briefFile" webkitdirectory multiple hidden>
+          <div id="briefInfo"></div>
+        </div>
+
         <div class="panel" id="pSession">
-          <h2><span class="stepbadge">4</span>Save and export</h2>
+          <h2><span class="stepbadge">5</span>Save and export</h2>
           <p class="sub">Decisions are kept in this browser only. Export when you stop for the day too, so a cleared browser can't lose your work. To continue on another browser, import your last export.</p>
           <div class="row">
             <button class="btn primary" id="exportJson">Export decisions (JSON)</button>
@@ -321,6 +381,7 @@ td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabu
           <div class="rail-list" id="railList"></div>
         </aside>
         <div class="center" id="center"><div class="center-in" id="centerIn"></div></div>
+        <aside class="brief" id="brief" aria-label="Briefing"><div class="brief-in" id="briefIn"></div></aside>
       </div>
     </section>
 
@@ -503,6 +564,9 @@ function renderSetup() {
     const rn = $("#revName");
     if (rn) rn.oninput = () => { S.reviewer = rn.value.trim() || S.screener; store.set(`ftd:name:${S.screener}`, S.reviewer); };
   }
+  $("#pBrief").classList.toggle("done", B.ids.size > 0);
+  $("#briefInfo").innerHTML = B.ids.size ? `<div class="loaded"><span class="ok">✓</span>
+      <span class="mono">${esc(B.folder)}</span> · ${B.ids.size} extracts · ${B.withSummary} with an LLM briefing</div>` : "";
   $$("#pSession .btn").forEach(b => b.disabled = !S.screener);
   const c = counts();
   $("#sessionNote").innerHTML = !S.screener ? "Pick who is screening first."
@@ -592,8 +656,9 @@ function renderPaper() {
   let card = "";
   if (mode === "find") {
     card = `<section class="card">
-      <div class="cardhead"><span class="sn">Start</span><h2>Find it in Zotero</h2></div>
-      <p>Paste the title into Zotero's search and open the PDF. The clock starts when you press <b>Got it</b>.</p>
+      <div class="cardhead"><span class="sn">Start</span><h2>${hasPdf(r.id) ? "Open the paper" : "Find it in Zotero"}</h2></div>
+      <p>${hasPdf(r.id) ? "The briefing is beside this card; <b>P</b> opens the PDF, and every page reference in the briefing opens it at that page."
+        : "Paste the title into Zotero's search and open the PDF."} The clock starts when you press <b>Got it</b>.</p>
       <div class="bigacts">
         <button class="big go" id="goBtn">Got it — start <kbd>Enter</kbd></button>
         <button class="big nr" id="nrBtn">Can't get it <kbd>R</kbd></button>
@@ -635,7 +700,8 @@ function renderPaper() {
       </div></section>`;
   }
   $("#centerIn").innerHTML = head + card +
-    `<p class="keys">${mode === "screen" ? "<kbd>Y</kbd> meets · <kbd>N</kbd> fails · <kbd>U</kbd> undo · " : ""}<kbd>←</kbd> <kbd>→</kbd> move · <kbd>/</kbd> search</p>`;
+    `<p class="keys">${mode === "screen" ? "<kbd>Y</kbd> meets · <kbd>N</kbd> fails · <kbd>U</kbd> undo · " : ""}<kbd>←</kbd> <kbd>→</kbd> move · <kbd>/</kbd> search${B.ids.size ? " · <kbd>B</kbd> briefing" : ""}</p>`;
+  renderBrief();
   $("#copyBtn").onclick = () => copyTitle(r);
   if (mode === "find") { $("#goBtn").onclick = start; $("#nrBtn").onclick = () => finish("not_retrieved"); }
   if (mode === "screen") {
@@ -774,6 +840,185 @@ function renderSummary() {
     </div>`;
 }
 
+/* ============================ briefings ============================ */
+// Files from the extracts folder, kept in memory only. Paths are as the browser gives them,
+// e.g. "extracts/C0001/summary.json"; `prefix` is whatever comes before "<ID>/".
+const B = { files: new Map(), prefix: "", folder: "", ids: new Set(), withSummary: 0,
+            cache: new Map(), urls: [], shownFor: "", manifest: null, collapsed: false };
+const narrow = () => matchMedia("(max-width:1280px)").matches;
+
+function setBriefFolder(fileList) {
+  const files = [...fileList];
+  if (!files.length) return;
+  B.files = new Map(); B.cache = new Map(); B.ids = new Set(); B.shownFor = ""; B.manifest = null; B.prefix = "";
+  files.forEach(f => {
+    const p = f.webkitRelativePath || f.name;
+    B.files.set(p, f);
+    const m = p.match(/^(.*?)([^/]+)\/meta\.json$/);
+    if (m) { B.ids.add(m[2]); B.prefix = m[1]; }
+  });
+  if (!B.ids.size) { B.files = new Map(); renderAll(); return toast("No extracts in that folder — choose final_corpus/fulltext/extracts.", true); }
+  B.folder = (files[0].webkitRelativePath || "").split("/")[0];
+  B.withSummary = [...B.ids].filter(id => B.files.has(`${B.prefix}${id}/summary.json`)).length;
+  const mf = B.files.get(`${B.prefix}manifest.json`);
+  if (mf) mf.text().then(t => {
+    try { B.manifest = new Map(JSON.parse(t).papers.map(p => [p.id, p])); } catch { /* ignore */ }
+    B.shownFor = ""; renderBrief();
+  });
+  toast(`Briefings: ${B.ids.size} extracts, ${B.withSummary} with an LLM briefing.`);
+  renderAll();
+}
+async function briefData(id) {
+  if (B.cache.has(id)) return B.cache.get(id);
+  const read = async p => {
+    const f = B.files.get(B.prefix + p);
+    if (!f) return null;
+    try { return JSON.parse(await f.text()); } catch { return { _bad: true }; }
+  };
+  const d = { meta: await read(`${id}/meta.json`), sum: await read(`${id}/summary.json`) };
+  B.cache.set(id, d);
+  return d;
+}
+// page refs open the paper's PDF at that page (see openPdf)
+const pgLink = (n, label) => `<a class="pg" href="#" data-page="${parseInt(n, 10) || 1}" title="Open the PDF at this page">${label}</a>`;
+const pageRefs = t => esc(t || "").replace(/\[p\.\s?((\d+)(?:[–-]\d+)?)\]/g, (_, all, first) => pgLink(first, "p." + all));
+const quoteHtml = qs => (qs || []).map(q =>
+  `<blockquote class="bq">“${esc(q.text)}”${pgLink(q.page, "p." + esc(q.page))}</blockquote>`).join("");
+function hasPdf(id) { return B.files.has(`${B.prefix}${id}/paper.pdf`); }
+async function openPdf(page) {
+  const r = curPaper();
+  if (!r || !hasPdf(r.id)) return toast("No PDF for this paper in the extracts folder.", true);
+  const m = (await briefData(r.id)).meta || {};
+  const local = Math.max(1, (parseInt(page, 10) || 1 + (m.page_offset || 0)) - (m.page_offset || 0));
+  // a fresh URL each time, so the PDF tab reloads and jumps to the page
+  const url = URL.createObjectURL(B.files.get(`${B.prefix}${r.id}/paper.pdf`));
+  setTimeout(() => URL.revokeObjectURL(url), 120000);
+  const w = window.open(`${url}#page=${local}`, "ftd-pdf");
+  if (!w) toast("The browser blocked the PDF tab — allow pop-ups for this page.", true);
+}
+const fld = (label, inner) => inner ? `<div class="fld"><b>${label}</b>${inner}</div>` : "";
+
+function briefHtml(r, d) {
+  const m = d.meta, s = d.sum && !d.sum._bad ? d.sum : null;
+  if (!m) {
+    const mf = B.manifest?.get(r.id);
+    const why = mf ? (mf.flags || []).join("; ") || mf.status : "This paper isn't in the extracts folder.";
+    return `<div class="brief-top"><h2>Briefing</h2></div>
+      <div class="empty"><b>No extract for this paper</b>${esc(why)}</div>`;
+  }
+  const flags = (m.flags || []).filter(f => !/^trimmed/.test(f));
+  let h = `<div class="brief-top"><h2>Briefing</h2>${s?._meta?.model ? `<span class="pill">${esc(s._meta.model)}</span>` : ""}
+      ${hasPdf(r.id) ? `<button class="tbtn copy" data-page="${(m.page_offset || 0) + 1}">Open PDF <kbd>P</kbd></button>` : ""}</div>
+    <div class="crumbs">
+      <span class="pill" title="${esc(m.pdf)}">${esc(m.pdf.length > 34 ? m.pdf.slice(0, 31) + "…" : m.pdf)}</span>
+      <span class="pill">${m.page_count} p${m.volume_pages ? ` · pp. ${m.pdf_pages[0]}–${m.pdf_pages[1]} of volume` : ""}</span>
+      ${flags.map(f => `<span class="pill warn">${esc(f)}</span>`).join("")}
+    </div>`;
+  if (d.sum?._bad) h += `<div class="banner">This paper's summary.json couldn't be read. Re-run the summariser with <code>--only ${esc(r.id)} --redo</code>.</div>`;
+  else if (!s) h += `<div class="banner">No LLM briefing for this paper yet. Run <code>14_fulltext_summarize.py</code>, then choose the folder again.
+      The figures and format signals below come straight from the PDF.</div>`;
+  else {
+    const rq2 = s.research_questions?.RQ2;
+    h += `<p class="lede">${pageRefs(s.one_line)}</p><p class="ptype">${pageRefs(s.paper_type)}</p>
+      <details open><summary>What the paper does</summary>
+        ${fld("Aim", `<p>${pageRefs(s.aim)}</p>`)}
+        ${fld("Contributions", s.contributions?.length ? `<ul>${s.contributions.map(c => `<li>${pageRefs(c)}</li>`).join("")}</ul>` : "")}
+        ${fld("How it works", `<p>${pageRefs(s.how_it_works)}</p>`)}
+        ${fld("Evaluation", `<p>${pageRefs(s.evaluation_summary)}</p>`)}
+      </details>
+      <details open><summary>Evidence for each check</summary>
+        ${S.steps.map(st => {
+          const c = s.checks?.[slug(st.title)];
+          if (!c) return "";
+          return `<div class="bchk" data-step="${esc(st.key)}">
+            <h4><span class="cc">${esc(st.i.code)}/${esc(st.e.code)}</span>${esc(st.title)}</h4>
+            <p>${pageRefs(c.evidence)}</p>${quoteHtml(c.quotes)}
+            ${c.gaps ? `<p class="gap"><b>Unclear:</b> ${pageRefs(c.gaps)}</p>` : ""}</div>`;
+        }).join("")}
+      </details>
+      <details open><summary>Research questions</summary>
+        ${[...S.rqs.values()].map(q => {
+          const v = s.research_questions?.[q.code];
+          if (!v) return "";
+          const dl = q.code === "RQ2" && rq2 ? `<dl class="rqdl">${[["Output", rq2.output_type], ["Models", rq2.models],
+              ["Runs on", rq2.infrastructure], ["Timing", rq2.timing], ["Domain", rq2.domain], ["XR", rq2.xr_platform]]
+              .map(([k, x]) => `<dt>${k}</dt><dd>${pageRefs(x)}</dd>`).join("")}</dl>` : "";
+          return `<div class="rqrow"><b><span class="rc">${esc(q.code)}</span> ${esc(q.text)}</b>${dl}
+            <p>${pageRefs(v.notes)}</p>${quoteHtml(v.quotes)}</div>`;
+        }).join("")}
+      </details>`;
+  }
+  const figs = (m.figures || []).filter(f => f.file && B.files.has(`${B.prefix}${r.id}/${f.file}`));
+  h += `<details open><summary>Figures (${figs.length})</summary>
+      ${s?.figures_to_look_at ? `<p class="note" style="margin-top:6px">${pageRefs(s.figures_to_look_at)}</p>` : ""}
+      ${figs.length ? `<div class="figs">${figs.map((f, i) => {
+        const u = URL.createObjectURL(B.files.get(`${B.prefix}${r.id}/${f.file}`));
+        B.urls.push(u); f._url = u;
+        const cap = String(f.caption || "").replace(/^(fig\.?|figure)\s*\d+\s*[.:|]?\s*/i, "");
+        return `<button class="fig" data-fig="${i}"><img src="${u}" alt="${esc(f.label)}" loading="lazy">
+          <span><b>${esc(f.label)}</b> · p.${esc(f.page)} — ${esc(cap)}</span></button>`;
+      }).join("")}</div>` : `<p class="note">No figures found in the PDF.</p>`}
+    </details>
+    <details ${s ? "" : "open"}><summary>Format signals from the PDF</summary>
+      <ul class="sig">
+        <li>${m.page_count} pages${m.volume_pages ? ` — PDF pp. ${m.pdf_pages[0]}–${m.pdf_pages[1]} of a ${m.volume_pages}-page proceedings volume` : ""}</li>
+        <li>Track or venue words: ${esc((m.track_words || []).join(", ") || "none")}</li>
+        <li>English check: stopword ratio ${esc(m.english_ratio)}${m.english_ratio < 0.08 ? " — may not be English" : ""}</li>
+        ${(m.header_footer || []).map(x => `<li class="mono">${esc(x)}</li>`).join("")}
+        <li>Sections: ${(m.sections || []).filter(x => /^(\d+|[IVX]+)?$/.test(x.num)).map(x =>
+          `<span style="${x.kept ? "" : "text-decoration:line-through;color:var(--faint)"}">${esc((x.num ? x.num + " " : "") + x.title)}</span>`).join(" · ") || "none detected"}</li>
+      </ul>
+    </details>
+    ${s?.extraction_issues ? `<div class="banner">Extraction: ${pageRefs(s.extraction_issues)}</div>` : ""}`;
+  B._figs = figs;
+  return h;
+}
+function markCurCheck() {
+  const r = curPaper(), w = r && S.drafts.get(r.id), st = w && curStep(w);
+  $$("#briefIn .bchk").forEach(el => {
+    const on = !!st && el.dataset.step === st.key;
+    if (on && !el.classList.contains("cur")) el.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    el.classList.toggle("cur", on);
+  });
+}
+async function renderBrief(force) {
+  const on = B.ids.size > 0;
+  $(".screen-grid").classList.toggle("with-brief", on && !B.collapsed);
+  $("#briefToggle").hidden = !on;
+  if (!on) return;
+  const r = curPaper();
+  if (!r) { $("#briefIn").innerHTML = ""; B.shownFor = ""; return; }
+  if (!force && B.shownFor === r.id) return markCurCheck();
+  B.shownFor = r.id;
+  const d = await briefData(r.id);
+  if (curPaper()?.id !== r.id) return;                  // moved on while the files were read
+  B.urls.forEach(u => URL.revokeObjectURL(u)); B.urls = [];
+  $("#briefIn").innerHTML = briefHtml(r, d);
+  $$("#briefIn .fig").forEach(b => b.onclick = () => showFigure(B._figs[+b.dataset.fig]));
+  $$("#briefIn [data-page]").forEach(a => a.onclick = e => { e.preventDefault(); openPdf(a.dataset.page); });
+  $("#brief").scrollTop = 0;
+  markCurCheck();
+}
+function toggleBrief() {
+  if (!B.ids.size) return;
+  if (narrow()) $("#brief").classList.toggle("show");
+  else { B.collapsed = !B.collapsed; renderBrief(true); }
+}
+function showFigure(f) {
+  if (!f) return;
+  const wrap = document.createElement("div");
+  wrap.className = "modal lightbox";
+  wrap.innerHTML = `<div class="box" role="dialog" aria-modal="true" aria-label="${esc(f.label)}">
+    <header><h3>${esc(f.label)} · p.${esc(f.page)}</h3><button class="iconbtn" data-x>✕</button></header>
+    <div class="body"><img src="${f._url}" alt="${esc(f.label)}"><p class="note">${esc(f.caption)}</p></div></div>`;
+  document.body.appendChild(wrap);
+  const close = () => { wrap.remove(); document.removeEventListener("keydown", onKey, true); };
+  const onKey = e => { if (e.key === "Escape") { e.stopPropagation(); close(); } };
+  document.addEventListener("keydown", onKey, true);
+  wrap.querySelector("[data-x]").onclick = close;
+  wrap.onclick = e => { if (e.target === wrap) close(); };
+}
+
 /* ============================ export / import ============================ */
 function payload() {
   return {
@@ -894,6 +1139,10 @@ $("#clearBtn").onclick = () => {
 };
 $("#railSearch").oninput = e => { S.query = e.target.value; renderRail(); };
 $("#railToggle").onclick = () => $("#rail").classList.toggle("show");
+$("#briefToggle").onclick = toggleBrief;
+$("#briefDrop").onclick = () => $("#briefFile").click();
+$("#briefDrop").onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("#briefFile").click(); } };
+$("#briefFile").onchange = () => { setBriefFolder($("#briefFile").files); $("#briefFile").value = ""; };
 const THEMES = ["system", "light", "dark"];
 function applyTheme(t) { if (t === "system") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", t); }
 $("#themeBtn").onclick = () => {
@@ -917,6 +1166,8 @@ document.addEventListener("keydown", e => {
   else if (e.key === "ArrowRight") go(1);
   else if (e.key === "ArrowLeft") go(-1);
   else if (k === "/") { $("#rail").classList.add("show"); $("#railSearch").focus(); }
+  else if (k === "b" && B.ids.size) toggleBrief();
+  else if (k === "p" && hasPdf(r.id)) openPdf();
   else return;
   e.preventDefault();
 });

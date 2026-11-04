@@ -76,6 +76,43 @@ interim summary only and leaves the diagram alone). Each excluded report is coun
 under the check it failed. It writes `fulltext/fulltext_log.csv`,
 `included_studies.json/.csv/.ris` and `fulltext_summary.md`, then reruns `02_report.py`.
 
+## LLM briefings for full-text screening (optional)
+
+Run from the repo root. Step 13 needs PyMuPDF, which is in the repo's `.venv`
+(`python3 -m venv .venv && .venv/bin/pip install pymupdf`); step 14 is standard library.
+
+    .venv/bin/python final_corpus/scripts/13_fulltext_extract.py       # PDFs -> fulltext/extracts/<ID>/
+    python3 final_corpus/scripts/14_fulltext_summarize.py prepare      # prompt + cost estimate, no API calls
+    python3 final_corpus/scripts/14_fulltext_summarize.py run --limit 5
+    python3 final_corpus/scripts/14_fulltext_summarize.py batch-submit # or `run` for all, at full price
+    python3 final_corpus/scripts/14_fulltext_summarize.py batch-collect
+
+`13_fulltext_extract.py` matches each PDF in `survey-papers/` to a record (DOI in the file
+name, DOI in the PDF, then title), cuts papers out of whole Springer proceedings volumes,
+and writes per paper: `extract.md` (record metadata, format signals such as page count,
+headers/footers and track words, the section outline, figure and table captions, and the
+text without related work, references or appendices, with ⟨p.N⟩ page markers),
+`meta.json`, `figures/*.jpg` (each figure cropped from the page) and `paper.pdf` (a hard
+link to the PDF, or just the paper's pages when it sits in a proceedings volume;
+`--pdfs-only` adds these to existing extracts). `manifest.json` and
+`match_report.csv` list what was matched, skipped or flagged. `ref.rtf` is used as a cross-check.
+
+`14_fulltext_summarize.py` sends each extract to the OpenAI Responses API (default model
+`gpt-6-luna`, key from `OPENAI_API_KEY` or `.env`) with instructions built from
+`criteria.json`, and saves `summary.json` next to the extract. The briefing follows the
+`fulltext_skim` checks in order, then RQ1–RQ7. For each it reports what the paper says, with
+page references and short quotes, and what is unclear. **It never gives a verdict**: the
+screener decides. The exact instructions are saved as `prompt_system.txt` for the methods
+section; every call's tokens and cost go to `usage_log.csv`. `--budget 5` stops before the
+total in that log passes $5. `--model gpt-6.1-terra --save-as summary_terra.json` writes a
+second briefing beside the first, for comparing models without replacing what the panel shows.
+
+In the tool, Setup → **Briefings** → choose `final_corpus/fulltext/extracts`. The Screen tab
+then shows the briefing, figures and format signals in a third column (or a drawer on
+narrower screens; **B** toggles it), with the evidence for the current check highlighted.
+**P** opens the paper's PDF in a tab, and every page reference in the briefing opens it at that page.
+The `extracts/` folder holds copyrighted paper text and figures, so git ignores it.
+
 ## Step numbering
 
 `04` was a threshold sweep used once to reconcile this corpus against another tool's
