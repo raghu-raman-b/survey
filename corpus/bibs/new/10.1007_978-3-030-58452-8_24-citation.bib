@@ -1,0 +1,21 @@
+@InProceedings{10.1007/978-3-030-58452-8_24,
+author="Mildenhall, Ben
+and Srinivasan, Pratul P.
+and Tancik, Matthew
+and Barron, Jonathan T.
+and Ramamoorthi, Ravi
+and Ng, Ren",
+editor="Vedaldi, Andrea
+and Bischof, Horst
+and Brox, Thomas
+and Frahm, Jan-Michael",
+title="NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis",
+booktitle="Computer Vision -- ECCV 2020",
+year="2020",
+publisher="Springer International Publishing",
+address="Cham",
+pages="405--421",
+abstract="We present a method that achieves state-of-the-art results for synthesizing novel views of complex scenes by optimizing an underlying continuous volumetric scene function using a sparse set of input views. Our algorithm represents a scene using a fully-connected (non-convolutional) deep network, whose input is a single continuous 5D coordinate (spatial location (x, y, z) and viewing direction {\$}{\$}({\backslash}theta ,{\backslash}phi ){\$}{\$}) and whose output is the volume density and view-dependent emitted radiance at that spatial location. We synthesize views by querying 5D coordinates along camera rays and use classic volume rendering techniques to project the output colors and densities into an image. Because volume rendering is naturally differentiable, the only input required to optimize our representation is a set of images with known camera poses. We describe how to effectively optimize neural radiance fields to render photorealistic novel views of scenes with complicated geometry and appearance, and demonstrate results that outperform prior work on neural rendering and view synthesis. View synthesis results are best viewed as videos, so we urge readers to view our supplementary video for  convincing comparisons.",
+isbn="978-3-030-58452-8"
+}
+
