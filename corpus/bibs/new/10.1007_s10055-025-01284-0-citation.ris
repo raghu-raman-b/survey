@@ -1,0 +1,17 @@
+TY  - JOUR
+AU  - Spiegler, Pascal
+AU  - Harirpoush, Arash
+AU  - Xiao, Yiming
+PY  - 2025
+DA  - 2025/12/25
+TI  - Towards user-centered interactive medical image segmentation in VR with an assistive AI agent
+JO  - Virtual Reality
+SP  - 20
+VL  - 30
+IS  - 1
+AB  - Crucial in disease analysis and surgical planning, manual segmentation of volumetric medical scans (e.g. MRI, CT) is laborious, error-prone, and challenging to master, while fully automatic algorithms can benefit from user feedback. Therefore, with the complementary power of the latest radiological AI foundation models and virtual reality (VR)’s intuitive data interaction, we propose SAMIRA, a novel conversational AI agent for medical VR that assists users with localizing, segmenting, and visualizing 3D medical concepts. Through speech-based interaction, the agent helps users understand radiological features, locate clinical targets, and generate segmentation masks that can be refined with just a few point prompts. The system also supports true-to-scale 3D visualization of segmented pathology to enhance patient-specific anatomical understanding. Furthermore, to determine the optimal interaction paradigm under near-far attention-switching for refining segmentation masks in an immersive, human-in-the-loop workflow, we compare VR controller pointing, head pointing, and eye tracking as input modes. With a user study, evaluations demonstrated a high usability score (SUS = 90.0 ± 9.0), low overall task load, as well as strong support for the proposed VR system’s guidance, training potential, and integration of AI in radiological segmentation tasks.
+SN  - 1434-9957
+UR  - https://doi.org/10.1007/s10055-025-01284-0
+DO  - 10.1007/s10055-025-01284-0
+ID  - Spiegler2025
+ER  - 

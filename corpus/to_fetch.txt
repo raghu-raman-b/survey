@@ -1,134 +1,61 @@
-Open issues in references.bib (ACM CSUR format), checked 2026-11-16
-Numbers are references.bib entry numbers; keys are ref_references.bib keys.
-Coverage is complete: both files have the same 309 entries and every first author agrees.
+Citation check of references.bib (ACM CSUR format), 2026-11-17
 ================================================================================
+What was checked: all 294 entries that have a DOI were compared with the publisher's Crossref
+record for title, every author (count, order, surname and given name), year, volume, issue
+and pages. Apart from the items below, all 294 agree.
+The 15 entries without a DOI were built from your exports and cannot be checked this way;
+they are listed in section 3.
 
 
-1. INCOMPLETE ENTRIES: only author + title (no year, venue, pages or DOI). Fetch these.
+1. STILL TO FETCH (2): no export yet; entry is incomplete
 --------------------------------------------------------------------------------
+[9]   10.7148/2026-0852
+      Armalis et al. Integrating VR and LLMs for Immersive Medical Training: Anaphylactic Shock
+      Simulation (ECMS 2026). references.bib lists 1 author; the bib has 5.
+      https://doi.org/10.7148/2026-0852
 
-[9]   armalis2026integrating
-      Title: Integrating VR and LLMs for Immersive Medical Training: Anaphylactic Shock Simulation
-      Venue: ECMS 2026 (European Council for Modelling and Simulation), pp. 852-858
-      DOI:   10.7148/2026-0852
-      Link:  https://doi.org/10.7148/2026-0852
-      Note:  references.bib lists only Armalis; bib has 5 authors.
-
-[22]  cante2025augmented
-      Title: Augmented Narratives: A Data-Driven Platform for Interactive Storytelling Based on Artificial
-             Intelligence and Knowledge Representation Techniques
-      Venue: CEUR Workshop Proceedings, Vol. 4152 (2025)
-      DOI:   (none)
-      Link:  https://www.scopus.com/pages/publications/105037329808?origin=resultslist
-
-[132] kingma2014
-      Title: Auto-Encoding Variational Bayes
-      Venue: ICLR 2014
-      DOI:   (none; arXiv 1312.6114)
-      Link:  https://arxiv.org/abs/1312.6114
-
-[169] lorenzoni2025virtual
-      Title: Virtual Reality and Conversational Agents for Cultural Heritage Engagement
-      Venue: International Conference 'The Future of Education' (2025)
-      DOI:   (none)
-      Link:  https://www.scopus.com/pages/publications/105029555144?origin=resultslist
-      Note:  last author shows as "Gianni Viardo"; bib has surname "Viardo Vercelli".
-
-[188] mohapatra2025educational
-      Title: Educational Games Promoting Folk Culture Through Artificial Intelligence
-      Venue: ShodhKosh: Journal of Visual and Performing Arts 6, 1s (2025), 160-170
-      DOI:   10.29121/shodhkosh.v6.i1s.2025.6644
-      Link:  https://doi.org/10.29121/shodhkosh.v6.i1s.2025.6644
-      Note:  author names include "Dr" and the title is ALL CAPS in both files.
-
-[309] zhu2024mixed
-      Title: A Mixed Reality Design System for Interior Renovation: Inpainting with 360-Degree Live
-             Streaming and Generative Adversarial Networks after Removal
-      Venue: Technologies 12, 1 (2024)
-      DOI:   10.3390/technologies12010009
-      Link:  https://doi.org/10.3390/technologies12010009
+[300] 10.1145/3706598.3714157
+      Zhao et al. Reviving Mural Art through Generative AI: A Comparative Study of AI-Generated and
+      Hand-Crafted Recreations (CHI 2025). references.bib lists 1 author; the bib has 6.
+      https://doi.org/10.1145/3706598.3714157
 
 
-2. NO VENUE: entry ends in just "(2025)". Fetch these.
+2. PUBLISHER RECORDS DISAGREE (1): check the paper's first page
 --------------------------------------------------------------------------------
-
-[257] wang2025art
-      Title: Art as a Medium for Fluoride Awareness: an Artificial Intelligence Visual Approach for Public
-             Health Education
-      Venue: Fluoride 58, 15 (2025)
-      DOI:   (none)
-      Link:  https://www.scopus.com/pages/publications/105006851421?origin=resultslist
-
-[300] zhao2025reviving
-      Title: Reviving Mural Art through Generative AI: A Comparative Study of AI-Generated and
-             Hand-Crafted Recreations
-      Venue: CHI 2025
-      DOI:   10.1145/3706598.3714157
-      Link:  https://doi.org/10.1145/3706598.3714157
-      Note:  references.bib lists only "Shuo Zhao"; bib has 6 authors (Zhao, Huang, He, Tong, Li, Wu).
+[287] 10.1117/12.2305151
+      Occluded object reconstruction for first responders with augmented reality glasses...
+      SPIE's citation export:   Kyongsik Yun, Thomas Lu, Edward Chow; article 106490T
+      SPIE's Crossref record:   Edward Chow, Kyongsik Yun, Thomas T. Lu; page "34"
+      Both files currently follow the export (Yun first). The byline on the PDF settles it.
+      https://doi.org/10.1117/12.2305151
 
 
-3. MISSING PAGES AND DOI
+3. NO DOI: checked only against your export (optional)
 --------------------------------------------------------------------------------
+These match the exports you fetched. The first three have no page numbers in their Scopus
+export; add pages if the paper has them.
 
-[155] li2025lightweight
-      Title: Lightweight Multi-Feature Fusion GAN with Deformable Attention for HMD-Occluded Face Reconstruction
-      Venue: IJACSA 16, 11 (2025), 159-169
-      DOI:   10.14569/IJACSA.2025.0161117
-      Link:  https://doi.org/10.14569/IJACSA.2025.0161117
-      Note:  references.bib has "16, 11 (2025)." with no pages or DOI.
+[22]  Cante et al. 2025. Augmented Narratives... CEUR Workshop Proceedings, Vol. 4152.
+      https://www.scopus.com/pages/publications/105037329808?origin=resultslist
+[169] Lorenzoni et al. 2025. Virtual Reality and Conversational Agents for Cultural Heritage
+      Engagement. Int. Conf. 'The Future of Education'.
+      https://www.scopus.com/pages/publications/105029555144?origin=resultslist
+[257] Wang et al. 2025. Art as a Medium for Fluoride Awareness... Fluoride 58, 15.
+      https://www.scopus.com/pages/publications/105006851421?origin=resultslist
+
+Complete, from publisher or Scopus exports:
+[19] Bowman (book), [83] Goodfellow (NeurIPS 2014), [91] Guo and [99] He (CAADRIA 2026),
+[104] Ho, [149] Lewis, [252] Vaswani (NeurIPS), [214] Radford (ICML), [248] Vaidhyanathan
+(ACADIA 2023). [132] Kingma is ICLR 2014 with the arXiv link (ICLR 2014 has no proceedings
+volume).
 
 
-4. WRONG VERSION: references.bib cites the arXiv preprint, ref_references.bib cites the
-   published paper. Fetch the published version (none of these have a DOI).
+NO ACTION NEEDED (for the record)
 --------------------------------------------------------------------------------
-
-[104] ho2020        Denoising Diffusion Probabilistic Models
-                    Published: NeurIPS 2020, Vol. 33, pp. 6840-6851
-                    Link: https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html
-                    references.bib now: https://doi.org/10.48550/arXiv.2006.11239
-
-[149] lewis2020     Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
-                    Published: NeurIPS 2020, Vol. 33, pp. 9459-9474
-                    Link: https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
-                    references.bib now: 2021, arXiv (year also wrong)
-
-[214] radford2021   Learning Transferable Visual Models From Natural Language Supervision
-                    Published: ICML 2021, PMLR Vol. 139, pp. 8748-8763
-                    Link: https://proceedings.mlr.press/v139/radford21a.html
-                    references.bib now: https://doi.org/10.48550/arXiv.2103.00020
-
-[252] vaswani2017   Attention Is All You Need
-                    Published: NeurIPS 2017, Vol. 30, pp. 5998-6008
-                    Link: https://papers.nips.cc/paper/7181-attention-is-all-you-need
-                    references.bib now: 2023, arXiv (year wrong: 2023 is the latest arXiv revision)
-
-([132] Kingma is in section 1.)
-
-
-5. YEAR DIFFERS BETWEEN THE FILES (probably online-first vs issue year).
-   Pick one rule (online year or issue year) and fetch to confirm.
---------------------------------------------------------------------------------
-
-[64]  arevaloespinal2025extended  refs 2024 / bib 2025  https://doi.org/10.1145/3703790.3703792
-[98]  he2026research              refs 2025 / bib 2026  https://doi.org/10.1145/3788910.3789021
-[125] kaur2026knowledge           refs 2025 / bib 2026  https://doi.org/10.1145/3774521.3774615
-[159] li2026say                   refs 2025 / bib 2026  https://doi.org/10.1145/3779232.3779288
-[186] mittal2026gemr              refs 2025 / bib 2026  https://doi.org/10.1145/3774521.3774603
-[213] qiu2026deep                 refs 2025 / bib 2026  https://doi.org/10.1145/3799457.3799634
-[232] spiegler2026user            refs 2025 / bib 2026  https://doi.org/10.1007/s10055-025-01284-0
-[247] vachha2025dreamcrafter      refs 2024 / bib 2025  https://doi.org/10.1145/3706598.3714312
-[279] yang2025exploring           refs 2026 / bib 2025  https://doi.org/10.1145/3757062
-
-
-6. TYPOS (no fetch needed, can fix directly)
---------------------------------------------------------------------------------
-
-[44], [256], [267], [281]  "Singapore , Singapore" -> "Singapore, Singapore"
-[207]                      double space in "ASEE Annual Conference & Exposition  Proceedings"
-
-
-7. NOT YET VERIFIED
---------------------------------------------------------------------------------
-The other ~260 original entries were matched by DOI/title only. Their venues, pages and
-author lists have not been checked against the publishers.
+- [181] McHugh: Crossref spells her name "Marry"; that is a publisher typo. "Mary" is correct.
+- 14 entries have different online and print years. Each entry uses one of its two publisher
+  years, following the usual convention: journals use the issue (print) year, and ACM
+  proceedings use the ACM DL year.
+  [12] [26] [65] [75] [110] [197] [231] [237]: online 2025, issue 2026 -> 2026
+  [64]: ACM DL 2025 (conference 2024) -> 2025
+  [98] [125] [159] [186] [213]: ACM DL 2026 (conference 2025) -> 2026
